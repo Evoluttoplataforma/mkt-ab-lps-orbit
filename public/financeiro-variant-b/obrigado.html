@@ -492,7 +492,17 @@
 })();
 </script>
 
-<!-- analytics -->
+<!-- UTM persistência + propagação (maoliver92/tracking) -->
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://cdn.jsdelivr.net/gh/maoliver92/tracking@main/utm-cookie-persist-referrer-mapping.js';
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- Orbit analytics -->
 <script>
 window.__pbqph = window.__pbqph || {};
 window.__pbqph.config = {
@@ -502,7 +512,7 @@ window.__pbqph.config = {
   debug: false
 };
 </script>
-<script src="../shared/js/analytics.js?v=1" defer></script>
+<script src="../shared/js/analytics.js?v=2" defer></script>
 
 </body>
 </html>

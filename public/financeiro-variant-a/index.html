@@ -932,7 +932,19 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
 })();
 </script>
 
-<!-- Config + tracking (TRACKING.md) -->
+<!-- ━━━━━━ TRACKING STACK ━━━━━━ -->
+
+<!-- 1. UTM persistência + propagação cross-domain + referrer mapping (maoliver92/tracking) -->
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://cdn.jsdelivr.net/gh/maoliver92/tracking@main/utm-cookie-persist-referrer-mapping.js';
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- 2. Config Orbit (webhook, chat URL, debug) -->
 <script>
   window.__pbqph = window.__pbqph || {};
   window.__pbqph.config = {
@@ -942,7 +954,9 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     debug: false
   };
 </script>
-<script src="../shared/js/analytics.js?v=1" defer></script>
+
+<!-- 3. Orbit analytics (dataLayer events, geo, scroll, form, chat_abriu) -->
+<script src="../shared/js/analytics.js?v=2" defer></script>
 <script src="../shared/js/form.js?v=1" defer></script>
 
 </body>
