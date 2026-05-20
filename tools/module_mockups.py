@@ -17,10 +17,10 @@ MOCKUPS = {
         'sidebar_section_2': 'Comercial',
         'sidebar_section_3': 'Gestão',
         'sidebar_items_section_2': [
-            ('M3 9l9 7 9-7M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'Pipeline', None, True),
             ('M9 11H7a2 2 0 01-2-2V5a2 2 0 012-2h2m6 0h2a2 2 0 012 2v4a2 2 0 01-2 2h-2', 'Leads', '24', False),
             ('M12 8v4l3 3M12 2a10 10 0 110 20 10 10 0 010-20z', 'Web Forms', None, False),
             ('M13 10V3L4 14h7v7l9-11h-7z', 'Automações', None, False),
+            ('M5 13l4 4L19 7', 'Negociações', '7', False),
         ],
         'sidebar_items_section_3': [
             ('M9 17v-2a4 4 0 014-4h0a4 4 0 014 4v2', 'Clientes', None, False),
@@ -265,10 +265,10 @@ MOCKUPS = {
         'sidebar_section_2': 'Processos',
         'sidebar_section_3': 'ISO 9001',
         'sidebar_items_section_2': [
-            ('M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', 'Processos', '47', True),
             ('M4 6h16M4 10h16M4 14h16M4 18h16', 'Instruções de Trabalho', None, False),
             ('M22 12h-4l-3 9L9 3l-3 9H2', 'Cadeia de Valor', None, False),
             ('M9 5l7 7-7 7', 'Ciclo de Vida', None, False),
+            ('M3 9l9 7 9-7', 'Fluxogramas', '12', False),
         ],
         'sidebar_items_section_3': [
             ('M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'Auditoria', None, False),
@@ -425,10 +425,10 @@ MOCKUPS = {
         'sidebar_section_2': 'Projetos',
         'sidebar_section_3': 'Pessoas',
         'sidebar_items_section_2': [
-            ('M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2', 'Projetos', '14', True),
             ('M9 12h6m-3-3v6m9 0a9 9 0 11-18 0 9 9 0 0118 0z', 'Tarefas', '124', False),
             ('M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', 'Cronograma', None, False),
             ('M22 11.08V12a10 10 0 11-5.93-9.14', 'Alertas', '2', False),
+            ('M3 3h18v18H3z', 'Portfolio', None, False),
         ],
         'sidebar_items_section_3': [
             ('M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2', 'Membros', None, False),

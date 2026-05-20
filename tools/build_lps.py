@@ -893,14 +893,13 @@ def apply_mockup(html, slug, m, variant):
 
         sidebar2 = m['sidebar_items_section_2']
         sidebar3 = m['sidebar_items_section_3']
-        # Sidebar items aparecem com indentação específica de 12 espaços antes do texto, seguido de \n          </a>.
-        # Usar regex com âncora estrita evita pegar a palavra em outros lugares do HTML.
+        # Sidebar items: indentação 12 espaços + texto + \n (próximo elem pode ser <span> badge ou </a>)
+        # Padrão mais permissivo aceita ambos.
         old_items_a = ['Contas a Pagar', 'Contas a Receber', 'Fluxo de Caixa', 'Aprovações']
         old_items_b = ['DRE', 'Orçamento']
 
         def _sidebar_swap(old, new):
-            pattern = r'(\n {12})' + re.escape(old) + r'(\n {10}</a>)'
-            return re.sub(pattern, lambda m_: m_.group(1) + new + m_.group(2), html, count=1)
+            return html.replace(f'\n            {old}\n', f'\n            {new}\n', 1)
 
         for i, (icon_path, label, badge, active) in enumerate(sidebar2):
             if i < len(old_items_a):
@@ -914,27 +913,20 @@ def apply_mockup(html, slug, m, variant):
                             f'<!-- Benefit 2: {m["b2_chart_title"]} -->')
 
     # ───── Stats (LP A) ─────
-    # 3 stats: Saldo Total / Burn Mensal / Runway no template
+    # Formato real no template: <h3>R$ 4,2M</h3>, <h3>R$ 285K</h3>, <h3>14,8 meses</h3>
+    # Labels: <p>Saldo Total</p>, <p>Burn Mensal</p>, <p>Runway</p>
+    # Changes: <span>+12,5%</span>, <span>+2,1%</span>, <span>Saudável</span>
     html = html.replace('>Saldo Total<', f'>{m["stat_1_label"]}<', 1)
-    html = html.replace('R$ 4.245.380', m['stat_1_value'].replace('R$ ', 'R$ '))
-    if 'R$' not in m['stat_1_value']:
-        html = html.replace('R$ ' + m['stat_1_value'].replace('R$ ', '').strip(',00'), m['stat_1_value'])
-    # Bypass: replace the full stat 1 value
-    html = html.replace('R$ 4.245.380<span class="text-gray-500">,00</span>',
-                        m['stat_1_value'].replace('R$ ', 'R$&nbsp;') if 'R$' in m['stat_1_value'] else m['stat_1_value'])
-    html = html.replace('12,5%', m['stat_1_change_value'].lstrip('+'), 1)
-    html = html.replace('vs mês anterior', m['stat_1_change_label'], 1)
+    html = html.replace('>R$ 4,2M<', f'>{m["stat_1_value"]}<', 1)
+    html = html.replace('>+12,5%<', f'>{m["stat_1_change_value"]}<', 1)
 
     html = html.replace('>Burn Mensal<', f'>{m["stat_2_label"]}<', 1)
-    html = html.replace('R$ 285.420<span class="text-gray-500">,00</span>',
-                        m['stat_2_value'] if 'R$' in m['stat_2_value'] else m['stat_2_value'])
-    html = html.replace('2,1%', m['stat_2_change_value'].lstrip('+').lstrip('−'), 1)
-    html = html.replace('vs mês anterior', m['stat_2_change_label'], 1)
+    html = html.replace('>R$ 285K<', f'>{m["stat_2_value"]}<', 1)
+    html = html.replace('>+2,1%<', f'>{m["stat_2_change_value"]}<', 1)
 
     html = html.replace('>Runway<', f'>{m["stat_3_label"]}<', 1)
-    html = html.replace('14,8 meses', m['stat_3_value'])
-    html = html.replace('Days cash · 444', m['stat_3_sub_left'])
-    html = html.replace('Saudável', m['stat_3_sub_right'])
+    html = html.replace('>14,8 meses<', f'>{m["stat_3_value"]}<', 1)
+    html = html.replace('>Saudável<', f'>{m["stat_3_sub_right"]}<', 1)
 
     # ───── Chart (LP A) ─────
     html = html.replace('Receita × Despesa', m['chart_title'])
