@@ -3,10 +3,13 @@
 Gerador de LPs Orbit por módulo · A (dark) + B (light)
 Lê os templates de Financeiro e aplica configs por módulo via find-replace.
 """
-import re, shutil, os
+import re, shutil, os, sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(ROOT / 'tools'))
+from module_mockups import MOCKUPS
+
 TPL_A = (ROOT / 'public/financeiro-variant-a/index.html').read_text()
 TPL_B = (ROOT / 'public/financeiro-variant-b/index.html').read_text()
 
@@ -848,6 +851,171 @@ def apply_module(html, slug, cfg, variant):
     # Aria-hidden, alt texts, etc. (não vou cobrir tudo, mas o essencial)
     # Hero alt-text (LP A · "Tela do módulo Financeiro..." → genérico)
     html = re.sub(r'data-swap="screenshot-painel-financeiro"', f'data-swap="screenshot-painel-{slug}"', html)
+
+    # ─── Mockup customization (sidebar, stats, chart, chat, marquee, floating) ───
+    m = MOCKUPS.get(slug, {})
+    if m:
+        html = apply_mockup(html, slug, m, variant)
+
+    return html
+
+
+def apply_mockup(html, slug, m, variant):
+    """Aplica swaps específicos do mockup (sidebar, stats, chart, olívia, marquee, floating)."""
+
+    # ───── Header do painel (LP A) ─────
+    html = html.replace('Painel Financeiro', m['header_title'])
+    html = html.replace('Novo lançamento', m['header_action'])
+
+    # ───── Sidebar sections (LP A) ─────
+    # "Operacional" e "Controladoria" são os section labels do financeiro
+    if variant == 'a':
+        html = html.replace(
+            '<div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Operacional</div>',
+            f'<div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">{m["sidebar_section_2"]}</div>',
+            1
+        )
+        html = html.replace(
+            '<div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Controladoria</div>',
+            f'<div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">{m["sidebar_section_3"]}</div>',
+            1
+        )
+        # Active item label: "Painel Financeiro" → header_title
+        # (já trocado acima pelo Painel Financeiro → header_title)
+
+        # Items do sidebar — não vou trocar todos (complexidade), mas posso fazer os principais
+        # "Contas a Pagar" → primeiro item da section 2
+        # "Contas a Receber" → segundo item
+        # "Fluxo de Caixa" → terceiro
+        # "Aprovações" → quarto (com badge 3)
+        # "DRE" → primeiro da section 3
+        # "Orçamento" → segundo da section 3
+
+        sidebar2 = m['sidebar_items_section_2']
+        sidebar3 = m['sidebar_items_section_3']
+        old_items_a = [
+            'Contas a Pagar',
+            'Contas a Receber',
+            'Fluxo de Caixa',
+            'Aprovações',
+        ]
+        old_items_b = [
+            'DRE',
+            'Orçamento',
+        ]
+        for i, (icon_path, label, badge, active) in enumerate(sidebar2):
+            if i < len(old_items_a):
+                html = html.replace(f'>{old_items_a[i]}<', f'>{label}<', 1)
+        for i, (icon_path, label, badge, active) in enumerate(sidebar3):
+            if i < len(old_items_b):
+                html = html.replace(f'>{old_items_b[i]}<', f'>{label}<', 1)
+
+    # ───── Stats (LP A) ─────
+    # 3 stats: Saldo Total / Burn Mensal / Runway no template
+    html = html.replace('>Saldo Total<', f'>{m["stat_1_label"]}<', 1)
+    html = html.replace('R$ 4.245.380', m['stat_1_value'].replace('R$ ', 'R$ '))
+    if 'R$' not in m['stat_1_value']:
+        html = html.replace('R$ ' + m['stat_1_value'].replace('R$ ', '').strip(',00'), m['stat_1_value'])
+    # Bypass: replace the full stat 1 value
+    html = html.replace('R$ 4.245.380<span class="text-gray-500">,00</span>',
+                        m['stat_1_value'].replace('R$ ', 'R$&nbsp;') if 'R$' in m['stat_1_value'] else m['stat_1_value'])
+    html = html.replace('12,5%', m['stat_1_change_value'].lstrip('+'), 1)
+    html = html.replace('vs mês anterior', m['stat_1_change_label'], 1)
+
+    html = html.replace('>Burn Mensal<', f'>{m["stat_2_label"]}<', 1)
+    html = html.replace('R$ 285.420<span class="text-gray-500">,00</span>',
+                        m['stat_2_value'] if 'R$' in m['stat_2_value'] else m['stat_2_value'])
+    html = html.replace('2,1%', m['stat_2_change_value'].lstrip('+').lstrip('−'), 1)
+    html = html.replace('vs mês anterior', m['stat_2_change_label'], 1)
+
+    html = html.replace('>Runway<', f'>{m["stat_3_label"]}<', 1)
+    html = html.replace('14,8 meses', m['stat_3_value'])
+    html = html.replace('Days cash · 444', m['stat_3_sub_left'])
+    html = html.replace('Saudável', m['stat_3_sub_right'])
+
+    # ───── Chart (LP A) ─────
+    html = html.replace('Receita × Despesa', m['chart_title'])
+    html = html.replace('Últimos 6 meses', m['chart_subtitle'].split('·')[0].strip() if '·' in m['chart_subtitle'] else m['chart_subtitle'])
+    html = html.replace('+18% vs mês anterior', m['chart_highlight'])
+    html = html.replace('R$ 612K', m['chart_tooltip_value'])
+
+    # ───── Olívia chat panel (LP A · canto direito) ─────
+    html = html.replace('Sua CFO em IA', m['olivia_role'])
+    html = html.replace('Como ficou meu DRE em abril vs março?', m['olivia_question'])
+    # The answer is split: gold heading + body
+    html = html.replace('Receita +18% (R$ 612K), margem subiu pra 53%. Quer ver o drill por cliente?',
+                        f'{m["olivia_answer_body"]}')
+    # Quick action chips
+    html = html.replace('>Sim, mostrar<', f'>{m["olivia_action_1"]}<', 1)
+    html = html.replace('>Comparar meta<', f'>{m["olivia_action_2"]}<', 1)
+    html = html.replace('placeholder="Pergunte algo..."', f'placeholder="{m["olivia_input_placeholder"]}"')
+
+    # ───── "Pergunte à Olívia" bottom bar (LP A) ─────
+    html = html.replace('DRE, fluxo de caixa, runway em linguagem natural', m['bottom_bar_subtitle'])
+    html = html.replace('Olívia, qual meu DRE de abril?', m['bottom_bar_input_placeholder'])
+
+    # ───── Mobile hero chat (LP A · md:hidden card) ─────
+    # Header role já trocado acima (Sua CFO em IA → m['olivia_role'])
+    # Question / answer / actions
+    html = html.replace('>Como ficou meu DRE em abril vs março?<', f'>{m["mobile_question"]}<', 1)
+    # Mobile answer header (the gold-bold first line)
+    html = html.replace('Receita +18%', m['mobile_answer_h'].split('·')[0].strip())
+    # Mobile answer body
+    html = html.replace('R$ 612K · margem subiu pra <strong>53%</strong>. Quer drill por cliente?',
+                        m['mobile_answer_body'])
+    # Mobile actions
+    html = html.replace('>Sim, mostrar<', f'>{m["mobile_action_1"]}<', 1)
+    html = html.replace('>Comparar meta<', f'>{m["mobile_action_2"]}<', 1)
+
+    # ───── Marquee (LP A + LP B) ─────
+    # O marquee tem 12 itens base + 12 duplicatas. Substituo todos pelos itens do módulo.
+    if variant == 'a':
+        marquee_items = m['marquee']
+        # Cada item da financeiro tem padrão: <span class="text-sm font-bold text-white/85 ...">TEXT</span><span class="w-1 h-1 ...">
+        # ou <span class="text-sm font-bold text-primary ...">TEXT</span><span...>
+        # Vou substituir os textos da lista financeira pelos novos
+        old_marquee_a = [
+            ('3.045+ empresas BR confiam', False),
+            ('DRE em tempo real', True),
+            ('Olívia · sua CFO em IA', False),
+            ('Conciliação bancária automática', True),
+            ('Fluxo projetado até 18 meses', False),
+            ('Open Finance BR nativo', True),
+            ('Fechamento mensal 12d → 3d', False),
+            ('Aprovações com trilha de auditoria', True),
+            ('Burn rate &amp; runway vivos', False),
+            ('−85% erros de lançamento', True),
+            ('Margem por cliente em 1 clique', False),
+            ('Pergunte "qual meu DRE?" em português', True),
+        ]
+        for (old_text, _), (new_text, _) in zip(old_marquee_a, marquee_items):
+            # Replace all 2 occurrences (set 1 + duplicate)
+            html = html.replace(f'>{old_text}<', f'>{new_text}<')
+    else:  # variant b
+        marquee_items_b = m['marquee']
+        old_marquee_b = [
+            '3.045+ empresas BR confiam',
+            'DRE em tempo real',
+            'Olívia · sua CFO em IA',
+            'Conciliação bancária automática',
+            'Fluxo projetado até 18 meses',
+            'Open Finance BR nativo',
+            'Fechamento mensal 12d → 3d',
+            'Aprovações com trilha de auditoria',
+            'Burn rate &amp; runway vivos',
+            '−85% erros de lançamento',
+            'Margem por cliente em 1 clique',
+            'Pergunte "qual meu DRE?" em português',
+        ]
+        for old_text, (new_text, _) in zip(old_marquee_b, marquee_items_b):
+            html = html.replace(f'>{old_text}<', f'>{new_text}<')
+
+    # ───── Floating card (LP B) ─────
+    if variant == 'b':
+        html = html.replace('<div class="stat">DRE em minutos</div>',
+                            f'<div class="stat">{m["floating_stat"]}</div>')
+        html = html.replace('não em semanas. Auditável e em linguagem natural.',
+                            m['floating_label'])
 
     return html
 
