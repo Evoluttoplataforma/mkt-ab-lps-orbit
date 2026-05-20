@@ -29,6 +29,9 @@
 
 <!-- Tailwind CDN + config Orbit -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Iconify (Solar icon set) -->
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 <script>
 tailwind.config = {
   darkMode: 'class',
@@ -127,11 +130,6 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
 
 <!-- ════════════ HERO ════════════ -->
 <main class="flex flex-col z-10 pt-32 md:pt-40 pr-6 pl-6 relative items-center justify-center">
-
-  <div class="inline-flex scroll-item scroll-fade-up bg-white/5 border-white/10 border rounded-full mb-6 pt-1.5 pr-3 pb-1.5 pl-3 backdrop-blur-sm items-center gap-2">
-    <span class="bg-primary/20 text-primary rounded px-1.5 py-0.5 text-[10px] font-bold tracking-wider">ICP</span>
-    <span class="text-xs text-gray-300 font-medium tracking-wide uppercase">Para empresas R$ 500k+/mês e 30+ funcionários</span>
-  </div>
 
   <h1 class="text-center text-4xl sm:text-5xl md:text-7xl leading-[1.05] max-w-5xl mx-auto font-display font-extrabold tracking-tight scroll-item scroll-blur-in d-100">
     Sua <span class="text-primary">CFO em IA</span>.
@@ -329,17 +327,34 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
         <p class="text-xs text-gray-400 font-medium mt-2">menos tempo em processos manuais</p>
       </div>
     </div>
-    <!-- Marquee logo bar (placeholder iniciais até trocar) -->
+    <!-- Marquee · 12 sinais densos -->
     <div class="mt-10 pt-8 border-t border-white/5 overflow-hidden">
-      <div class="flex animate-marquee gap-12 items-center w-max opacity-60">
-        <span class="text-sm font-bold text-white/70 tracking-tight">3.045+ empresas</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-primary tracking-tight">LGPD compliant</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-white/70 tracking-tight">ISO 9001</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-primary tracking-tight">Open Finance BR</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-white/70 tracking-tight">3.045+ empresas</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-primary tracking-tight">LGPD compliant</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-white/70 tracking-tight">ISO 9001</span><span class="w-1 h-1 rounded-full bg-primary"></span>
-        <span class="text-sm font-bold text-primary tracking-tight">Open Finance BR</span><span class="w-1 h-1 rounded-full bg-primary"></span>
+      <div class="flex animate-marquee gap-10 items-center w-max opacity-80">
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">3.045+ empresas BR confiam</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">DRE em tempo real</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Olívia · sua CFO em IA</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Conciliação bancária automática</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fluxo projetado até 18 meses</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Setup guiado em 3-4 semanas</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">LGPD · ISO 9001</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <!-- duplicata para loop seamless -->
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">3.045+ empresas BR confiam</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">DRE em tempo real</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Olívia · sua CFO em IA</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Conciliação bancária automática</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fluxo projetado até 18 meses</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Setup guiado em 3-4 semanas</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">LGPD · ISO 9001</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
       </div>
     </div>
   </div>
@@ -354,40 +369,66 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     <p class="text-base md:text-lg text-gray-400 font-light">Não é qualquer empresa. É a sua, se você se reconhece aqui:</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto">
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5"><strong class="font-bold">R$ 500.000+/mês de faturamento</strong> e <strong class="font-bold">30 ou mais funcionários</strong>.</span>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 overflow-hidden">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:buildings-3-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Porte</span>
+        <p class="text-sm text-white leading-relaxed"><strong class="font-extrabold">R$ 500.000+/mês de faturamento</strong> e <strong class="font-extrabold">30 ou mais funcionários</strong>.</p>
+      </div>
     </div>
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong class="font-bold">planilha toda semana</strong>.</span>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:document-medicine-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Planilha</span>
+        <p class="text-sm text-white leading-relaxed">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong class="font-extrabold">planilha toda semana</strong>.</p>
+      </div>
     </div>
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5">DRE só sai <strong class="font-bold">15-30 dias depois</strong> do mês fechado.</span>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:clock-circle-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">DRE atrasado</span>
+        <p class="text-sm text-white leading-relaxed">DRE só sai <strong class="font-extrabold">15-30 dias depois</strong> do mês fechado.</p>
+      </div>
     </div>
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5">Já <strong class="font-bold">estourou o ContaAzul/Omie/Bling</strong>, mas TOTVS/Sankhya é caro demais.</span>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:exit-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Stack estourou</span>
+        <p class="text-sm text-white leading-relaxed">Já <strong class="font-extrabold">estourou o ContaAzul/Omie/Bling</strong>, mas TOTVS/Sankhya é caro demais.</p>
+      </div>
     </div>
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5">Decisões financeiras dependem da <strong class="font-bold">memória da equipe</strong>, não do sistema.</span>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:brain-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Risco operacional</span>
+        <p class="text-sm text-white leading-relaxed">Decisões financeiras dependem da <strong class="font-extrabold">memória da equipe</strong>, não do sistema.</p>
+      </div>
     </div>
-    <div class="flex items-start gap-3 p-4 rounded-xl bg-[#0A0A0C] border border-white/10 hover:border-primary/30 transition-colors">
-      <span class="shrink-0 w-7 h-7 rounded-full bg-primary text-orbit-black grid place-items-center"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <span class="text-sm text-white leading-relaxed pt-0.5">Quer falar com sua área financeira <strong class="font-bold">sem precisar 'pedir' relatório</strong>.</span>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:chat-square-call-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Autonomia</span>
+        <p class="text-sm text-white leading-relaxed">Quer falar com sua área financeira <strong class="font-extrabold">sem precisar 'pedir' relatório</strong>.</p>
+      </div>
     </div>
   </div>
 
+  <div class="mt-8 max-w-3xl mx-auto text-center text-sm text-gray-400 flex items-center justify-center gap-2">
+    <iconify-icon icon="solar:target-bold" style="font-size:18px;color:#ffba1a"></iconify-icon>
+    Reconheceu <strong class="text-primary font-extrabold">3 ou mais</strong> sinais aí em cima? Orbit Financeiro foi feito pra você.
+  </div>
+
   <!-- Anti-alvo -->
-  <div class="mt-8 max-w-4xl mx-auto p-6 rounded-2xl bg-[#050505] border border-white/5">
-    <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-4">Quem NÃO se beneficia (e está tudo bem)</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-gray-400">
-      <div class="flex items-start gap-2"><span class="text-error mt-0.5">✕</span><span>Microempresa, MEI ou autônomo — Orbit é overkill.</span></div>
-      <div class="flex items-start gap-2"><span class="text-error mt-0.5">✕</span><span>Empresa que já tem ERP enterprise (SAP, Oracle) com BI dedicado.</span></div>
-      <div class="flex items-start gap-2"><span class="text-error mt-0.5">✕</span><span>Quem quer só emissor de nota fiscal — não é nosso foco.</span></div>
+  <div class="mt-8 max-w-5xl mx-auto p-6 rounded-2xl bg-[#050505] border border-white/5">
+    <div class="flex items-center gap-2 mb-5">
+      <iconify-icon icon="solar:hand-stars-linear" style="font-size:18px;color:#8B949E"></iconify-icon>
+      <p class="text-[11px] font-extrabold text-gray-500 uppercase tracking-widest">Quem NÃO se beneficia <span class="font-medium normal-case tracking-normal text-gray-600">· e está tudo bem</span></p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-400">
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:user-linear" style="font-size:14px"></iconify-icon></span><span>Microempresa, MEI ou autônomo — Orbit é overkill.</span></div>
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:server-square-cloud-linear" style="font-size:14px"></iconify-icon></span><span>Empresa com ERP enterprise (SAP, Oracle) + BI dedicado.</span></div>
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:bill-list-linear" style="font-size:14px"></iconify-icon></span><span>Quem quer só emissor de nota fiscal — não é nosso foco.</span></div>
     </div>
   </div>
 </section>
@@ -650,36 +691,65 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     <p class="text-base md:text-lg text-gray-400 font-light">Quanto custa o seu "patchwork" financeiro hoje?</p>
   </div>
 
-  <div class="max-w-5xl mx-auto bg-[#0A0A0C] border border-white/10 rounded-2xl overflow-hidden">
-    <div class="grid grid-cols-12 gap-0 bg-orbit-black-soft px-4 md:px-6 py-3 border-b border-white/5">
-      <div class="col-span-5 text-[11px] font-bold text-gray-500 uppercase tracking-widest">Hoje você usa</div>
-      <div class="col-span-4 text-[11px] font-bold text-primary uppercase tracking-widest">Orbit no lugar dele</div>
-      <div class="col-span-3 text-[11px] font-bold text-gray-500 uppercase tracking-widest">Ganho</div>
+  <div class="max-w-6xl mx-auto bg-[#0A0A0C] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+    <!-- Header -->
+    <div class="hidden md:grid grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-5 px-6 py-3 bg-orbit-black-soft border-b border-white/5 items-center">
+      <div></div>
+      <div class="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">Hoje você usa</div>
+      <div></div>
+      <div class="text-[10px] font-extrabold text-primary uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_0_3px_rgba(255,186,26,.18)]"></span>Orbit no lugar dele</div>
+      <div class="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">Ganho</div>
     </div>
+
+    <!-- Rows -->
     <div class="divide-y divide-white/5">
-      <div class="grid grid-cols-12 gap-4 px-4 md:px-6 py-5 items-center">
-        <div class="col-span-12 md:col-span-5 text-sm text-gray-300">ContaAzul + planilhas <span class="text-gray-500">(limite de funcionalidade)</span></div>
-        <div class="col-span-12 md:col-span-4 text-sm text-white font-semibold">Operacional + DRE + projeção <span class="text-primary">tudo no Orbit</span></div>
-        <div class="col-span-12 md:col-span-3 text-sm text-gray-400">Visão única, sem export/import</div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:document-medicine-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">ContaAzul + planilhas</span>Limite de funcionalidade · export/import constante</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 relative md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Operacional + DRE + projeção</span> tudo no Orbit</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Visão única, sem export/import</div>
       </div>
-      <div class="grid grid-cols-12 gap-4 px-4 md:px-6 py-5 items-center">
-        <div class="col-span-12 md:col-span-5 text-sm text-gray-300">Excel para fluxo de caixa</div>
-        <div class="col-span-12 md:col-span-4 text-sm text-white font-semibold">Fluxo de caixa projetado <span class="text-primary">automático</span></div>
-        <div class="col-span-12 md:col-span-3 text-sm text-gray-400">Sem erro de fórmula, sem planilha quebrada</div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:calculator-minimalistic-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">Excel para fluxo de caixa</span>Planilha quebra, fórmula falha, ninguém atualiza</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Fluxo projetado até 18 meses</span> · automático</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Sem erro de fórmula, runway vivo</div>
       </div>
-      <div class="grid grid-cols-12 gap-4 px-4 md:px-6 py-5 items-center">
-        <div class="col-span-12 md:col-span-5 text-sm text-gray-300">WhatsApp para aprovar pagamentos</div>
-        <div class="col-span-12 md:col-span-4 text-sm text-white font-semibold">Workflow de aprovação <span class="text-primary">rastreado</span></div>
-        <div class="col-span-12 md:col-span-3 text-sm text-gray-400">Compliance + histórico auditável</div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:chat-round-dots-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">WhatsApp para aprovar pagamentos</span>"Foi tio?" · sem histórico · sem rastro</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Workflow de aprovação</span> com trilha de auditoria</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Compliance LGPD · histórico imutável</div>
       </div>
-      <div class="grid grid-cols-12 gap-4 px-4 md:px-6 py-5 items-center">
-        <div class="col-span-12 md:col-span-5 text-sm text-gray-300">Analista financeiro respondendo perguntas básicas</div>
-        <div class="col-span-12 md:col-span-4 text-sm text-white font-semibold">Olívia IA responde <span class="text-primary">em segundos</span></div>
-        <div class="col-span-12 md:col-span-3 text-sm text-gray-400">Time foca em estratégia</div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:user-id-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">Analista financeiro respondendo perguntas básicas</span>Pergunta segunda · resposta sexta</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Olívia IA responde em segundos</span> · em português</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Time foca em estratégia</div>
       </div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:database-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">CRM, RH e Financeiro separados</span>Cada área com sua planilha · sem cruzamento</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Tudo conectado nativamente</span> · sem Zapier, sem integração paga</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Margem por cliente em 1 clique</div>
+      </div>
+
     </div>
-    <div class="px-4 md:px-6 py-5 bg-orbit-black-soft border-t border-white/5 text-sm text-center text-gray-300">
-      <span class="text-primary font-bold">Soma o custo das ferramentas + horas perdidas + erro humano</span> = ROI do Orbit em 90 dias.
+
+    <div class="px-6 py-6 bg-gradient-to-r from-orbit-black-soft via-primary/[0.05] to-orbit-black-soft border-t border-white/5 text-sm text-center text-gray-300 flex items-center justify-center gap-2 flex-wrap">
+      <iconify-icon icon="solar:medal-star-bold" style="font-size:18px;color:#ffba1a"></iconify-icon>
+      <span class="text-primary font-extrabold">Soma o custo das ferramentas + horas perdidas + erro humano</span>
+      <span class="text-gray-400">= ROI do Orbit em 90 dias.</span>
     </div>
   </div>
 </section>

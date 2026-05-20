@@ -86,7 +86,7 @@
 
   .hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
   .hero-content{display:flex;flex-direction:column;gap:28px;max-width:620px}
-  .hero-headline{font-family:var(--font-sans);font-weight:700;font-size:clamp(40px,5vw,80px);line-height:0.98;letter-spacing:-0.035em;color:var(--text)}
+  .hero-headline{font-family:var(--font-sans);font-weight:700;font-size:clamp(40px,5vw,76px);line-height:1.02;letter-spacing:-0.035em;color:var(--text);text-wrap:balance}
   .hero-headline em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero-subhead{font-size:17px;line-height:1.55;color:var(--text-mid);max-width:520px;font-weight:400}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -107,9 +107,9 @@
   .hero-imageCaption{position:absolute;left:22px;right:22px;bottom:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff;z-index:2}
   .hero-imageCaption .label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;opacity:.85}
   .hero-imageCaption .title{font-family:var(--font-sans);font-weight:700;font-size:22px;line-height:1.1;letter-spacing:-0.02em}
-  .hero-floating{position:absolute;left:-18px;bottom:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-16);padding:14px 18px;box-shadow:var(--shadow-card);transform:rotate(-4deg);transition:transform .6s var(--ease-soft);max-width:220px;z-index:3}
+  .hero-floating{position:absolute;left:-18px;bottom:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-16);padding:14px 18px;box-shadow:var(--shadow-card);transform:rotate(-4deg);transition:transform .6s var(--ease-soft);max-width:240px;z-index:3}
   .hero-floating:hover{transform:rotate(0)}
-  .hero-floating .stat{font-family:var(--font-sans);font-weight:800;font-size:24px;line-height:0.95;color:var(--gold-dark);letter-spacing:-0.025em}
+  .hero-floating .stat{font-family:var(--font-sans);font-weight:800;font-size:22px;line-height:1;color:var(--gold-dark);letter-spacing:-0.025em}
   .hero-floating .label{font-size:11px;font-weight:500;color:var(--text-mid);margin-top:4px;line-height:1.4}
 
   /* Buttons */
@@ -150,21 +150,34 @@
   .marquee-track .dot{width:6px;height:6px;border-radius:999px;background:var(--gold);flex-shrink:0}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* Para quem é */
-  .pci-grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:880px;margin:0 auto}
+  /* Para quem é — upgraded */
+  .pci-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:1024px;margin:0 auto}
   @media(min-width:768px){.pci-grid{grid-template-columns:1fr 1fr}}
-  .pci-item{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-16);transition:border-color .3s,transform .3s}
-  .pci-item:hover{border-color:rgba(255,186,26,.45);transform:translateY(-2px)}
-  .pci-item .check{flex-shrink:0;width:28px;height:28px;border-radius:999px;background:var(--gold);color:var(--orbit-black);display:grid;place-items:center}
-  .pci-item .check iconify-icon{font-size:15px;font-weight:700}
-  .pci-item .text{font-size:14px;color:var(--text);line-height:1.5;padding-top:2px}
-  .pci-item .text strong{font-weight:700}
-  .anti-target{margin-top:32px;padding:24px;background:var(--cream);border:1px dashed var(--border-2);border-radius:var(--r-20);max-width:880px;margin-left:auto;margin-right:auto}
-  .anti-target .label{font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px}
-  .anti-target ul{display:grid;grid-template-columns:1fr;gap:10px;font-size:13px;color:var(--text-mid)}
-  @media(min-width:768px){.anti-target ul{grid-template-columns:repeat(3,1fr)}}
-  .anti-target li{display:flex;align-items:flex-start;gap:8px}
-  .anti-target li::before{content:"✕";color:var(--danger);font-weight:700;flex-shrink:0;margin-top:1px}
+  .pci-item{position:relative;display:flex;align-items:flex-start;gap:18px;padding:22px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-20);transition:border-color .35s var(--ease-soft),transform .35s var(--ease-soft),box-shadow .35s var(--ease-soft);overflow:hidden}
+  .pci-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold) 0%,transparent 100%);opacity:0;transition:opacity .3s}
+  .pci-item:hover{border-color:rgba(255,186,26,.45);transform:translateY(-3px);box-shadow:var(--shadow-card)}
+  .pci-item:hover::before{opacity:1}
+  .pci-icon{flex-shrink:0;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--gold-mid),var(--gold));display:grid;place-items:center;color:var(--orbit-black);box-shadow:0 8px 18px -6px rgba(255,186,26,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+  .pci-icon iconify-icon{font-size:26px}
+  .pci-body{flex:1;min-width:0}
+  .pci-tag{display:inline-block;font-size:10px;font-weight:800;color:var(--gold-dark);background:rgba(255,186,26,.10);border:1px solid rgba(255,186,26,.25);padding:3px 9px;border-radius:6px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;line-height:1.4}
+  .pci-text{font-size:14.5px;color:var(--text);line-height:1.55}
+  .pci-text strong{font-weight:700;color:var(--text)}
+
+  .pci-meter{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:28px;font-size:13px;color:var(--text-mid)}
+  .pci-meter strong{color:var(--gold-dark);font-weight:800}
+  .pci-meter iconify-icon{color:var(--gold);font-size:18px}
+
+  .anti-target{margin-top:36px;padding:24px 28px;background:linear-gradient(135deg,var(--cream-2),var(--cream));border:1px dashed var(--border-2);border-radius:var(--r-20);max-width:1024px;margin-left:auto;margin-right:auto}
+  .anti-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .anti-head iconify-icon{font-size:18px;color:var(--text-mid)}
+  .anti-label{font-size:11px;font-weight:800;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.12em;line-height:1}
+  .anti-label span{font-weight:500;color:var(--text-soft);letter-spacing:.04em;text-transform:none;margin-left:4px}
+  .anti-list{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:768px){.anti-list{grid-template-columns:repeat(3,1fr)}}
+  .anti-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-mid);line-height:1.5}
+  .anti-icon{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.22);color:var(--danger);display:grid;place-items:center;margin-top:1px}
+  .anti-icon iconify-icon{font-size:14px}
 
   /* Vídeo */
   .video-wrap{position:relative;aspect-ratio:16/9;border-radius:var(--r-24);overflow:hidden;background:linear-gradient(135deg,var(--gold-light),var(--gold-mid));cursor:pointer;max-width:880px;margin:0 auto}
@@ -235,20 +248,44 @@
   .case-result .lbl{font-size:12px;color:var(--text-mid);font-weight:500}
   .case-result .val{font-family:var(--font-sans);font-weight:800;font-size:18px;color:var(--gold-dark);letter-spacing:-0.02em}
 
-  /* Comparativo */
-  .compare-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);overflow:hidden;max-width:1024px;margin:0 auto}
-  .compare-head{display:grid;grid-template-columns:5fr 4fr 3fr;background:var(--cream-2);padding:16px 24px;border-bottom:1px solid var(--border)}
-  .compare-head > div{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mid)}
-  .compare-head > div:nth-child(2){color:var(--gold-dark)}
-  .compare-row{display:grid;grid-template-columns:5fr 4fr 3fr;padding:18px 24px;border-bottom:1px solid var(--border);gap:16px;align-items:center}
+  /* Comparativo — VS rich layout */
+  .compare-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-32);overflow:hidden;max-width:1100px;margin:0 auto;box-shadow:var(--shadow-soft)}
+  .compare-head{display:grid;grid-template-columns:64px 1fr 36px 1.3fr 1fr;background:var(--cream-2);padding:16px 28px;border-bottom:1px solid var(--border);gap:18px;align-items:center}
+  .compare-head > div{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid)}
+  .compare-head .h-orbit{color:var(--gold-dark);display:inline-flex;align-items:center;gap:6px}
+  .compare-head .h-orbit::before{content:"";width:6px;height:6px;border-radius:9999px;background:var(--gold);box-shadow:0 0 0 3px rgba(255,186,26,.18)}
+  .compare-row{display:grid;grid-template-columns:64px 1fr 36px 1.3fr 1fr;padding:22px 28px;border-bottom:1px solid var(--border);gap:18px;align-items:center;transition:background .25s var(--ease-soft)}
   .compare-row:last-child{border-bottom:0}
-  .compare-row .col-hoje{color:var(--text-mid);font-size:14px}
-  .compare-row .col-orbit{color:var(--text);font-size:14px;font-weight:600}
-  .compare-row .col-orbit .hl{color:var(--gold-dark)}
-  .compare-row .col-ganho{color:var(--text-mid);font-size:13px}
-  .compare-foot{padding:20px 24px;text-align:center;font-size:14px;background:var(--cream)}
-  .compare-foot strong{color:var(--gold-dark);font-weight:700}
-  @media(max-width:767px){.compare-head,.compare-row{grid-template-columns:1fr}.compare-head > div{font-size:10px;padding:4px 0}}
+  .compare-row:hover{background:rgba(255,186,26,.025)}
+  .compare-tool{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(24,25,27,.05),rgba(24,25,27,.02));border:1px solid var(--border);display:grid;place-items:center;color:var(--text-mid);transition:all .35s var(--ease-soft)}
+  .compare-tool iconify-icon{font-size:24px}
+  .compare-row:hover .compare-tool{border-color:rgba(255,186,26,.25);color:var(--gold-dark);background:linear-gradient(135deg,rgba(255,186,26,.04),rgba(255,186,26,.01))}
+  .col-hoje{color:var(--text-mid);font-size:14.5px;line-height:1.45}
+  .col-hoje .h-strong{color:var(--text-2);font-weight:600;display:block;margin-bottom:2px}
+  .col-arrow{color:var(--gold);display:flex;align-items:center;justify-content:center;animation:nudgeArrow 2.4s ease-in-out infinite}
+  .col-arrow iconify-icon{font-size:24px}
+  @keyframes nudgeArrow{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+  .col-orbit{padding:14px 18px;background:linear-gradient(135deg,rgba(255,186,26,.10) 0%,rgba(255,186,26,.02) 100%);border:1px solid rgba(255,186,26,.22);border-radius:14px;color:var(--text);font-size:14.5px;line-height:1.4;position:relative}
+  .col-orbit strong{font-weight:800;color:var(--gold-dark)}
+  .col-orbit::after{content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:3px;background:linear-gradient(180deg,var(--gold),var(--gold-dark));border-radius:14px 0 0 14px}
+  .gain-pill{display:inline-flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-2);font-weight:600;line-height:1.4}
+  .gain-pill iconify-icon{font-size:16px;color:var(--success);flex-shrink:0;margin-top:1px}
+  .compare-foot{padding:24px 28px;text-align:center;font-size:15px;background:linear-gradient(135deg,var(--cream),var(--cream-2));font-weight:500;color:var(--text-2);border-top:1px solid var(--border)}
+  .compare-foot strong{color:var(--gold-dark);font-weight:800}
+  .compare-foot iconify-icon{color:var(--gold-dark);font-size:18px;vertical-align:middle;margin-right:6px}
+  @media(max-width:900px){
+    .compare-head{display:none}
+    .compare-row{grid-template-columns:48px 1fr;gap:14px;padding:20px;align-items:flex-start;border-bottom:1px solid var(--border);background:var(--surface)}
+    .compare-row:nth-child(even){background:var(--cream-2)}
+    .compare-tool{width:44px;height:44px;grid-row:1/span 3}
+    .compare-tool iconify-icon{font-size:20px}
+    .col-hoje{font-size:13.5px}
+    .col-hoje::before{content:"HOJE";display:block;font-size:9px;font-weight:800;color:var(--text-soft);letter-spacing:.14em;margin-bottom:4px}
+    .col-arrow{display:none}
+    .col-orbit{margin-top:8px;font-size:13.5px}
+    .col-orbit::before{content:"ORBIT";display:block;font-size:9px;font-weight:800;color:var(--gold-dark);letter-spacing:.14em;margin-bottom:4px}
+    .gain-pill{margin-top:10px;padding:8px 12px;background:rgba(63,185,80,.06);border:1px solid rgba(63,185,80,.20);border-radius:8px}
+  }
 
   /* FAQ */
   .faq-list{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:4px 28px;max-width:880px;margin:0 auto}
@@ -354,9 +391,7 @@
       <div class="hero-grid">
         <div class="hero-content">
           <h1 class="hero-headline">
-            Pare de descobrir o<br>
-            caixa <em>depois</em> que<br>
-            ele já acabou.
+            Pare de descobrir o caixa <em>depois</em> que ele já acabou.
           </h1>
           <p class="hero-subhead">
             Substitua planilha, ContaAzul e o financeiro improvisado por uma plataforma com IA
@@ -405,7 +440,7 @@
             </div>
           </div>
           <div class="hero-floating">
-            <div class="stat">DRE em min</div>
+            <div class="stat">DRE em minutos</div>
             <div class="label">não em semanas. Auditável e em linguagem natural.</div>
           </div>
         </div>
@@ -441,16 +476,32 @@
   </div>
   <div class="marquee">
     <div class="marquee-track">
-      <span>3.045+ empresas</span><span class="dot"></span>
-      <span class="--gold">LGPD compliant</span><span class="dot"></span>
-      <span>ISO 9001</span><span class="dot"></span>
-      <span class="--gold">Open Finance BR</span><span class="dot"></span>
-      <span>Olívia · IA financeira</span><span class="dot"></span>
-      <span>3.045+ empresas</span><span class="dot"></span>
-      <span class="--gold">LGPD compliant</span><span class="dot"></span>
-      <span>ISO 9001</span><span class="dot"></span>
-      <span class="--gold">Open Finance BR</span><span class="dot"></span>
-      <span>Olívia · IA financeira</span><span class="dot"></span>
+      <!-- set 1 -->
+      <span>3.045+ empresas BR confiam</span><span class="dot"></span>
+      <span class="--gold">DRE em tempo real</span><span class="dot"></span>
+      <span>Olívia · sua CFO em IA</span><span class="dot"></span>
+      <span class="--gold">Conciliação bancária automática</span><span class="dot"></span>
+      <span>Fluxo projetado até 18 meses</span><span class="dot"></span>
+      <span class="--gold">Open Finance BR nativo</span><span class="dot"></span>
+      <span>Fechamento mensal 12d → 3d</span><span class="dot"></span>
+      <span class="--gold">Aprovações com trilha de auditoria</span><span class="dot"></span>
+      <span>Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="dot"></span>
+      <span class="--gold">−85% erros de lançamento</span><span class="dot"></span>
+      <span>Setup guiado em 3-4 semanas</span><span class="dot"></span>
+      <span class="--gold">LGPD · ISO 9001</span><span class="dot"></span>
+      <!-- set 2 (duplicate p/ loop seamless) -->
+      <span aria-hidden="true">3.045+ empresas BR confiam</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">DRE em tempo real</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Olívia · sua CFO em IA</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">Conciliação bancária automática</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Fluxo projetado até 18 meses</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">Open Finance BR nativo</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Fechamento mensal 12d → 3d</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">Aprovações com trilha de auditoria</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">−85% erros de lançamento</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Setup guiado em 3-4 semanas</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">LGPD · ISO 9001</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </section>
@@ -467,38 +518,73 @@
 
     <div class="pci-grid">
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text"><strong>R$ 500.000+/mês de faturamento</strong> e <strong>30 ou mais funcionários</strong>.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:buildings-3-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">Porte</span>
+          <p class="pci-text"><strong>R$ 500.000+/mês de faturamento</strong> e <strong>30 ou mais funcionários</strong>.</p>
+        </div>
       </div>
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong>planilha toda semana</strong>.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">Planilha</span>
+          <p class="pci-text">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong>planilha toda semana</strong>.</p>
+        </div>
       </div>
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text">DRE só sai <strong>15-30 dias depois</strong> do mês fechado.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:clock-circle-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">DRE atrasado</span>
+          <p class="pci-text">DRE só sai <strong>15-30 dias depois</strong> do mês fechado.</p>
+        </div>
       </div>
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text">Já <strong>estourou o ContaAzul/Omie/Bling</strong>, mas TOTVS/Sankhya é caro demais.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:exit-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">Stack estourou</span>
+          <p class="pci-text">Já <strong>estourou o ContaAzul/Omie/Bling</strong>, mas TOTVS/Sankhya é caro demais.</p>
+        </div>
       </div>
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text">Decisões financeiras dependem da <strong>memória da equipe</strong>, não do sistema.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:brain-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">Risco operacional</span>
+          <p class="pci-text">Decisões financeiras dependem da <strong>memória da equipe</strong>, não do sistema.</p>
+        </div>
       </div>
       <div class="pci-item">
-        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
-        <span class="text">Quer falar com sua área financeira <strong>sem precisar "pedir" relatório</strong>.</span>
+        <div class="pci-icon"><iconify-icon icon="solar:chat-square-call-bold-duotone"></iconify-icon></div>
+        <div class="pci-body">
+          <span class="pci-tag">Autonomia</span>
+          <p class="pci-text">Quer falar com sua área financeira <strong>sem precisar "pedir" relatório</strong>.</p>
+        </div>
       </div>
     </div>
 
+    <div class="pci-meter">
+      <iconify-icon icon="solar:target-bold"></iconify-icon>
+      Reconheceu <strong>3 ou mais</strong> sinais aí em cima? Orbit Financeiro foi feito pra você.
+    </div>
+
     <div class="anti-target">
-      <p class="label">Quem NÃO se beneficia (e está tudo bem)</p>
-      <ul>
-        <li>Microempresa, MEI ou autônomo — Orbit é overkill.</li>
-        <li>Empresa que já tem ERP enterprise (SAP, Oracle) com BI dedicado.</li>
-        <li>Quem quer só emissor de nota fiscal — não é nosso foco.</li>
-      </ul>
+      <div class="anti-head">
+        <iconify-icon icon="solar:hand-stars-linear"></iconify-icon>
+        <p class="anti-label">Quem NÃO se beneficia <span>· e está tudo bem</span></p>
+      </div>
+      <div class="anti-list">
+        <div class="anti-item">
+          <div class="anti-icon"><iconify-icon icon="solar:user-linear"></iconify-icon></div>
+          <span>Microempresa, MEI ou autônomo — Orbit é overkill.</span>
+        </div>
+        <div class="anti-item">
+          <div class="anti-icon"><iconify-icon icon="solar:server-square-cloud-linear"></iconify-icon></div>
+          <span>Empresa com ERP enterprise (SAP, Oracle) + BI dedicado.</span>
+        </div>
+        <div class="anti-item">
+          <div class="anti-icon"><iconify-icon icon="solar:bill-list-linear"></iconify-icon></div>
+          <span>Quem quer só emissor de nota fiscal — não é nosso foco.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -740,31 +826,55 @@
 
     <div class="compare-table">
       <div class="compare-head">
+        <div></div>
         <div>Hoje você usa</div>
-        <div>Orbit no lugar dele</div>
+        <div></div>
+        <div class="h-orbit">Orbit no lugar dele</div>
         <div>Ganho</div>
       </div>
+
       <div class="compare-row">
-        <div class="col-hoje">ContaAzul + planilhas <span style="opacity:.6">(limite de funcionalidade)</span></div>
-        <div class="col-orbit">Operacional + DRE + projeção <span class="hl">tudo no Orbit</span></div>
-        <div class="col-ganho">Visão única, sem export/import</div>
+        <div class="compare-tool"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></div>
+        <div class="col-hoje"><span class="h-strong">ContaAzul + planilhas</span>Limite de funcionalidade · export/import constante</div>
+        <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
+        <div class="col-orbit"><strong>Operacional + DRE + projeção</strong> tudo no Orbit</div>
+        <div class="gain-pill"><iconify-icon icon="solar:check-circle-bold"></iconify-icon> Visão única, sem export/import</div>
       </div>
+
       <div class="compare-row">
-        <div class="col-hoje">Excel para fluxo de caixa</div>
-        <div class="col-orbit">Fluxo de caixa projetado <span class="hl">automático</span></div>
-        <div class="col-ganho">Sem erro de fórmula, sem planilha quebrada</div>
+        <div class="compare-tool"><iconify-icon icon="solar:calculator-minimalistic-bold-duotone"></iconify-icon></div>
+        <div class="col-hoje"><span class="h-strong">Excel para fluxo de caixa</span>Planilha quebra, fórmula falha, ninguém atualiza</div>
+        <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
+        <div class="col-orbit"><strong>Fluxo projetado até 18 meses</strong> · automático</div>
+        <div class="gain-pill"><iconify-icon icon="solar:check-circle-bold"></iconify-icon> Sem erro de fórmula, runway vivo</div>
       </div>
+
       <div class="compare-row">
-        <div class="col-hoje">WhatsApp para aprovar pagamentos</div>
-        <div class="col-orbit">Workflow de aprovação <span class="hl">rastreado</span></div>
-        <div class="col-ganho">Compliance + histórico auditável</div>
+        <div class="compare-tool"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></div>
+        <div class="col-hoje"><span class="h-strong">WhatsApp para aprovar pagamentos</span>"Foi tio?" · sem histórico · sem rastro</div>
+        <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
+        <div class="col-orbit"><strong>Workflow de aprovação</strong> com trilha de auditoria</div>
+        <div class="gain-pill"><iconify-icon icon="solar:check-circle-bold"></iconify-icon> Compliance LGPD · histórico imutável</div>
       </div>
+
       <div class="compare-row">
-        <div class="col-hoje">Analista financeiro respondendo perguntas básicas</div>
-        <div class="col-orbit">Olívia IA responde <span class="hl">em segundos</span></div>
-        <div class="col-ganho">Time foca em estratégia</div>
+        <div class="compare-tool"><iconify-icon icon="solar:user-id-bold-duotone"></iconify-icon></div>
+        <div class="col-hoje"><span class="h-strong">Analista financeiro respondendo perguntas básicas</span>Pergunta segunda · resposta sexta</div>
+        <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
+        <div class="col-orbit"><strong>Olívia IA responde em segundos</strong> · em português</div>
+        <div class="gain-pill"><iconify-icon icon="solar:check-circle-bold"></iconify-icon> Time foca em estratégia</div>
       </div>
+
+      <div class="compare-row">
+        <div class="compare-tool"><iconify-icon icon="solar:database-bold-duotone"></iconify-icon></div>
+        <div class="col-hoje"><span class="h-strong">CRM, RH e Financeiro separados</span>Cada área com sua planilha · sem cruzamento</div>
+        <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
+        <div class="col-orbit"><strong>Tudo conectado nativamente</strong> · sem Zapier, sem integração paga</div>
+        <div class="gain-pill"><iconify-icon icon="solar:check-circle-bold"></iconify-icon> Margem por cliente em 1 clique</div>
+      </div>
+
       <div class="compare-foot">
+        <iconify-icon icon="solar:medal-star-bold"></iconify-icon>
         <strong>Soma o custo das ferramentas + horas perdidas + erro humano</strong> = ROI do Orbit em 90 dias.
       </div>
     </div>
