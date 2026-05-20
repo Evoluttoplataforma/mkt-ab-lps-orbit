@@ -240,18 +240,16 @@
   }
 
   // ---------- CHAT CTA HELPER ----------
-  // Constrói URL do chat com UTMs (last-touch + first-touch) + variant + session_id
-  // e dispara chat_abriu antes de navegar.
+  // URL do chat carrega APENAS UTMs + click IDs.
+  // Prioridade: last-touch (URL atual) → fallback first-touch (cookie ft_*).
+  // Variant, session, etc. continuam no dataLayer (uso interno GTM/GA4) — não vão na URL.
   function buildChatUrl(extra) {
     var u = new URL(cfg.chatUrl);
-    var lt = getUrlParams();
-    var ft = readFirstTouch();
-    Object.keys(lt).forEach(function (k) { u.searchParams.set(k, lt[k]); });
-    Object.keys(ft).forEach(function (k) { if (!u.searchParams.get(k)) u.searchParams.set(k, ft[k]); });
-    u.searchParams.set('variant', detectVariant());
-    u.searchParams.set('norm', detectNormSlug());
-    u.searchParams.set('session_id', getOrCreateSession());
-    u.searchParams.set('referrer_page', location.href);
+    var urlParams = new URLSearchParams(location.search);
+    TRACKED_PARAMS.forEach(function (k) {
+      var val = urlParams.get(k) || getCookie('ft_' + k);
+      if (val) u.searchParams.set(k, val);
+    });
     if (extra && typeof extra === 'object') {
       Object.keys(extra).forEach(function (k) { u.searchParams.set(k, extra[k]); });
     }
