@@ -267,15 +267,15 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
             <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M2 7h20l-2 13H4z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Contas a Pagar
+            Dashboards
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
             <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Contas a Receber
+            Indicadores
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
             <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            Fluxo de Caixa
+            Alertas
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
             <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -285,7 +285,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
           <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Configuração</div>
           <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
             <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
-            DRE
+            Conectores
           </a>
         </nav>
       </aside>
@@ -540,17 +540,17 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
       <p class="text-sm text-gray-300 leading-relaxed mb-5">Olívia analisa o histórico do KPI e identifica fatores correlacionados. "Receita caiu 15%? Foi queda em 2 clientes do segmento X." Dado contextualizado, não só gráfico.</p>
       <!-- Mini mockup: chat -->
       <div class="bg-[#050505] border border-white/5 rounded-xl p-3 space-y-2" data-swap="screenshot-olivia-chat">
-        <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300">Receita por cliente em maio</div>
+        <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300">Top 3 KPIs em alerta</div>
         <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white">
-          <p class="font-bold text-primary mb-1">Top 3 clientes (mai/2026)</p>
-          <p>1. ACME · R$ 182K (+22%)</p>
-          <p>2. Veridian · R$ 145K (+8%)</p>
-          <p>3. Lumina · R$ 96K (-4%)</p>
+          <p class="font-bold text-primary mb-1">Alertas (mai/2026)</p>
+          <p>1. CPL ↑ 30%</p>
+          <p>2. Conv ↓ 5%</p>
+          <p>3. NPS ↓ 4pt</p>
         </div>
       </div>
     </div>
 
-    <!-- Benefit 2: DRE / Fluxo de caixa -->
+    <!-- Benefit 2: CPL · 6m -->
     <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-colors">
       <div class="flex items-start gap-4 mb-4">
         <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
@@ -565,8 +565,8 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
       <!-- Mini mockup: line chart -->
       <div class="bg-[#050505] border border-white/5 rounded-xl p-4" data-swap="screenshot-fluxo-caixa">
         <div class="flex justify-between items-center mb-3">
-          <p class="text-[11px] font-bold text-white">Fluxo projetado · 6m</p>
-          <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">Runway: 14,8m</span>
+          <p class="text-[11px] font-bold text-white">CPL · 6m</p>
+          <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">Queda 18% · meta hit</span>
         </div>
         <svg viewBox="0 0 280 80" class="w-full h-auto">
           <defs><linearGradient id="benefArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffba1a" stop-opacity="0.45"/><stop offset="1" stop-color="#ffba1a" stop-opacity="0"/></linearGradient></defs>
@@ -593,17 +593,17 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
       <div class="bg-[#050505] border border-white/5 rounded-xl p-3 space-y-1.5" data-swap="screenshot-aprovacoes">
         <div class="flex items-center gap-2.5 p-2 bg-white/5 rounded-lg">
           <span class="w-6 h-6 rounded-full bg-success/15 text-success flex items-center justify-center text-[10px] font-bold">✓</span>
-          <span class="text-[11px] text-white flex-1">Solicitação · CC Marketing</span>
-          <span class="text-[10px] text-gray-500 font-mono">R$ 12,4K</span>
+          <span class="text-[11px] text-white flex-1">Alerta CPL · acima da meta</span>
+          <span class="text-[10px] text-gray-500 font-mono">crítico</span>
         </div>
         <div class="flex items-center gap-2.5 p-2 bg-white/5 rounded-lg">
           <span class="w-6 h-6 rounded-full bg-success/15 text-success flex items-center justify-center text-[10px] font-bold">✓</span>
-          <span class="text-[11px] text-white flex-1">Aprovador 1 · Gerente</span>
-          <span class="text-[10px] text-gray-500">há 12min</span>
+          <span class="text-[11px] text-white flex-1">Olívia · causa raiz</span>
+          <span class="text-[10px] text-gray-500">há 2min</span>
         </div>
         <div class="flex items-center gap-2.5 p-2 bg-primary/10 border border-primary/25 rounded-lg">
           <span class="w-6 h-6 rounded-full bg-primary text-orbit-black flex items-center justify-center text-[10px] font-bold animate-pulse">2</span>
-          <span class="text-[11px] text-white flex-1 font-semibold">Aprovador 2 · Diretor Fin</span>
+          <span class="text-[11px] text-white flex-1 font-semibold">Diretor mkt · ação</span>
           <span class="text-[10px] text-primary font-bold">pendente</span>
         </div>
       </div>
@@ -629,8 +629,8 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
             <p class="text-[9px] text-gray-500">Leads · Pipeline</p>
           </div>
           <div class="bg-primary/10 border border-primary/30 rounded-lg p-2 text-center">
-            <p class="text-[10px] font-bold text-primary">Financeiro</p>
-            <p class="text-[9px] text-gray-300">Olívia · DRE</p>
+            <p class="text-[10px] font-bold text-primary">Indicadores</p>
+            <p class="text-[9px] text-gray-300">22 KPIs · IA</p>
           </div>
           <div class="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
             <p class="text-[10px] font-bold text-primary">RH</p>

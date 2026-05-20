@@ -893,22 +893,25 @@ def apply_mockup(html, slug, m, variant):
 
         sidebar2 = m['sidebar_items_section_2']
         sidebar3 = m['sidebar_items_section_3']
-        old_items_a = [
-            'Contas a Pagar',
-            'Contas a Receber',
-            'Fluxo de Caixa',
-            'Aprovações',
-        ]
-        old_items_b = [
-            'DRE',
-            'Orçamento',
-        ]
+        # Sidebar items aparecem com indentação específica de 12 espaços antes do texto, seguido de \n          </a>.
+        # Usar regex com âncora estrita evita pegar a palavra em outros lugares do HTML.
+        old_items_a = ['Contas a Pagar', 'Contas a Receber', 'Fluxo de Caixa', 'Aprovações']
+        old_items_b = ['DRE', 'Orçamento']
+
+        def _sidebar_swap(old, new):
+            pattern = r'(\n {12})' + re.escape(old) + r'(\n {10}</a>)'
+            return re.sub(pattern, lambda m_: m_.group(1) + new + m_.group(2), html, count=1)
+
         for i, (icon_path, label, badge, active) in enumerate(sidebar2):
             if i < len(old_items_a):
-                html = html.replace(f'>{old_items_a[i]}<', f'>{label}<', 1)
+                html = _sidebar_swap(old_items_a[i], label)
         for i, (icon_path, label, badge, active) in enumerate(sidebar3):
             if i < len(old_items_b):
-                html = html.replace(f'>{old_items_b[i]}<', f'>{label}<', 1)
+                html = _sidebar_swap(old_items_b[i], label)
+
+        # Também limpa o comentário HTML do benefício 2
+        html = html.replace('<!-- Benefit 2: DRE / Fluxo de caixa -->',
+                            f'<!-- Benefit 2: {m["b2_chart_title"]} -->')
 
     # ───── Stats (LP A) ─────
     # 3 stats: Saldo Total / Burn Mensal / Runway no template
@@ -1016,6 +1019,49 @@ def apply_mockup(html, slug, m, variant):
                             f'<div class="stat">{m["floating_stat"]}</div>')
         html = html.replace('não em semanas. Auditável e em linguagem natural.',
                             m['floating_label'])
+
+    # ───── Benefícios mini-mockups (4 cards) ─────
+    if 'b1_chat_q' in m:
+        # Benefit 1: Olívia chat
+        html = html.replace('Receita por cliente em maio', m['b1_chat_q'])
+        html = html.replace('Top 3 clientes (mai/2026)', m['b1_chat_h'])
+        old_lines = [
+            '1. ACME · R$ 182K (+22%)',
+            '2. Veridian · R$ 145K (+8%)',
+            '3. Lumina · R$ 96K (-4%)',
+        ]
+        # LP B variants (slightly different formatting)
+        old_lines_b_variants = [
+            ('1. ACME · R$ 182K ', '+22%'),
+            ('2. Veridian · R$ 145K ', '+8%'),
+            ('3. Lumina · R$ 96K ', '-4%'),
+        ]
+        for old_l, new_l in zip(old_lines, m['b1_chat_lines']):
+            html = html.replace(old_l, new_l)
+
+        # Benefit 2: Chart com runway pill
+        html = html.replace('Fluxo projetado · 6m', m['b2_chart_title'])
+        html = html.replace('Runway: 14,8m', m['b2_chart_pill'])
+        html = html.replace('Runway 14,8m', m['b2_chart_pill'])  # LP B variant
+
+        # Benefit 3: Approval workflow
+        html = html.replace('Solicitação · CC Marketing', m['b3_app_l1'])
+        html = html.replace('R$ 12,4K', m['b3_app_v1'])
+        html = html.replace('Aprovador 1 · Gerente', m['b3_app_l2'])
+        html = html.replace('há 12min', m['b3_app_v2'])
+        html = html.replace('Aprovador 2 · Diretor Fin', m['b3_app_l3'])
+        # 'pendente' status stays default
+
+        # Benefit 4: Integration diagram (gold center text)
+        html = html.replace('<p class="text-[10px] font-bold text-primary">Financeiro</p>',
+                            f'<p class="text-[10px] font-bold text-primary">{m["b4_center_p"]}</p>')
+        html = html.replace('<p class="text-[9px] text-gray-300">Olívia · DRE</p>',
+                            f'<p class="text-[9px] text-gray-300">{m["b4_center_s"]}</p>')
+        # LP B variant of the diagram
+        html = html.replace('<p class="mod">Financeiro</p>',
+                            f'<p class="mod">{m["b4_center_p"]}</p>')
+        html = html.replace('<p class="sub">Olívia · DRE</p>',
+                            f'<p class="sub">{m["b4_center_s"]}</p>')
 
     return html
 
