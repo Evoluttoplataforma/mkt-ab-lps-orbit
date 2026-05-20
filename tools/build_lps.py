@@ -30,9 +30,9 @@ MODULES = {
             'og_description': 'Tire os leads do WhatsApp pessoal. Pipeline, análise IA e automação para empresas R$ 500k+/30+ funcionários.',
         },
         'hero_a_h1': 'CRM com <span class="text-primary">IA</span>. Pipeline real, integrado ao WhatsApp.',
-        'hero_a_sub': 'Pipeline visual, automação, web forms, análise IA por oportunidade — e tudo conversa com Financeiro, RH e Processos da empresa.',
+        'hero_a_sub': 'Múltiplos pipes — vendas, clientes, projetos — com drag-and-drop, automação entre etapas e análise IA por lead. Tudo conversa com Financeiro, RH e Processos da empresa.',
         'hero_b_h1': 'Tire o comercial do <em>WhatsApp pessoal</em> sem perder agilidade.',
-        'hero_b_sub': 'Pipeline visual, automação, web forms, análise IA por oportunidade — e tudo conversa com Financeiro, RH e Processos da empresa.',
+        'hero_b_sub': 'Múltiplos pipes — vendas, clientes, projetos — com drag-and-drop, automação entre etapas e análise IA por lead. Tudo conversa com Financeiro, RH e Processos da empresa.',
         'credibility_headline': '3.045+ empresas tiraram o comercial do WhatsApp pessoal',
         'stats': [
             ('65%', 'mais produtividade do time comercial'),
@@ -59,10 +59,10 @@ MODULES = {
         'benefits_headline': 'O CRM que <span class="text-primary">cresceu junto</span> com a empresa B2B',
         'benefits_headline_b': 'O CRM que <em>cresceu junto</em> com a empresa B2B',
         'benefits': [
-            ('solar:magic-stick-3-bold-duotone', 'Análise IA por lead', 'Cada oportunidade recebe sugestão de próxima ação baseada em padrões.', 'A IA analisa histórico de interação, perfil da empresa e estágio do funil para sugerir o melhor próximo passo. Vendedor não fica adivinhando — segue insight com base em dado.'),
+            ('solar:magic-stick-3-bold-duotone', 'Análise IA por lead', 'Cada oportunidade recebe sugestão de próxima ação baseada em padrões.', 'A IA cruza histórico de interação, perfil da empresa, tempo na etapa e estágio do pipe pra sugerir o melhor próximo passo. Cada etapa tem tempo máximo configurado — se o lead estaciona, alerta. Vendedor segue insight, não achismo.'),
             ('solar:chat-round-dots-bold-duotone', 'WhatsApp integrado · sem extensão paga', 'Mensagens do WhatsApp registradas no pipeline automaticamente.', 'Conversa do vendedor com lead vira histórico do CRM em tempo real. Direção comercial vê tudo. Vendedor não perde tempo registrando manualmente.'),
             ('solar:document-add-bold-duotone', 'Web Forms e automações', 'Formulário do site cria lead na etapa certa.', 'Cada formulário do seu site (ou LP de Google Ads) cria lead no pipeline correto, atribui vendedor por regra e dispara mensagem automática. Zero retrabalho.'),
-            ('solar:branching-paths-up-bold-duotone', 'Conectado com Financeiro, RH e Processos', 'Closer vê histórico financeiro do cliente em tela única.', 'Lead virou cliente? Já aparece no financeiro com proposta. Cliente reclamou? Closer vê o problema no módulo Problemas. Tudo conversa nativamente.'),
+            ('solar:branching-paths-up-bold-duotone', 'Pipes que se conversam · vendas → clientes → entrega', 'Quando o card chega em ganho, abre automático no pipe de Clientes ou Projetos.', 'Você cria múltiplos pipes (vendas, onboarding, sucesso do cliente, projetos, auditoria) e automatiza a passagem entre eles. Quando o lead fecha, vira card no pipe de Clientes. Quando entra em auditoria, abre card paralelo. Nada fica solto.'),
         ],
         'steps_headline': 'Migrar para um CRM <span class="text-primary">de verdade</span> em 3 passos',
         'steps_headline_b': 'Migrar para um CRM <em>de verdade</em> em 3 passos',
@@ -140,7 +140,7 @@ MODULES = {
         'benefits': [
             ('solar:routing-bold-duotone', 'BSC conectado à tarefa', 'Cada meta do BSC liga a um projeto e uma tarefa real.', 'O Balanced Scorecard sai do PowerPoint e vive na plataforma. Cada objetivo financeiro, cliente, processo ou aprendizado puxa projetos e tarefas que aparecem no dia-a-dia do time.'),
             ('solar:target-bold-duotone', 'OKR trimestral auditável', 'Defina, acompanhe e ajuste OKRs com histórico completo.', 'Reunião trimestral deixa de ser "estamos bem?" e vira "atingimos 87% do KR1 com essas 3 iniciativas". Tudo gravado, tudo auditável.'),
-            ('solar:magnifer-zoom-in-bold-duotone', 'Inteligência de mercado com IA', 'Olívia analisa concorrência e oportunidades automaticamente.', 'Aponte um concorrente e a IA traz posicionamento, preços, principais movimentos e oportunidades para você. Sem precisar contratar consultoria de mercado.'),
+            ('solar:magnifer-zoom-in-bold-duotone', 'Inteligência de mercado com IA', 'Cole a URL da empresa. Agente IA devolve mercado, concorrentes e tendências.', 'Caso real Orbit: pet shop colou o site, o agente devolveu mercado de R$ 7,9 bi, 11 concorrentes mapeados, 7 tendências, ICP detalhado, fontes citadas. Inteligência de mercado que custaria R$ 30k+ em consultoria — pronto em minutos.'),
             ('solar:branching-paths-up-bold-duotone', 'Conectado com Financeiro, CRM, RH', 'Estratégia conversa com receita, pipeline e headcount.', 'Meta de crescer 30%? O sistema mostra se o pipeline (CRM), o caixa (Financeiro) e a estrutura (RH) sustentam. Sem planilhas paralelas.'),
         ],
         'steps_headline': 'Estratégia <span class="text-primary">viva</span> em 3 passos',
@@ -296,7 +296,7 @@ MODULES = {
         'benefits_headline': 'O conhecimento vira <span class="text-primary">ativo da empresa</span>',
         'benefits_headline_b': 'O conhecimento vira <em>ativo da empresa</em>',
         'benefits': [
-            ('solar:magic-stick-3-bold-duotone', 'Agente IA cria processo', 'Descreva o processo. Agente IA monta fluxograma.', 'Você descreve em texto livre ("o cliente liga, vendedor anota no CRM, gerente aprova proposta..."). O agente IA Processos monta o fluxograma BPMN completo, com etapas, responsáveis e gatilhos.'),
+            ('solar:magic-stick-3-bold-duotone', 'Agente IA cria processo BPMN', 'Descreva o processo. Agente IA monta diagrama BPMN com entradas, atividades, saídas e indicadores.', 'Você descreve em texto livre. O agente IA Processos monta o diagrama BPMN completo: entradas, atividades, saídas, responsáveis, gatilhos E os indicadores de cada etapa. Sai pronto pra ISO 9001 — sem 3 meses de consultoria de mapeamento.'),
             ('solar:branching-paths-up-bold-duotone', 'Cadeia de valor visual', 'Veja a empresa inteira em um mapa.', 'Cadeia de valor nativa mostra como os processos se conectam: vendas → projetos → produção → entrega → suporte. Identifica gargalo na hora.'),
             ('solar:document-add-bold-duotone', 'Instruções de trabalho', 'Cada etapa vira instrução passo-a-passo.', 'O processo gera Instruções de Trabalho (IT) automaticamente. Colab novo abre o processo e vê o que fazer. Sem manual de 80 páginas em PDF.'),
             ('solar:chart-2-bold-duotone', 'Conectado a Indicadores', 'KPI do processo medido automaticamente.', 'Cada processo tem KPIs de performance (tempo de ciclo, taxa de erro, satisfação). Os indicadores rolam direto pro painel de Indicadores — sem planilha intermediária.'),
@@ -504,9 +504,9 @@ MODULES = {
             'og_description': 'Plataforma white-label para consultorias R$ 100k+/mês. Agentes de IA, recorrência embutida, acesso direto à operação do cliente.',
         },
         'hero_a_h1': 'Sua consultoria entrega <span class="text-primary">3x mais valor</span> com o mesmo time.',
-        'hero_a_sub': 'Plataforma white-label onde seu cliente faz BSC, processos e indicadores na sua marca. Agentes de IA inclusos. Modelo de recorrência embutido.',
+        'hero_a_sub': 'Plataforma white-label onde seu cliente faz BSC, processos e indicadores na sua marca. 7 agentes IA inclusos. Modelo de consultoria recorrente passiva — sua empresa deixa de cobrar por hora e passa a cobrar mensalidade.',
         'hero_b_h1': 'Sua margem despenca com <em>cada cliente novo?</em>',
-        'hero_b_sub': 'Plataforma white-label onde seu cliente faz BSC, processos e indicadores na sua marca. Agentes de IA inclusos. Modelo de recorrência embutido.',
+        'hero_b_sub': 'Plataforma white-label onde seu cliente faz BSC, processos e indicadores na sua marca. 7 agentes IA inclusos. Modelo de consultoria recorrente passiva — sua empresa deixa de cobrar por hora e passa a cobrar mensalidade.',
         'credibility_headline': '+25 consultorias escalaram com o Canal Orbit',
         'stats': [
             ('3x', 'valor entregue com o mesmo time'),
@@ -535,7 +535,7 @@ MODULES = {
         'benefits': [
             ('solar:palette-bold-duotone', 'White-label nativo', 'Sua marca, suas cores, seu domínio.', 'O cliente acessa numa URL sua (clientes.suaconsultoria.com.br) com sua marca. Não vê "Orbit" em lugar nenhum. Ferramenta é sua, customer success é seu, recorrência é sua.'),
             ('solar:magic-stick-3-bold-duotone', '7 agentes IA inclusos', 'Estrategista, Processos, Indicadores, Pessoas...', 'Cada consultor seu opera 3x mais clientes porque os agentes IA fazem o trabalho repetitivo: mapear processo, montar BSC, analisar KPI. Consultor foca em estratégia, não em entregável.'),
-            ('solar:wallet-money-bold-duotone', 'Recorrência embutida', 'Cliente paga assinatura mensal automaticamente.', 'Sai do modelo "projeto de 6 meses → silêncio". Cliente paga assinatura mensal pra você. Você entrega valor contínuo via plataforma. MRR previsível, churn auditável.'),
+            ('solar:wallet-money-bold-duotone', 'Consultoria recorrente passiva', 'Saia do hora/projeto. Cobre mensalidade.', 'Modelo que a Templum (grupo Orbit · 30 anos, 9.000 empresas atendidas, 2.000 ISOs) testou em escala. Cliente paga assinatura mensal, sua consultoria entrega valor contínuo via plataforma. Você vira empresário de consultoria — não mais só consultor.'),
             ('solar:eye-bold-duotone', 'Acesso direto à operação', 'Você vê o dia-a-dia do cliente, não só na reunião.', 'Entre encontros, você acompanha pelo painel: o cliente está usando? Atingindo metas? Em qual gargalo? Sem precisar reagendar pra entender contexto.'),
         ],
         'steps_headline': 'Sua consultoria escala em <span class="text-primary">4 semanas</span>',
