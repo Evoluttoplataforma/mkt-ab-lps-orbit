@@ -336,6 +336,17 @@
   .chat-fab__pulse{position:absolute;inset:-6px;border-radius:9999px;border:2px solid rgba(255,186,26,.5);animation:pulseRing 1.8s ease-out infinite}
   @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
 
+  /* Mobile menu */
+  .nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;background:var(--surface);border:1px solid var(--border);color:var(--text);box-shadow:var(--shadow-soft)}
+  @media(max-width:768px){.nav-hamburger{display:flex}.nav ul,.nav>.nav-inner>a.btn{display:none}}
+  .mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .35s ease}
+  .mobile-menu.--open{opacity:1;pointer-events:auto}
+  .mobile-menu a.mobile-link{font-size:24px;font-weight:800;color:var(--text);letter-spacing:-.02em;transition:color .2s}
+  .mobile-menu a.mobile-link:hover{color:var(--gold-dark)}
+  .mobile-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:9999px;background:var(--cream);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center}
+  .mobile-divider{width:48px;height:1px;background:rgba(255,186,26,.4);margin:8px 0}
+  @media(min-width:769px){.mobile-menu{display:none !important}}
+
   /* Responsive */
   @media(max-width:1024px){
     .hero-panel{padding:28px 24px}
@@ -372,8 +383,27 @@
       Falar com a Olívia
       <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
     </a>
+
+    <button class="nav-hamburger" id="hamburgerBtnB" aria-label="Abrir menu" aria-expanded="false">
+      <iconify-icon icon="solar:hamburger-menu-linear" style="font-size:22px"></iconify-icon>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenuB" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <button class="mobile-close" id="mobileCloseB" aria-label="Fechar menu">
+    <iconify-icon icon="solar:close-circle-linear" style="font-size:24px"></iconify-icon>
+  </button>
+  <a href="#beneficios" class="mobile-link">Benefícios</a>
+  <a href="#como-funciona" class="mobile-link">Como funciona</a>
+  <a href="#comparativo" class="mobile-link">Comparativo</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <div class="mobile-divider"></div>
+  <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="mobile-menu" class="btn btn--primary btn--lg">
+    Falar com a Olívia <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+  </a>
+</div>
 
 <!-- ════════════ HERO (split) ════════════ -->
 <section class="hero">
@@ -385,7 +415,7 @@
           <span class="av">F</span>
           <span class="av">O</span>
         </div>
-        <span class="text"><strong>+3.045 empresas</strong> · para R$ 500k+/mês e 30+ funcionários</span>
+        <span class="text"><strong>+3.045 empresas</strong> utilizando o Orbit</span>
       </div>
 
       <div class="hero-grid">
@@ -485,10 +515,10 @@
       <span class="--gold">Open Finance BR nativo</span><span class="dot"></span>
       <span>Fechamento mensal 12d → 3d</span><span class="dot"></span>
       <span class="--gold">Aprovações com trilha de auditoria</span><span class="dot"></span>
-      <span>Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="dot"></span>
+      <span>Burn rate &amp; runway vivos</span><span class="dot"></span>
       <span class="--gold">−85% erros de lançamento</span><span class="dot"></span>
-      <span>Setup guiado em 3-4 semanas</span><span class="dot"></span>
-      <span class="--gold">LGPD · ISO 9001</span><span class="dot"></span>
+      <span>Margem por cliente em 1 clique</span><span class="dot"></span>
+      <span class="--gold">Pergunte "qual meu DRE?" em português</span><span class="dot"></span>
       <!-- set 2 (duplicate p/ loop seamless) -->
       <span aria-hidden="true">3.045+ empresas BR confiam</span><span class="dot" aria-hidden="true"></span>
       <span aria-hidden="true" class="--gold">DRE em tempo real</span><span class="dot" aria-hidden="true"></span>
@@ -498,10 +528,10 @@
       <span aria-hidden="true" class="--gold">Open Finance BR nativo</span><span class="dot" aria-hidden="true"></span>
       <span aria-hidden="true">Fechamento mensal 12d → 3d</span><span class="dot" aria-hidden="true"></span>
       <span aria-hidden="true" class="--gold">Aprovações com trilha de auditoria</span><span class="dot" aria-hidden="true"></span>
-      <span aria-hidden="true">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Burn rate &amp; runway vivos</span><span class="dot" aria-hidden="true"></span>
       <span aria-hidden="true" class="--gold">−85% erros de lançamento</span><span class="dot" aria-hidden="true"></span>
-      <span aria-hidden="true">Setup guiado em 3-4 semanas</span><span class="dot" aria-hidden="true"></span>
-      <span aria-hidden="true" class="--gold">LGPD · ISO 9001</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true">Margem por cliente em 1 clique</span><span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true" class="--gold">Pergunte "qual meu DRE?" em português</span><span class="dot" aria-hidden="true"></span>
     </div>
   </div>
 </section>
@@ -525,7 +555,7 @@
         </div>
       </div>
       <div class="pci-item">
-        <div class="pci-icon"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></div>
+        <div class="pci-icon"><iconify-icon icon="solar:document-text-bold-duotone"></iconify-icon></div>
         <div class="pci-body">
           <span class="pci-tag">Planilha</span>
           <p class="pci-text">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong>planilha toda semana</strong>.</p>
@@ -546,14 +576,14 @@
         </div>
       </div>
       <div class="pci-item">
-        <div class="pci-icon"><iconify-icon icon="solar:brain-bold-duotone"></iconify-icon></div>
+        <div class="pci-icon"><iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon></div>
         <div class="pci-body">
           <span class="pci-tag">Risco operacional</span>
           <p class="pci-text">Decisões financeiras dependem da <strong>memória da equipe</strong>, não do sistema.</p>
         </div>
       </div>
       <div class="pci-item">
-        <div class="pci-icon"><iconify-icon icon="solar:chat-square-call-bold-duotone"></iconify-icon></div>
+        <div class="pci-icon"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></div>
         <div class="pci-body">
           <span class="pci-tag">Autonomia</span>
           <p class="pci-text">Quer falar com sua área financeira <strong>sem precisar "pedir" relatório</strong>.</p>
@@ -834,7 +864,7 @@
       </div>
 
       <div class="compare-row">
-        <div class="compare-tool"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></div>
+        <div class="compare-tool"><iconify-icon icon="solar:document-text-bold-duotone"></iconify-icon></div>
         <div class="col-hoje"><span class="h-strong">ContaAzul + planilhas</span>Limite de funcionalidade · export/import constante</div>
         <div class="col-arrow"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></div>
         <div class="col-orbit"><strong>Operacional + DRE + projeção</strong> tudo no Orbit</div>
@@ -970,7 +1000,7 @@
     </div>
     <div class="footer-bot">
       <span>© 2026 Orbit Gestão. Todos os direitos reservados.</span>
-      <span>variant-b · light · jakarta · iconify-solar</span>
+      <span>CNPJ · contato@orbitgestao.com.br · Política de privacidade</span>
     </div>
   </div>
 </footer>
@@ -1003,6 +1033,20 @@
   }
   window.addEventListener('scroll', check, { passive: true });
   check();
+})();
+
+// Mobile menu toggle
+(function(){
+  var btn = document.getElementById('hamburgerBtnB');
+  var menu = document.getElementById('mobileMenuB');
+  var close = document.getElementById('mobileCloseB');
+  if(!btn || !menu) return;
+  function open(){ menu.classList.add('--open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function shut(){ menu.classList.remove('--open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click', open);
+  if(close) close.addEventListener('click', shut);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') shut(); });
 })();
 </script>
 

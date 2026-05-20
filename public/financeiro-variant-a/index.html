@@ -101,6 +101,16 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
 .chat-fab:hover{transform:scale(1.05);box-shadow:0 14px 32px -8px rgba(255,186,26,.75),0 0 0 6px rgba(255,186,26,.22)}
 @media(max-width:767px){.chat-fab{bottom:88px}}
 .chat-fab__pulse{position:absolute;inset:-6px;border-radius:9999px;border:2px solid rgba(255,186,26,.5);animation:pulseDot 1.8s ease-out infinite}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(13,17,23,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.mobile-menu.--open{opacity:1;pointer-events:auto}
+.mobile-menu a.mobile-link{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.02em;transition:color .2s}
+.mobile-menu a.mobile-link:hover{color:#ffba1a}
+.mobile-menu .mobile-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center}
+.mobile-menu .mobile-divider{width:48px;height:1px;background:rgba(255,186,26,.3);margin:8px 0}
+@media(min-width:768px){.mobile-menu,.hamburger-btn{display:none !important}}
+.hamburger-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff}
 </style>
 </head>
 
@@ -125,8 +135,27 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="nav" class="hidden md:flex group transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-gold-strong hover:scale-[1.02] items-center justify-center bg-black/60 border-primary border rounded-full pt-2.5 pr-6 pb-2.5 pl-6 shadow-gold-glow">
       <span class="uppercase text-[12px] transition-colors group-hover:text-white font-bold text-white/90 tracking-tight z-10 relative">Falar com a Olívia</span>
     </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger-btn md:!hidden" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+    <svg width="22" height="22" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#beneficios" class="mobile-link">Benefícios</a>
+  <a href="#como-funciona" class="mobile-link">Como funciona</a>
+  <a href="#comparativo" class="mobile-link">Comparativo</a>
+  <a href="#cases" class="mobile-link">Cases</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <div class="mobile-divider"></div>
+  <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="mobile-menu" class="bg-primary text-orbit-black px-8 py-4 rounded-full font-extrabold text-base shadow-gold-strong">Falar com a Olívia →</a>
+</div>
 
 <!-- ════════════ HERO ════════════ -->
 <main class="flex flex-col z-10 pt-32 md:pt-40 pr-6 pl-6 relative items-center justify-center">
@@ -162,8 +191,39 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
 
   <p class="text-xs text-gray-500 mt-4 scroll-item scroll-fade-up d-300">Resposta em até 1 minuto. Sem cartão. Sem instalação.</p>
 
-  <!-- HERO MOCKUP — Painel Financeiro Orbit -->
-  <div class="flex scroll-item scroll-blur-in d-500 w-full h-[640px] md:h-[720px] max-w-[1440px] mt-16 md:mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-financeiro">
+  <!-- HERO MOCKUP MOBILE — chat Olívia simplificado -->
+  <div class="md:hidden w-full max-w-sm mx-auto mt-12 scroll-item scroll-blur-in d-500 px-2">
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-3xl p-5 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Header -->
+      <div class="flex items-center gap-3 pb-4 border-b border-white/5 mb-4 relative z-10">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-sm border border-white/10">OL</div>
+        <div class="flex-1">
+          <p class="text-sm font-bold text-white">Olívia · IA financeira</p>
+          <p class="text-[11px] text-gray-500">Online · responde em segundos</p>
+        </div>
+        <div class="status-dot"></div>
+      </div>
+      <!-- Chat bubbles -->
+      <div class="space-y-3 mb-4 relative z-10">
+        <div class="bg-white/5 rounded-2xl rounded-bl-sm px-4 py-3 text-sm text-gray-300 max-w-[85%]">Como ficou meu DRE em abril vs março?</div>
+        <div class="bg-primary/10 border border-primary/25 rounded-2xl rounded-br-sm px-4 py-3 text-sm text-white max-w-[88%] ml-auto">
+          <p class="font-bold text-primary mb-1 text-[13px]">Receita +18%</p>
+          <p class="leading-snug">R$ 612K · margem subiu pra <strong>53%</strong>. Quer drill por cliente?</p>
+        </div>
+      </div>
+      <!-- Quick actions -->
+      <div class="flex gap-2 flex-wrap relative z-10">
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 font-semibold">Sim, mostrar</span>
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 font-semibold">Comparar meta</span>
+      </div>
+      <!-- Footer caption -->
+      <p class="text-[11px] text-center text-gray-600 mt-5 pt-4 border-t border-white/5">Painel completo no desktop ↗</p>
+    </div>
+  </div>
+
+  <!-- HERO MOCKUP DESKTOP — Painel Financeiro Orbit -->
+  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-financeiro">
     <div class="flex overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
 
       <!-- Sidebar -->
@@ -338,10 +398,10 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
         <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Burn rate &amp; runway vivos</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Setup guiado em 3-4 semanas</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">LGPD · ISO 9001</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Margem por cliente em 1 clique</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Pergunte "qual meu DRE?" em português</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <!-- duplicata para loop seamless -->
         <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">3.045+ empresas BR confiam</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">DRE em tempo real</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
@@ -351,10 +411,10 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
         <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Integra com ContaAzul · Omie · Sankhya · TOTVS</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Burn rate &amp; runway vivos</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
         <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Setup guiado em 3-4 semanas</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
-        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">LGPD · ISO 9001</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Margem por cliente em 1 clique</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Pergunte "qual meu DRE?" em português</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
       </div>
     </div>
   </div>
@@ -378,7 +438,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
       </div>
     </div>
     <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
-      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:document-medicine-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:document-text-bold-duotone" style="font-size:24px"></iconify-icon></div>
       <div class="flex-1 min-w-0">
         <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Planilha</span>
         <p class="text-sm text-white leading-relaxed">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong class="font-extrabold">planilha toda semana</strong>.</p>
@@ -399,14 +459,14 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
       </div>
     </div>
     <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
-      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:brain-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:users-group-rounded-bold-duotone" style="font-size:24px"></iconify-icon></div>
       <div class="flex-1 min-w-0">
         <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Risco operacional</span>
         <p class="text-sm text-white leading-relaxed">Decisões financeiras dependem da <strong class="font-extrabold">memória da equipe</strong>, não do sistema.</p>
       </div>
     </div>
     <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
-      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:chat-square-call-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:chat-round-dots-bold-duotone" style="font-size:24px"></iconify-icon></div>
       <div class="flex-1 min-w-0">
         <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Autonomia</span>
         <p class="text-sm text-white leading-relaxed">Quer falar com sua área financeira <strong class="font-extrabold">sem precisar 'pedir' relatório</strong>.</p>
@@ -705,7 +765,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     <div class="divide-y divide-white/5">
 
       <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
-        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:document-medicine-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:document-text-bold-duotone" style="font-size:24px"></iconify-icon></div>
         <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">ContaAzul + planilhas</span>Limite de funcionalidade · export/import constante</div>
         <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
         <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 relative md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Operacional + DRE + projeção</span> tudo no Orbit</div>
@@ -843,7 +903,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
   </div>
   <div class="mt-8 pt-6 border-t border-white/5 flex flex-col md:flex-row gap-3 text-[11px] text-gray-600">
     <span>© 2026 Orbit Gestão. Todos os direitos reservados.</span>
-    <span class="md:ml-auto font-mono">variant-a · dark · jakarta</span>
+    <span class="md:ml-auto">CNPJ · contato@orbitgestao.com.br · Política de privacidade</span>
   </div>
 </footer>
 
@@ -872,6 +932,20 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
   }
   window.addEventListener('scroll', check, { passive: true });
   check();
+})();
+
+// Mobile menu toggle
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  var close = document.getElementById('mobileClose');
+  if(!btn || !menu) return;
+  function open(){ menu.classList.add('--open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function shut(){ menu.classList.remove('--open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click', open);
+  if(close) close.addEventListener('click', shut);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') shut(); });
 })();
 </script>
 
