@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbit Financeiro · Design System v1 · Variant B (light)</title>
+  <meta name="description" content="Variante B (light) do Design System do produto Financeiro da Orbit Gestão — estrutura Templum/Aura com tokens Orbit." />
+
+  <link rel="icon" type="image/jpeg" href="../shared/assets/favicon.jpeg" />
+  <link rel="apple-touch-icon" href="../shared/assets/orbit-logo.png" />
+  <meta name="theme-color" content="#ffba1a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    /* =========================================================
+       TOKENS — Orbit Gestão · Variant B (light)
+       Estrutura: clone refinamento Templum/Aura/Green-Museum
+       Identidade: paleta Orbit (dourado + dark institucional)
+       ========================================================= */
+    :root {
+      /* Brand · Gold (Orbit) */
+      --gold-dark:    #b87f00;   /* hover/pressed do dourado */
+      --gold:         #ffba1a;   /* PRIMARY · CTA */
+      --gold-mid:     #ffca4a;   /* primary-light */
+      --gold-light:   #ffd66b;   /* sub-acento */
+      --gold-soft:    #fff0c2;   /* surface tint */
+      --cream:        #FFF8E6;   /* warm pale gold */
+      --cream-2:      #FFFAF0;   /* page warm acento */
+
+      /* Sub-acento (Olívia/IA badge) */
+      --amber:        #e6a200;   /* dourado mais sério */
+      --gold-bright:  #FFE066;   /* pop accent (usar pontualmente) */
+
+      /* Dark institucional (Orbit) */
+      --black:        #000000;
+      --orbit-black:  #0D1117;   /* --black da identidade */
+      --orbit-soft:   #161B22;   /* --black-soft */
+      --orbit-card:   #1C2333;   /* --black-card */
+
+      /* Surfaces */
+      --bg:           #FFFFFF;        /* page · BRANCO conforme spec */
+      --surface:      #FFFFFF;        /* paper */
+      --surface-glass:rgba(255,255,255,0.92);
+      --surface-warm: var(--cream-2); /* leve calor pontual */
+      --surface-deep: var(--orbit-black);
+
+      /* Text — neutrals zinc-like */
+      --text:         #18191B;
+      --text-2:       #3F424B;
+      --text-mid:     rgba(24,25,27,0.62);
+      --text-soft:    rgba(24,25,27,0.42);
+      --text-faint:   rgba(24,25,27,0.18);
+
+      /* Borders */
+      --border:       rgba(24,25,27,0.08);
+      --border-2:     rgba(24,25,27,0.14);
+      --border-3:     rgba(24,25,27,0.22);
+      --border-onDark:rgba(255,244,221,0.14);
+
+      /* Feedback (Orbit identity) */
+      --success:      #3FB950;
+      --danger:       #F85149;
+
+      /* Type — fonte única Orbit */
+      --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      /* Radii (Aura: 2.5rem nos painéis grandes) */
+      --r-12: 12px;
+      --r-16: 16px;
+      --r-20: 20px;
+      --r-24: 24px;
+      --r-32: 32px;
+      --r-40: 40px;
+      --r-arch: 7rem;
+
+      /* Shadows */
+      --shadow-soft: 0 1px 2px rgba(24,25,27,0.04), 0 6px 16px rgba(24,25,27,0.05);
+      --shadow-card: 0 1px 2px rgba(24,25,27,0.04), 0 12px 32px rgba(24,25,27,0.08);
+      --shadow-lift: 0 28px 56px -16px rgba(24,25,27,0.18), 0 12px 28px -12px rgba(24,25,27,0.10);
+      --shadow-cta:  0 15px 25px -10px rgba(255,186,26,0.55), inset 0 4px 8px rgba(255,221,138,0.65), inset 0 -4px 8px rgba(255,162,0,0.55);
+      --shadow-cta-hover: 0 18px 30px -10px rgba(255,186,26,0.70), inset 0 4px 8px rgba(255,221,138,0.75), inset 0 -4px 8px rgba(255,162,0,0.65);
+
+      /* Easings */
+      --ease-soft: cubic-bezier(.22, 1, .36, 1);
+      --ease-snap: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* =========================================================
+       RESET & BASE
+       ========================================================= */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      scroll-padding-top: 80px;
+    }
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-sans);
+      color: var(--text);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    iconify-icon { display: inline-flex; }
+    strong, b { font-weight: 700; }
+    ::selection { background: var(--gold); color: var(--orbit-black); }
+
+    /* =========================================================
+       CONTAINER
+       ========================================================= */
+    .container { width: 100%; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+    .container.xl { max-width: 1300px; }
+    .container.lg { max-width: 1180px; }
+    .container.md { max-width: 1024px; }
+    .container.sm { max-width: 760px; }
+
+    /* =========================================================
+       BRAND LOGO (Orbit)
+       ========================================================= */
+    .orbit-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1;
+    }
+    .orbit-logo img { width: 32px; height: 32px; object-fit: contain; }
+    .orbit-logo .product { color: var(--gold); font-weight: 600; margin-left: 2px; }
+    .orbit-logo.onDark { color: var(--cream); }
+
+    /* =========================================================
+       DS NAV
+       ========================================================= */
+    .ds-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .ds-nav-inner { display: flex; align-items: center; gap: 24px; padding: 14px 24px; max-width: 1300px; margin: 0 auto; flex-wrap: wrap; }
+    .ds-nav ul { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+    .ds-nav a {
+      padding: 8px 14px; border-radius: 999px;
+      font-size: 13px; font-weight: 500; color: var(--text-2);
+      transition: background .25s var(--ease-soft), color .25s var(--ease-soft);
+    }
+    .ds-nav a:hover { background: rgba(255,186,26,0.10); color: var(--gold-dark); }
+    .ds-nav .variant-pill {
+      margin-left: auto;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--orbit-black); color: var(--cream);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* =========================================================
+       HERO — glass-panel + split + arched image (gold-tinted)
+       ========================================================= */
+    .hero {
+      padding: 24px 0 0 0;
+      background:
+        radial-gradient(1100px 600px at 50% -10%, rgba(255,186,26,0.18), transparent 60%),
+        var(--bg);
+    }
+    .hero-panel {
+      position: relative;
+      background: var(--surface-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-40);
+      padding: 40px 48px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 18px 6px 6px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 32px;
+    }
+    .hero-pill .avatars { display: flex; }
+    .hero-pill .av {
+      width: 28px; height: 28px; border-radius: 999px;
+      border: 2px solid #fff;
+      margin-right: -8px;
+      display: grid; place-items: center;
+      font-size: 11px; font-weight: 700; color: var(--orbit-black);
+      background: linear-gradient(135deg, var(--gold-mid), var(--gold));
+    }
+    .hero-pill .av:nth-child(2) { background: linear-gradient(135deg, var(--gold-light), var(--gold-mid)); color: var(--orbit-black); }
+    .hero-pill .av:nth-child(3) { background: var(--orbit-black); color: var(--gold); }
+    .hero-pill .av:last-child { margin-right: 0; }
+    .hero-pill .text { font-size: 12px; font-weight: 500; color: var(--text-2); }
+    .hero-pill .text strong { font-weight: 700; color: var(--text); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-content { display: flex; flex-direction: column; gap: 28px; max-width: 620px; }
+    .hero-headline {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 80px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: var(--text);
+    }
+    .hero-headline em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-subhead {
+      font-size: 17px; line-height: 1.55; color: var(--text-mid);
+      max-width: 520px; font-weight: 400;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    /* Stats */
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; margin-top: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .hero-stat { padding: 0 20px; border-right: 1px solid var(--border); }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat:last-child  { padding-right: 0; border-right: 0; }
+    .hero-stat .num {
+      font-family: var(--font-sans); font-weight: 800;
+      font-size: 28px; line-height: 1; letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .hero-stat .num em { color: var(--gold-dark); font-style: normal; }
+    .hero-stat .lbl {
+      font-size: 11px; font-weight: 600; color: var(--text-mid);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px;
+    }
+
+    /* Hero image (arched top) */
+    .hero-imageCol { position: relative; }
+    .hero-imageCard {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--r-arch) var(--r-arch) var(--r-24) var(--r-24);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-mid));
+      box-shadow: var(--shadow-lift);
+    }
+    .hero-imageCard img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1.6s var(--ease-soft), filter 1.2s var(--ease-soft);
+      filter: saturate(0.92);
+    }
+    .hero-imageCard:hover img { transform: scale(1.04); filter: saturate(1); }
+    .hero-imageCard::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%;
+      background: linear-gradient(to top, rgba(13,17,23,0.65), transparent);
+    }
+    .hero-imageCaption {
+      position: absolute; left: 22px; right: 22px; bottom: 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      color: #fff; z-index: 2;
+    }
+    .hero-imageCaption .label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+    .hero-imageCaption .title { font-family: var(--font-sans); font-weight: 700; font-size: 22px; line-height: 1.1; letter-spacing: -0.02em; }
+
+    /* Floating card */
+    .hero-floating {
+      position: absolute; left: -18px; bottom: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-16);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-card);
+      transform: rotate(-4deg);
+      transition: transform .6s var(--ease-soft);
+      max-width: 220px;
+      z-index: 3;
+    }
+    .hero-floating:hover { transform: rotate(0); }
+    .hero-floating .stat {
+      font-family: var(--font-sans); font-weight: 800;
+      font-size: 28px; line-height: 0.95; color: var(--gold-dark);
+      letter-spacing: -0.035em;
+    }
+    .hero-floating .label {
+      font-size: 11px; font-weight: 500; color: var(--text-mid); margin-top: 4px; line-height: 1.4;
+    }
+
+    /* =========================================================
+       BUTTONS (Aura: gold radial gradient + inset shadow)
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-sans); font-weight: 600; font-size: 14px;
+      letter-spacing: -0.005em;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .35s var(--ease-soft), background .35s var(--ease-soft), color .35s var(--ease-soft), box-shadow .35s var(--ease-soft), border-color .35s var(--ease-soft);
+      white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .btn iconify-icon { font-size: 16px; transition: transform .55s var(--ease-soft); }
+    .btn:hover iconify-icon { transform: translateX(3px); }
+
+    .btn--primary {
+      background: radial-gradient(120% 140% at 50% 0%, #FFE49A 0%, #FFD24A 38%, #FFBA1A 100%);
+      color: var(--orbit-black);
+      box-shadow: var(--shadow-cta);
+    }
+    .btn--primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-cta-hover); }
+
+    .btn--dark {
+      background: var(--orbit-black);
+      color: var(--cream);
+    }
+    .btn--dark:hover { background: var(--orbit-soft); transform: translateY(-1px); }
+
+    .btn--ghost {
+      background: rgba(255,255,255,0.6);
+      color: var(--text);
+      border-color: var(--border-2);
+    }
+    .btn--ghost:hover { background: var(--surface); border-color: var(--border-3); }
+
+    .btn--ghost-onDark {
+      background: rgba(255,244,221,0.08);
+      color: var(--cream);
+      border-color: rgba(255,244,221,0.20);
+    }
+    .btn--ghost-onDark:hover { background: rgba(255,244,221,0.14); }
+
+    .btn--lg { padding: 14px 26px; font-size: 15px; }
+    .btn--xl { padding: 16px 30px; font-size: 16px; }
+    .btn--sm { padding: 9px 16px; font-size: 13px; }
+
+    .btn--icon {
+      width: 44px; height: 44px; padding: 0;
+      border-radius: 999px;
+      display: inline-grid; place-items: center;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn--icon:hover { background: var(--orbit-black); color: var(--gold); border-color: var(--orbit-black); }
+    .btn--icon iconify-icon { font-size: 18px; }
+
+    .btn--disabled { opacity: .45; pointer-events: none; }
+
+    /* =========================================================
+       BADGES & STATUS
+       ========================================================= */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap; width: fit-content;
+    }
+    .badge--default { background: rgba(24,25,27,0.06); color: var(--text); }
+    .badge--gold    { background: rgba(255,186,26,0.14); color: var(--gold-dark); }
+    .badge--gold-solid { background: var(--gold); color: var(--orbit-black); }
+    .badge--cream   { background: var(--cream); color: var(--text); }
+    .badge--dark    { background: var(--orbit-black); color: var(--cream); }
+    .badge--amber   { background: var(--amber); color: #fff; }
+    .badge--success { background: rgba(63,185,80,0.12); color: var(--success); }
+    .badge--ai      { background: var(--orbit-black); color: var(--gold); }
+
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase; letter-spacing: 0.10em;
+    }
+    .status-dot { position: relative; width: 8px; height: 8px; border-radius: 999px; background: var(--success); }
+    .status-dot::after {
+      content: ""; position: absolute; inset: 0; border-radius: 999px;
+      background: var(--success); animation: pulse 1.8s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2.6); opacity: 0; }
+    }
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+    .ds-section { padding: 96px 0; border-top: 1px solid var(--border); }
+    .ds-section h2 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(32px, 4vw, 56px);
+      letter-spacing: -0.035em;
+      line-height: 0.98;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .ds-section h2 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .ds-section .ds-lede {
+      font-size: 17px; color: var(--text-mid);
+      max-width: 640px; margin-bottom: 56px;
+      line-height: 1.55; font-weight: 400;
+    }
+    .ds-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+    .ds-eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+
+    /* =========================================================
+       TYPOGRAPHY SPEC TABLE
+       ========================================================= */
+    .ds-type-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 28px 0; border-bottom: 1px dashed var(--border-2);
+      gap: 32px;
+    }
+    .ds-type-row:last-child { border-bottom: 0; }
+    .ds-type-meta { display: flex; flex-direction: column; gap: 4px; min-width: 220px; flex-shrink: 0; }
+    .ds-type-meta strong { font-family: var(--font-sans); font-size: 11px; color: var(--text-mid); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
+    .ds-type-meta code { font-size: 12px; color: var(--text-soft); }
+    .ds-type-spec { font-family: ui-monospace, monospace; font-size: 11px; color: var(--text-soft); white-space: nowrap; text-align: right; }
+    .ds-type-preview { flex: 1; padding: 0 12px; min-width: 0; }
+
+    /* =========================================================
+       TYPOGRAPHY CLASSES — Plus Jakarta Sans
+       ========================================================= */
+    .display-1 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(56px, 7vw, 96px);
+      line-height: 0.94; letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    .display-2 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(44px, 5.4vw, 80px);
+      line-height: 0.95; letter-spacing: -0.035em;
+      color: var(--text);
+    }
+    .h1 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(36px, 4.4vw, 64px);
+      line-height: 0.98; letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .h2 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(30px, 3.6vw, 48px);
+      line-height: 1; letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .h3 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(22px, 2.4vw, 32px);
+      line-height: 1.1; letter-spacing: -0.022em;
+      color: var(--text);
+    }
+    .h4 {
+      font-family: var(--font-sans); font-weight: 600;
+      font-size: 20px;
+      line-height: 1.2; letter-spacing: -0.018em;
+      color: var(--text);
+    }
+    .bold-l { font-family: var(--font-sans); font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.4; }
+    .bold-m { font-family: var(--font-sans); font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .bold-s { font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .paragraph { font-family: var(--font-sans); font-size: 17px; font-weight: 400; line-height: 1.6; color: var(--text-2); }
+    .reg-l    { font-family: var(--font-sans); font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--text-2); }
+    .reg-m    { font-family: var(--font-sans); font-size: 13px; font-weight: 400; line-height: 1.5; color: var(--text-mid); }
+    .reg-s    { font-family: var(--font-sans); font-size: 12px; font-weight: 400; line-height: 1.5; color: var(--text-mid); }
+    .label-caps {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid);
+    }
+
+    /* =========================================================
+       SWATCHES
+       ========================================================= */
+    .ds-swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+    .ds-swatch { border: 1px solid var(--border); border-radius: var(--r-16); overflow: hidden; background: var(--surface); }
+    .ds-swatch .swatch-color { height: 88px; }
+    .ds-swatch .swatch-meta { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+    .ds-swatch .swatch-name { font-weight: 700; font-size: 13px; color: var(--text); font-family: var(--font-sans); }
+    .ds-swatch .swatch-hex  { font-size: 11px; color: var(--text-mid); font-family: ui-monospace, monospace; }
+    .ds-swatch .swatch-role { font-size: 10px; color: var(--text-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+    /* Surfaces */
+    .ds-surface-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .ds-surface { border-radius: var(--r-20); padding: 28px; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
+    .ds-surface .surface-label { font-family: var(--font-sans); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; }
+    .ds-surface .surface-name  { font-family: var(--font-sans); font-weight: 600; font-size: 14px; }
+    .surface-bg     { background: var(--bg);          border: 1px solid var(--border); color: var(--text); }
+    .surface-cream  { background: var(--cream);       border: 1px solid var(--border); color: var(--text); }
+    .surface-paper  { background: var(--surface);     border: 1px solid var(--border); color: var(--text); }
+    .surface-glass  { background: var(--surface-glass); border: 1px solid var(--border); color: var(--text); backdrop-filter: blur(12px); }
+    .surface-gold   { background: var(--gold);        color: var(--orbit-black); }
+    .surface-dark   { background: var(--orbit-black); color: var(--cream); }
+    .surface-soft   { background: var(--gold-soft);   color: var(--text); border: 1px solid var(--border); }
+
+    /* =========================================================
+       COMPONENTS
+       ========================================================= */
+    .ds-component { padding: 32px; border: 1px solid var(--border); border-radius: var(--r-24); background: var(--surface); }
+    .ds-component + .ds-component { margin-top: 16px; }
+    .ds-component h3 { font-family: var(--font-sans); font-weight: 700; font-size: 22px; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .ds-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .ds-row + .ds-row { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border); }
+    .ds-label {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+      color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.12em; min-width: 100px;
+    }
+
+    /* Stat card */
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-20);
+      padding: 28px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: transform .45s var(--ease-soft), box-shadow .45s var(--ease-soft), border-color .45s var(--ease-soft);
+      min-height: 200px;
+    }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); border-color: var(--border-2); }
+    .stat-card .num {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: clamp(40px, 4.4vw, 64px);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin-top: auto;
+    }
+    .stat-card .num em { color: var(--gold-dark); font-style: normal; }
+    .stat-card .lbl {
+      font-family: var(--font-sans); font-size: 13px; color: var(--text-mid);
+      line-height: 1.5; font-weight: 400;
+    }
+    .stat-card.--gold { background: var(--gold); border: 0; color: var(--orbit-black); }
+    .stat-card.--gold .num { color: var(--orbit-black); }
+    .stat-card.--gold .num em { color: var(--orbit-black); border-bottom: 3px solid var(--orbit-black); padding-bottom: 2px; }
+    .stat-card.--gold .lbl { color: var(--orbit-black); opacity: 0.78; }
+    .stat-card.--gold .label-caps { color: var(--orbit-black); opacity: 0.7; }
+    .stat-card.--dark { background: var(--orbit-black); border: 0; color: var(--cream); }
+    .stat-card.--dark .num { color: var(--cream); }
+    .stat-card.--dark .num em { color: var(--gold); }
+    .stat-card.--dark .lbl { color: var(--cream); opacity: 0.78; }
+    .stat-card.--dark .label-caps { color: var(--gold); }
+
+    /* Step card */
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-20);
+      padding: 28px;
+      display: flex; flex-direction: column; gap: 16px;
+      min-height: 220px;
+      transition: transform .5s var(--ease-soft), border-color .5s var(--ease-soft);
+    }
+    .step-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .step-card .step-num {
+      width: 40px; height: 40px; border-radius: 999px;
+      background: rgba(255,186,26,0.14); color: var(--gold-dark);
+      display: grid; place-items: center;
+      font-family: var(--font-sans); font-weight: 800; font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .step-card .step-title {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: 22px; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .step-card .step-text {
+      font-family: var(--font-sans); font-size: 14px;
+      color: var(--text-mid); line-height: 1.55; font-weight: 400;
+    }
+
+    /* Checklist */
+    .check-list { display: flex; flex-direction: column; gap: 12px; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5; color: var(--text); font-weight: 400; }
+    .check-item strong { font-weight: 700; }
+    .check-circle, .check-cross {
+      width: 26px; height: 26px; min-width: 26px;
+      border-radius: 999px;
+      display: grid; place-items: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .check-circle { background: rgba(255,186,26,0.16); color: var(--gold-dark); }
+    .check-cross  { background: rgba(248,81,73,0.12); color: var(--danger); }
+    .check-circle iconify-icon, .check-cross iconify-icon { font-size: 15px; }
+
+    /* Image card */
+    .image-card {
+      position: relative; aspect-ratio: 1 / 1;
+      border-radius: var(--r-32);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-mid));
+      box-shadow: var(--shadow-lift);
+    }
+    .image-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1.6s var(--ease-soft), filter 1.2s var(--ease-soft);
+      filter: saturate(0.92);
+    }
+    .image-card:hover img { transform: scale(1.04); filter: saturate(1); }
+    .image-card::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 50%;
+      background: linear-gradient(to top, rgba(13,17,23,0.65), transparent);
+    }
+    .image-card .caption {
+      position: absolute; left: 22px; right: 22px; bottom: 22px; z-index: 2;
+      color: #fff;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .image-card .caption .label { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+    .image-card .caption .title { font-family: var(--font-sans); font-weight: 700; font-size: 22px; line-height: 1.1; letter-spacing: -0.02em; }
+    .image-card .floating-badge { position: absolute; top: 22px; left: 22px; z-index: 2; }
+
+    /* CTA Dark */
+    .cta-dark {
+      position: relative;
+      background: var(--surface-deep);
+      color: var(--cream);
+      border-radius: var(--r-32);
+      padding: 56px;
+      overflow: hidden;
+    }
+    .cta-dark::before {
+      content: ""; position: absolute;
+      width: 360px; height: 360px;
+      right: -100px; top: 50%; transform: translateY(-50%);
+      background: radial-gradient(circle, rgba(255,186,26,0.35), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-dark > * { position: relative; z-index: 1; }
+    .cta-dark h3 {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: clamp(28px, 3.6vw, 48px);
+      color: var(--cream); line-height: 1; letter-spacing: -0.03em;
+      max-width: 720px; margin-bottom: 20px;
+    }
+    .cta-dark h3 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .cta-dark p { color: rgba(255,244,221,0.78); max-width: 560px; margin-bottom: 24px; line-height: 1.6; font-weight: 400; font-size: 16px; }
+    .cta-dark .check-circle { background: rgba(255,186,26,0.22); color: var(--gold); }
+    .cta-dark .check-item { color: var(--cream); }
+
+    /* FAQ */
+    .faq-list { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-24); padding: 4px 28px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-question {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; padding: 22px 0;
+      font-family: var(--font-sans); font-weight: 600;
+      font-size: 17px; line-height: 1.3; letter-spacing: -0.015em;
+      color: var(--text); text-align: left; cursor: pointer; list-style: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question iconify-icon { font-size: 22px; color: var(--text-mid); transition: transform .3s var(--ease-soft); flex-shrink: 0; }
+    .faq-item[open] .faq-question iconify-icon { transform: rotate(180deg); color: var(--gold-dark); }
+    .faq-answer { padding: 0 0 22px 0; font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 760px; font-weight: 400; }
+
+    /* Marquee */
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      background: var(--surface-warm);
+    }
+    .marquee-track {
+      display: flex; gap: 48px; width: max-content;
+      animation: marquee 36s linear infinite;
+      align-items: center;
+    }
+    .marquee-track span {
+      font-family: var(--font-sans); font-weight: 700;
+      font-size: 22px; letter-spacing: -0.02em; line-height: 1;
+      color: var(--text); white-space: nowrap;
+    }
+    .marquee-track span.--gold { color: var(--gold-dark); }
+    .marquee-track .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--gold); flex-shrink: 0; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* =========================================================
+       LAYOUT VISUALIZERS
+       ========================================================= */
+    .ds-grid-demo { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; }
+    .ds-grid-demo > div { background: rgba(255,186,26,0.10); border: 1px dashed rgba(255,186,26,0.45); height: 40px; border-radius: 6px; }
+    .ds-spacing-bar { display: flex; align-items: flex-end; gap: 12px; }
+    .ds-spacing-tick { background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 6px; min-width: 8px; }
+    .ds-spacing-label { font-size: 11px; color: var(--text-mid); text-align: center; margin-top: 8px; font-family: var(--font-sans); font-weight: 600; }
+    .ds-container-demo {
+      border: 1px dashed var(--border-3); border-radius: var(--r-16);
+      padding: 18px; text-align: center; font-family: ui-monospace, monospace; font-size: 12px;
+      color: var(--text-mid); margin-bottom: 8px; background: var(--surface);
+    }
+
+    /* =========================================================
+       MOTION GALLERY
+       ========================================================= */
+    .ds-motion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .ds-motion-card {
+      padding: 26px; border-radius: var(--r-20);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex; flex-direction: column; gap: 16px; min-height: 220px;
+    }
+    .ds-motion-card .label { font-family: var(--font-sans); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-mid); }
+    .ds-motion-card .meta { font-family: ui-monospace, monospace; font-size: 11px; color: var(--text-soft); }
+    .demo-spin {
+      width: 60px; height: 60px; border-radius: 999px;
+      background: conic-gradient(from 0deg, var(--gold), var(--gold-light), var(--gold));
+      animation: spin 16s linear infinite;
+      align-self: flex-start;
+    }
+    @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+    .demo-pulse { display: flex; align-items: center; gap: 12px; align-self: flex-start; }
+    .demo-pulse .pulse-dot {
+      position: relative; width: 10px; height: 10px; border-radius: 999px; background: var(--success);
+    }
+    .demo-pulse .pulse-dot::after {
+      content: ""; position: absolute; inset: 0; border-radius: 999px;
+      background: var(--success); animation: pulse 1.8s ease-out infinite;
+    }
+    .demo-lift {
+      display: inline-block; padding: 10px 20px; border-radius: 999px;
+      background: var(--orbit-black); color: var(--cream); font-weight: 600; font-size: 14px;
+      transition: transform .35s var(--ease-soft), background .35s var(--ease-soft);
+      align-self: flex-start;
+    }
+    .demo-lift:hover { transform: translateY(-2px); background: var(--gold); color: var(--orbit-black); }
+    .demo-arrow { display: inline-flex; align-items: center; gap: 6px; color: var(--gold-dark); font-weight: 600; font-size: 14px; align-self: flex-start; }
+    .demo-arrow iconify-icon { font-size: 18px; transition: transform .55s var(--ease-soft); }
+    .demo-arrow:hover iconify-icon { transform: translateX(6px); }
+    .demo-imgWrap {
+      position: relative; aspect-ratio: 4/3; border-radius: var(--r-16);
+      overflow: hidden; background: linear-gradient(135deg, var(--gold-light), var(--gold-mid));
+    }
+    .demo-imgWrap .demo-img {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      filter: grayscale(0.6) saturate(0.8);
+      transition: transform 1.4s var(--ease-soft), filter 1.2s var(--ease-soft);
+    }
+    .demo-imgWrap:hover .demo-img { transform: scale(1.06); filter: grayscale(0) saturate(1); }
+
+    /* Vertical carousel (Aura signature) */
+    .demo-vScroll {
+      height: 96px; overflow: hidden;
+      mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+    }
+    .demo-vScroll .track {
+      display: flex; flex-direction: column; gap: 8px;
+      animation: vscroll 12s var(--ease-snap) infinite;
+    }
+    .demo-vScroll .track > div {
+      padding: 10px 14px; border-radius: 12px; background: rgba(24,25,27,0.05);
+      font-size: 13px; color: var(--text); font-weight: 600;
+    }
+    @keyframes vscroll {
+      0%, 25% { transform: translateY(0); }
+      33%, 58% { transform: translateY(-33.33%); }
+      66%, 91% { transform: translateY(-66.66%); }
+      100% { transform: translateY(0); }
+    }
+
+    /* =========================================================
+       ICONS
+       ========================================================= */
+    .ds-icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+    .ds-icon-tile {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      padding: 18px 12px; border-radius: var(--r-16);
+      background: var(--surface); border: 1px solid var(--border);
+      transition: background .3s var(--ease-soft), transform .3s var(--ease-soft), border-color .3s var(--ease-soft);
+    }
+    .ds-icon-tile:hover { transform: translateY(-2px); border-color: var(--gold); }
+    .ds-icon-tile iconify-icon { font-size: 26px; color: var(--text); }
+    .ds-icon-tile .ds-icon-name { font-size: 10px; color: var(--text-mid); font-family: ui-monospace, monospace; text-align: center; }
+
+    /* =========================================================
+       CHARTS · SVG inline
+       ========================================================= */
+    .charts-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 900px) { .charts-grid--2 { grid-template-columns: 1fr 1fr; } }
+
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-20);
+      padding: 28px;
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .chart-card .chart-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .chart-card .chart-title { font-family: var(--font-sans); font-weight: 700; font-size: 17px; letter-spacing: -0.015em; color: var(--text); }
+    .chart-card .chart-sub { font-size: 12px; color: var(--text-mid); font-weight: 500; }
+    .chart-card .chart-meta-num { font-family: var(--font-sans); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+    .chart-card .chart-meta-num em { color: var(--gold-dark); font-style: normal; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 14px; }
+    .chart-legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-mid); font-weight: 600; }
+    .chart-legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+    .chart-svg { width: 100%; height: auto; display: block; }
+    .chart-grid line { stroke: rgba(24,25,27,0.06); stroke-dasharray: 4 4; }
+    .chart-axis text { font-family: var(--font-sans); font-size: 10px; font-weight: 600; fill: var(--text-mid); }
+
+    /* Waterfall */
+    .bar-positive { fill: var(--gold); }
+    .bar-neg      { fill: rgba(24,25,27,0.16); }
+    .bar-subtotal { fill: var(--orbit-black); }
+    .bar-result   { fill: url(#goldGrad); }
+    .bar-connect  { stroke: rgba(24,25,27,0.20); stroke-dasharray: 3 3; stroke-width: 1; fill: none; }
+    .bar-label    { font-family: var(--font-sans); font-size: 11px; font-weight: 700; fill: var(--text); }
+    .bar-cat      { font-family: var(--font-sans); font-size: 11px; font-weight: 600; fill: var(--text-mid); }
+
+    /* Cash flow line */
+    .line-cash    { stroke: var(--gold-dark); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .line-area    { fill: url(#cashGrad); }
+    .line-dot     { fill: var(--surface); stroke: var(--gold-dark); stroke-width: 2; }
+    .line-dot-hi  { fill: var(--gold); stroke: var(--orbit-black); stroke-width: 2; }
+    .line-target  { stroke: var(--text-soft); stroke-width: 1; stroke-dasharray: 4 4; }
+    .line-zero    { stroke: rgba(24,25,27,0.20); stroke-width: 1; }
+
+    /* Donut */
+    .donut-bg     { fill: rgba(24,25,27,0.04); }
+    .donut-track  { stroke: rgba(24,25,27,0.06); stroke-width: 28; fill: none; }
+    .donut-seg    { stroke-width: 28; fill: none; stroke-linecap: butt; }
+    .donut-center-num { font-family: var(--font-sans); font-size: 24px; font-weight: 800; letter-spacing: -0.025em; fill: var(--text); text-anchor: middle; }
+    .donut-center-lbl { font-family: var(--font-sans); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; fill: var(--text-mid); text-anchor: middle; text-transform: uppercase; }
+
+    /* Sparkline */
+    .spark-line   { stroke: var(--gold-dark); stroke-width: 1.8; fill: none; }
+    .spark-area   { fill: var(--gold); opacity: 0.18; }
+    .spark-line.--neg { stroke: var(--danger); }
+    .spark-area.--neg { fill: var(--danger); opacity: 0.14; }
+
+    /* Gauge */
+    .gauge-bg     { stroke: rgba(24,25,27,0.10); stroke-width: 16; fill: none; stroke-linecap: round; }
+    .gauge-fill   { stroke: url(#gaugeGrad); stroke-width: 16; fill: none; stroke-linecap: round; }
+    .gauge-num    { font-family: var(--font-sans); font-size: 36px; font-weight: 800; letter-spacing: -0.03em; fill: var(--text); text-anchor: middle; }
+    .gauge-lbl    { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; fill: var(--text-mid); text-anchor: middle; text-transform: uppercase; }
+    .gauge-tick   { stroke: rgba(24,25,27,0.20); stroke-width: 2; }
+
+    /* KPI sparkline cards */
+    .kpi-spark-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 720px) { .kpi-spark-grid { grid-template-columns: repeat(3, 1fr); } }
+    .kpi-spark {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-16);
+      padding: 20px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .kpi-spark__head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .kpi-spark__lbl { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-mid); }
+    .kpi-spark__delta { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+    .kpi-spark__delta.--up { background: rgba(63,185,80,0.12); color: var(--success); }
+    .kpi-spark__delta.--down { background: rgba(248,81,73,0.12); color: var(--danger); }
+    .kpi-spark__num { font-family: var(--font-sans); font-weight: 800; font-size: 26px; line-height: 1; letter-spacing: -0.025em; color: var(--text); }
+    .kpi-spark__svg { width: 100%; height: 44px; display: block; }
+
+
+    /* =========================================================
+       OLÍVIA · HUB ORBITAL (light adaptation)
+       ========================================================= */
+    .olivia-hub {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      height: 860px;
+      margin: 0 auto;
+    }
+    .olivia-hub__lines {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .olivia-hub__center {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex; flex-direction: column; align-items: center;
+      z-index: 3;
+    }
+    .olivia-hub__glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,186,26,0.28) 0%, rgba(255,186,26,0.06) 50%, transparent 70%);
+      animation: olivia-glow 3.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes olivia-glow {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    }
+    .olivia-hub__photo {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 0 40px rgba(255,186,26,0.35), 0 0 80px rgba(255,186,26,0.12), var(--shadow-lift);
+      animation: olivia-photo-breathe 3.5s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes olivia-photo-breathe {
+      0%, 100% { box-shadow: 0 0 40px rgba(255,186,26,0.35), 0 0 80px rgba(255,186,26,0.12), var(--shadow-lift); }
+      50% { box-shadow: 0 0 55px rgba(255,186,26,0.55), 0 0 100px rgba(255,186,26,0.22), var(--shadow-lift); }
+    }
+    .olivia-hub__photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+    .olivia-hub__name {
+      color: var(--gold-dark);
+      font-size: 20px; font-weight: 800;
+      margin-top: 14px;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .olivia-hub__role {
+      color: var(--text-mid);
+      font-size: 13px; margin-top: 4px;
+      font-weight: 500;
+    }
+    .olivia-hub__ring {
+      position: absolute; top: 50%; left: 50%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,186,26,0.20);
+      pointer-events: none;
+      animation: olivia-ring 3.5s ease-in-out infinite;
+    }
+    .olivia-hub__ring--1 { width: 180px; height: 180px; transform: translate(-50%, calc(-50% - 12px)); }
+    .olivia-hub__ring--2 { width: 220px; height: 220px; border-color: rgba(255,186,26,0.12); transform: translate(-50%, calc(-50% - 12px)); animation-delay: 0.5s; }
+    .olivia-hub__ring--3 { width: 264px; height: 264px; border-color: rgba(255,186,26,0.07); transform: translate(-50%, calc(-50% - 12px)); animation-delay: 1s; }
+    @keyframes olivia-ring {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    .olivia-hub__node {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 2; cursor: pointer;
+      transition: transform 0.3s ease;
+      opacity: 0; scale: 0.5;
+    }
+    .olivia-visible .olivia-hub__node {
+      animation: olivia-node-in 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .olivia-visible .olivia-hub__node[data-idx="0"]  { animation-delay: 0.10s; }
+    .olivia-visible .olivia-hub__node[data-idx="1"]  { animation-delay: 0.15s; }
+    .olivia-visible .olivia-hub__node[data-idx="2"]  { animation-delay: 0.20s; }
+    .olivia-visible .olivia-hub__node[data-idx="3"]  { animation-delay: 0.25s; }
+    .olivia-visible .olivia-hub__node[data-idx="4"]  { animation-delay: 0.30s; }
+    .olivia-visible .olivia-hub__node[data-idx="5"]  { animation-delay: 0.35s; }
+    .olivia-visible .olivia-hub__node[data-idx="6"]  { animation-delay: 0.40s; }
+    .olivia-visible .olivia-hub__node[data-idx="7"]  { animation-delay: 0.45s; }
+    .olivia-visible .olivia-hub__node[data-idx="8"]  { animation-delay: 0.50s; }
+    .olivia-visible .olivia-hub__node[data-idx="9"]  { animation-delay: 0.55s; }
+    .olivia-visible .olivia-hub__node[data-idx="10"] { animation-delay: 0.60s; }
+    .olivia-visible .olivia-hub__node[data-idx="11"] { animation-delay: 0.65s; }
+    @keyframes olivia-node-in { to { opacity: 1; scale: 1; } }
+    .olivia-hub__node:hover { transform: translate(-50%, -50%) scale(1.12); }
+    .olivia-hub__node:hover .olivia-hub__node-icon {
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(255,186,26,0.40), var(--shadow-card);
+      background: linear-gradient(135deg, rgba(255,186,26,0.18), rgba(255,186,26,0.04));
+    }
+    .olivia-hub__node-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid rgba(255,186,26,0.40);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .olivia-hub__node-icon iconify-icon {
+      font-size: 22px;
+      color: var(--gold-dark);
+    }
+    .olivia-hub__node-label {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .olivia-hub__node-desc {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-mid);
+      white-space: nowrap;
+      margin-top: -2px;
+    }
+    .olivia-hub__node.olivia-node--active {
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 100;
+    }
+    .olivia-hub__node.olivia-node--active .olivia-hub__node-icon {
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(255,186,26,0.55), var(--shadow-lift);
+      background: linear-gradient(135deg, rgba(255,186,26,0.25), rgba(255,186,26,0.08));
+    }
+    .olivia-hub__node.olivia-node--dimmed { opacity: 0.3 !important; }
+    .olivia-node-card {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      width: 260px;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,186,26,0.40);
+      border-radius: 16px;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 200;
+      box-shadow: 0 12px 40px rgba(24,25,27,0.18);
+      text-align: left;
+    }
+    .olivia-node--active .olivia-node-card {
+      opacity: 1; pointer-events: auto;
+      transform: translateX(-50%) scale(1);
+    }
+    .olivia-node-card::before {
+      content: ''; position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 10px; height: 10px;
+      background: rgba(255,255,255,0.98);
+      border-left: 1px solid rgba(255,186,26,0.40);
+      border-top: 1px solid rgba(255,186,26,0.40);
+    }
+    .olivia-node-card__status {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--success);
+      background: rgba(63,185,80,0.10);
+      border: 1px solid rgba(63,185,80,0.25);
+      padding: 3px 10px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .olivia-node-card__status iconify-icon { font-size: 8px; }
+    .olivia-node-card__title { color: var(--text); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .olivia-node-card__text { color: var(--text-mid); font-size: 12.5px; line-height: 1.5; margin-bottom: 14px; }
+    .olivia-node-card__bar { margin-bottom: 12px; }
+    .olivia-node-card__bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-mid); margin-bottom: 4px; font-weight: 600; }
+    .olivia-node-card__bar-track { width: 100%; height: 4px; background: rgba(24,25,27,0.08); border-radius: 2px; overflow: hidden; }
+    .olivia-node-card__bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-mid)); border-radius: 2px; transition: width 0.6s ease; }
+    .olivia-node-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .olivia-node-card__tag { font-size: 10px; font-weight: 600; color: var(--text-mid); background: rgba(255,186,26,0.08); border: 1px solid rgba(255,186,26,0.20); padding: 3px 8px; border-radius: 4px; }
+
+    .olivia-hub__center { opacity: 0; scale: 0.3; }
+    .olivia-visible .olivia-hub__center { animation: olivia-center-in 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+    @keyframes olivia-center-in { to { opacity: 1; scale: 1; } }
+    .olivia-hub__lines { opacity: 0; }
+    .olivia-visible .olivia-hub__lines { animation: olivia-lines-in 0.8s ease 0.3s forwards; }
+    @keyframes olivia-lines-in { to { opacity: 1; } }
+
+    @media (max-width: 768px) {
+      .olivia-hub { max-width: 100%; height: 460px; }
+      .olivia-hub__glow { width: 130px; height: 130px; }
+      .olivia-hub__photo { width: 80px; height: 80px; border-width: 3px; }
+      .olivia-hub__name { font-size: 13px; margin-top: 8px; }
+      .olivia-hub__role { font-size: 10px; }
+      .olivia-hub__ring--1 { width: 120px; height: 120px; }
+      .olivia-hub__ring--2 { width: 150px; height: 150px; }
+      .olivia-hub__ring--3 { display: none; }
+      .olivia-hub__node-icon { width: 38px; height: 38px; }
+      .olivia-hub__node-icon iconify-icon { font-size: 16px; }
+      .olivia-hub__node-label { font-size: 10px; }
+      .olivia-hub__node-desc { display: none; }
+      .olivia-node-card { width: 220px; padding: 16px; }
+    }
+    @media (max-width: 480px) {
+      .olivia-hub { height: 400px; }
+      .olivia-hub__photo { width: 60px; height: 60px; }
+      .olivia-hub__glow { width: 100px; height: 100px; }
+      .olivia-hub__name { font-size: 11px; margin-top: 6px; }
+      .olivia-hub__role { font-size: 9px; }
+      .olivia-hub__ring--1 { width: 100px; height: 100px; }
+      .olivia-hub__ring--2 { display: none; }
+      .olivia-hub__node-icon { width: 32px; height: 32px; }
+      .olivia-hub__node-icon iconify-icon { font-size: 13px; }
+      .olivia-hub__node-label { font-size: 9px; }
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 1024px) {
+      .hero-panel { padding: 28px 24px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-imageCol { max-width: 460px; margin: 0 auto; width: 100%; }
+      .hero-floating { left: 8px; }
+    }
+    @media (max-width: 768px) {
+      .ds-section { padding: 64px 0; }
+      .ds-section h2 { font-size: 32px; }
+      .hero-headline { font-size: 38px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .ds-type-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .ds-type-spec { text-align: left; }
+      .ds-type-preview { padding: 0; }
+      .cta-dark { padding: 32px; }
+      .ds-component { padding: 22px; }
+      .marquee-track span { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       NAV
+       ===================================================== -->
+  <nav class="ds-nav">
+    <div class="ds-nav-inner">
+      <a href="#hero" class="orbit-logo">
+        <img src="../shared/assets/orbit-logo.png" alt="Orbit" />
+        Orbit <span class="product">Financeiro</span>
+      </a>
+      <ul>
+        <li><a href="#hero">Hero</a></li>
+        <li><a href="#typography">Tipografia</a></li>
+        <li><a href="#colors">Cores</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#charts">Gráficos</a></li>
+        <li><a href="#olivia">Olívia</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#motion">Motion</a></li>
+        <li><a href="#icons">Ícones</a></li>
+      </ul>
+      <span class="variant-pill">Variant B · Light</span>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       0) HERO — glass-panel + split + arched image
+       ===================================================== -->
+  <section id="hero" class="hero">
+    <div class="container xl">
+      <div class="hero-panel">
+        <div class="hero-pill">
+          <div class="avatars">
+            <span class="av">C</span>
+            <span class="av">F</span>
+            <span class="av">O</span>
+          </div>
+          <span class="text"><strong>+3.045 empresas</strong> · DS Financeiro v1 · Variant B</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 class="hero-headline">
+              Sua CFO em IA.<br>
+              <em>Em tempo real.</em><br>
+              Sem espera.
+            </h1>
+            <p class="hero-subhead">
+              A única plataforma BR all-in-one com IA financeira nativa. Olívia responde DRE,
+              fluxo de caixa e runway em linguagem natural — direto no painel.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#components" class="btn btn--primary btn--lg">
+                Agendar demo
+                <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+              </a>
+              <a href="#typography" class="btn btn--ghost btn--lg">Ver Olívia em ação</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="num">+<em>3.045</em></div>
+                <div class="lbl">empresas</div>
+              </div>
+              <div class="hero-stat">
+                <div class="num"><em>40%</em></div>
+                <div class="lbl">menos tempo</div>
+              </div>
+              <div class="hero-stat">
+                <div class="num"><em>85%</em></div>
+                <div class="lbl">menos erros</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-imageCol">
+            <div class="hero-imageCard">
+              <img src="https://orbitgestao.com.br/images/olivia.png" alt="Olívia — CFO em IA da Orbit" />
+              <div class="hero-imageCaption">
+                <div>
+                  <div class="label">Quem está pronto</div>
+                  <div class="title">decide com Olívia.</div>
+                </div>
+                <a href="#" class="btn btn--icon" aria-label="Saber mais">
+                  <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-floating">
+              <div class="stat">DRE em min</div>
+              <div class="label">não em semanas. Auditável e em linguagem natural.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       1) TYPOGRAPHY
+       ===================================================== -->
+  <section id="typography" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">01 — Tipografia</span>
+      <h2>Plus Jakarta Sans <em>refinada</em>.</h2>
+      <p class="ds-lede">
+        Família única <code>Plus Jakarta Sans</code>. Headlines em <strong>Bold 700</strong> com tracking negativo
+        (refinamento Aura). <strong>SemiBold 600</strong> para subtítulos. <strong>ExtraBold 800</strong>
+        reservado a números/stats. Body em Regular 400.
+      </p>
+
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Display 1</strong><code>.display-1</code></div>
+        <div class="ds-type-preview"><span class="display-1">O jogo financeiro mudou.</span></div>
+        <div class="ds-type-spec">96px / 0.94<br>700 · -0.04em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Display 2</strong><code>.display-2</code></div>
+        <div class="ds-type-preview"><span class="display-2">Seu DRE está atrasado de novo?</span></div>
+        <div class="ds-type-spec">80px / 0.95<br>700 · -0.035em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Heading 1</strong><code>.h1</code></div>
+        <div class="ds-type-preview"><h1 class="h1">A trava não é o time. É a visibilidade.</h1></div>
+        <div class="ds-type-spec">64px / 0.98<br>700 · -0.03em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Heading 2</strong><code>.h2</code></div>
+        <div class="ds-type-preview"><h2 class="h2">Conheça Olívia, sua CFO em IA</h2></div>
+        <div class="ds-type-spec">48px / 1.0<br>700 · -0.03em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Heading 3</strong><code>.h3</code></div>
+        <div class="ds-type-preview"><h3 class="h3">DRE conectado ao operacional</h3></div>
+        <div class="ds-type-spec">32px / 1.1<br>700 · -0.022em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Heading 4</strong><code>.h4</code></div>
+        <div class="ds-type-preview"><h4 class="h4">Fluxo de caixa projetado até 18 meses</h4></div>
+        <div class="ds-type-spec">20px / 1.2<br>600 · -0.018em</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Bold L</strong><code>.bold-l</code></div>
+        <div class="ds-type-preview"><p class="bold-l">Visibilidade real do caixa, em tempo real.</p></div>
+        <div class="ds-type-spec">18px · 700</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Bold M</strong><code>.bold-m</code></div>
+        <div class="ds-type-preview"><p class="bold-m">Sem planilha. Sem espera. Sem feeling.</p></div>
+        <div class="ds-type-spec">15px · 600</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Bold S</strong><code>.bold-s</code></div>
+        <div class="ds-type-preview"><p class="bold-s">DEMO COM ESPECIALISTA</p></div>
+        <div class="ds-type-spec">13px · 600</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Paragraph</strong><code>.paragraph</code></div>
+        <div class="ds-type-preview"><p class="paragraph">Olívia cruza dados do financeiro, CRM e RH em um só painel. Pergunte em português e receba DRE, projeção de caixa e análise de margem em segundos.</p></div>
+        <div class="ds-type-spec">17px / 1.6 · 400</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Regular L</strong><code>.reg-l</code></div>
+        <div class="ds-type-preview"><p class="reg-l">Conciliação automática, workflow de aprovações e DRE auditável.</p></div>
+        <div class="ds-type-spec">15px / 1.55 · 400</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Regular M</strong><code>.reg-m</code></div>
+        <div class="ds-type-preview"><p class="reg-m">Demo de 30 minutos, sem compromisso. Limitada por semana.</p></div>
+        <div class="ds-type-spec">13px / 1.5 · 400</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Regular S</strong><code>.reg-s</code></div>
+        <div class="ds-type-preview"><p class="reg-s">Fonte: base de 3.045 clientes Orbit · médias observadas no primeiro trimestre.</p></div>
+        <div class="ds-type-spec">12px / 1.5 · 400</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><strong>Label Caps</strong><code>.label-caps</code></div>
+        <div class="ds-type-preview"><span class="label-caps">DRE auditável</span></div>
+        <div class="ds-type-spec">11px · 700<br>0.14em</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       2) COLORS & SURFACES
+       ===================================================== -->
+  <section id="colors" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">02 — Cores</span>
+      <h2>Paleta <em>Orbit</em>.</h2>
+      <p class="ds-lede">
+        Dourado <code>#ffba1a</code> como ação. Branco <code>#FFFFFF</code> como base.
+        Cream e gold-soft como acentos quentes pontuais. Preto institucional Orbit <code>#0D1117</code>
+        para superfícies dark de contraste.
+      </p>
+
+      <h3 class="bold-l" style="margin: 24px 0 12px;">Marca · Dourado</h3>
+      <div class="ds-swatch-grid">
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold-dark)"></div><div class="swatch-meta"><span class="swatch-name">Gold Dark</span><span class="swatch-hex">#b87f00</span><span class="swatch-role">Hover · pressed</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold)"></div><div class="swatch-meta"><span class="swatch-name">Gold</span><span class="swatch-hex">#ffba1a</span><span class="swatch-role">PRIMARY · CTA</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold-mid)"></div><div class="swatch-meta"><span class="swatch-name">Gold Mid</span><span class="swatch-hex">#ffca4a</span><span class="swatch-role">Primary-light</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold-light)"></div><div class="swatch-meta"><span class="swatch-name">Gold Light</span><span class="swatch-hex">#ffd66b</span><span class="swatch-role">Sub-acento</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold-soft); border-bottom: 1px solid var(--border);"></div><div class="swatch-meta"><span class="swatch-name">Gold Soft</span><span class="swatch-hex">#fff0c2</span><span class="swatch-role">Surface tint</span></div></div>
+      </div>
+
+      <h3 class="bold-l" style="margin: 32px 0 12px;">Calor · Cream</h3>
+      <div class="ds-swatch-grid">
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--cream); border-bottom: 1px solid var(--border);"></div><div class="swatch-meta"><span class="swatch-name">Cream</span><span class="swatch-hex">#FFF8E6</span><span class="swatch-role">Surface warm</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--cream-2); border-bottom: 1px solid var(--border);"></div><div class="swatch-meta"><span class="swatch-name">Cream 2</span><span class="swatch-hex">#FFFAF0</span><span class="swatch-role">Marquee bg</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--amber)"></div><div class="swatch-meta"><span class="swatch-name">Amber</span><span class="swatch-hex">#e6a200</span><span class="swatch-role">Dourado mais sério</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--gold-bright)"></div><div class="swatch-meta"><span class="swatch-name">Gold Bright</span><span class="swatch-hex">#FFE066</span><span class="swatch-role">Pop accent</span></div></div>
+      </div>
+
+      <h3 class="bold-l" style="margin: 32px 0 12px;">Dark · Institucional Orbit</h3>
+      <div class="ds-swatch-grid">
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--black)"></div><div class="swatch-meta"><span class="swatch-name">Black</span><span class="swatch-hex">#000000</span><span class="swatch-role">Pure</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--orbit-black)"></div><div class="swatch-meta"><span class="swatch-name">Orbit Black</span><span class="swatch-hex">#0D1117</span><span class="swatch-role">--black · superfícies dark</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--orbit-soft)"></div><div class="swatch-meta"><span class="swatch-name">Orbit Soft</span><span class="swatch-hex">#161B22</span><span class="swatch-role">--black-soft</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--orbit-card)"></div><div class="swatch-meta"><span class="swatch-name">Orbit Card</span><span class="swatch-hex">#1C2333</span><span class="swatch-role">--black-card</span></div></div>
+      </div>
+
+      <h3 class="bold-l" style="margin: 32px 0 12px;">Feedback (estados)</h3>
+      <div class="ds-swatch-grid">
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--success)"></div><div class="swatch-meta"><span class="swatch-name">Success</span><span class="swatch-hex">#3FB950</span><span class="swatch-role">Confirmação</span></div></div>
+        <div class="ds-swatch"><div class="swatch-color" style="background: var(--danger)"></div><div class="swatch-meta"><span class="swatch-name">Danger</span><span class="swatch-hex">#F85149</span><span class="swatch-role">Erro · atraso</span></div></div>
+      </div>
+
+      <h3 class="bold-l" style="margin: 40px 0 12px;">Surfaces</h3>
+      <div class="ds-surface-grid">
+        <div class="ds-surface surface-bg"><span class="surface-label">PAGE</span><span class="surface-name">BG — #FFFFFF</span></div>
+        <div class="ds-surface surface-cream"><span class="surface-label">CREAM</span><span class="surface-name">#FFF8E6</span></div>
+        <div class="ds-surface surface-paper"><span class="surface-label">PANEL</span><span class="surface-name">#FFFFFF</span></div>
+        <div class="ds-surface surface-glass"><span class="surface-label">GLASS</span><span class="surface-name">white 92% + blur</span></div>
+        <div class="ds-surface surface-soft"><span class="surface-label">SOFT</span><span class="surface-name">Gold soft — #fff0c2</span></div>
+        <div class="ds-surface surface-gold"><span class="surface-label">CTA</span><span class="surface-name">Gold — #ffba1a</span></div>
+        <div class="ds-surface surface-dark"><span class="surface-label">DARK</span><span class="surface-name">Orbit black — #0D1117</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       3) UI COMPONENTS
+       ===================================================== -->
+  <section id="components" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">03 — Componentes</span>
+      <h2>UI <em>canônica</em>.</h2>
+      <p class="ds-lede">Botões, badges, status pill, stat cards, step cards (Olívia), checklist com/sem, image cards, FAQ, CTA dark e marquee.</p>
+
+      <div class="ds-component">
+        <h3>Buttons</h3>
+        <div class="ds-row"><span class="ds-label">Primary</span>
+          <a class="btn btn--primary btn--sm">Agendar <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <a class="btn btn--primary">Agendar demo <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <a class="btn btn--primary btn--lg">Agendar demo com especialista <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <a class="btn btn--primary btn--xl">Quero ver Olívia em ação <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <a class="btn btn--primary btn--disabled">Disabled</a>
+        </div>
+        <div class="ds-row"><span class="ds-label">Dark</span>
+          <a class="btn btn--dark btn--sm">Saiba mais</a>
+          <a class="btn btn--dark">Saiba mais <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <a class="btn btn--dark btn--lg">Falar com especialista</a>
+        </div>
+        <div class="ds-row"><span class="ds-label">Ghost</span>
+          <a class="btn btn--ghost btn--sm">Ver detalhes</a>
+          <a class="btn btn--ghost">Ver detalhes</a>
+          <a class="btn btn--ghost btn--lg">Ver Olívia em ação</a>
+        </div>
+        <div class="ds-row"><span class="ds-label">Icon</span>
+          <a class="btn btn--icon" aria-label="seta"><iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></a>
+          <a class="btn btn--icon" aria-label="play"><iconify-icon icon="solar:play-bold"></iconify-icon></a>
+          <a class="btn btn--icon" aria-label="info"><iconify-icon icon="solar:info-circle-linear"></iconify-icon></a>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Badges &amp; status</h3>
+        <div class="ds-row"><span class="ds-label">Variants</span>
+          <span class="badge badge--default"><iconify-icon icon="solar:shield-check-linear"></iconify-icon> DRE auditável</span>
+          <span class="badge badge--gold"><iconify-icon icon="solar:fire-linear"></iconify-icon> Em alta</span>
+          <span class="badge badge--gold-solid">+3.045 empresas</span>
+          <span class="badge badge--cream">Cream</span>
+          <span class="badge badge--dark">Orbit Black</span>
+          <span class="badge badge--amber">Amber</span>
+          <span class="badge badge--success">Sincronizado</span>
+          <span class="badge badge--ai">IA · Olívia</span>
+        </div>
+        <div class="ds-row"><span class="ds-label">Status pill</span>
+          <span class="status-pill"><span class="status-dot"></span> Demos abertas esta semana</span>
+          <span class="status-pill"><span class="status-dot" style="background: var(--gold);"></span> Última semana de agenda</span>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Stat cards (Painel Financeiro)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+          <div class="stat-card">
+            <span class="label-caps">Saldo total</span>
+            <div class="num">R$ <em>4,2</em>M</div>
+            <div class="lbl">+12,5% vs mês anterior</div>
+          </div>
+          <div class="stat-card --gold">
+            <span class="label-caps">Runway</span>
+            <div class="num"><em>14,8</em> meses</div>
+            <div class="lbl">days cash · 444 dias · saudável</div>
+          </div>
+          <div class="stat-card --dark">
+            <span class="label-caps">Burn mensal</span>
+            <div class="num">R$ <em>285</em>K</div>
+            <div class="lbl">+2,1% vs mês anterior</div>
+          </div>
+          <div class="stat-card">
+            <span class="label-caps">Margem líquida</span>
+            <div class="num"><em>53%</em></div>
+            <div class="lbl">acima da meta trimestral de 48%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Step cards · como Olívia trabalha</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-title">Conecta</div>
+            <div class="step-text">Olívia integra bancos, ERP e planilhas existentes em até 48h, sem migração traumática.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-title">Aprende</div>
+            <div class="step-text">Categoriza lançamentos, cruza CRM e RH e monta seu DRE em tempo real.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-title">Responde</div>
+            <div class="step-text">Pergunte em português: "qual meu burn de abril?" — resposta em segundos, auditável.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-title">Antecipa</div>
+            <div class="step-text">Avisa antes do problema: queda de margem, risco de inadimplência, fim de runway.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Checklist · Com Olívia × Sem Olívia</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+          <ul class="check-list">
+            <li class="check-item">
+              <span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+              <span><strong>DRE em minutos</strong>, não no fim do mês</span>
+            </li>
+            <li class="check-item">
+              <span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+              <span>Fluxo de caixa <strong>projetado até 18 meses</strong></span>
+            </li>
+            <li class="check-item">
+              <span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+              <span>Aprovações e conciliação <strong>automáticas</strong></span>
+            </li>
+            <li class="check-item">
+              <span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+              <span>Olívia responde em <strong>linguagem natural</strong></span>
+            </li>
+          </ul>
+          <ul class="check-list">
+            <li class="check-item">
+              <span class="check-cross"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></span>
+              <span>DRE atrasado, <strong>planilhas que não fecham</strong></span>
+            </li>
+            <li class="check-item">
+              <span class="check-cross"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></span>
+              <span>Caixa no escuro, decisão no <strong>feeling</strong></span>
+            </li>
+            <li class="check-item">
+              <span class="check-cross"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></span>
+              <span>Conciliação manual, retrabalho <strong>todo mês</strong></span>
+            </li>
+            <li class="check-item">
+              <span class="check-cross"><iconify-icon icon="solar:close-circle-linear"></iconify-icon></span>
+              <span>BI separado, financeiro <strong>desconectado do operacional</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Image cards · arched (Olívia)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+          <div class="image-card">
+            <span class="badge badge--cream floating-badge">+3.045 empresas</span>
+            <img src="https://orbitgestao.com.br/images/olivia.png" alt="Olívia — CFO em IA" />
+            <div class="caption">
+              <span class="label">Quem está pronto</span>
+              <span class="title">decide com Olívia.</span>
+            </div>
+          </div>
+          <div class="image-card" style="background: var(--orbit-black);">
+            <span class="badge badge--gold-solid floating-badge">3 sinais críticos</span>
+            <div class="caption">
+              <span class="label">Quem não está</span>
+              <span class="title">fica refém de planilha.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>FAQ</h3>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              A Olívia tem custo extra?
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </summary>
+            <div class="faq-answer">Não. Olívia é nativa do módulo Financeiro e já vem habilitada em todos os planos B2B. Sem add-on, sem cobrança por pergunta.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">
+              Em quanto tempo conecto meus bancos e ERP?
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </summary>
+            <div class="faq-answer">Bancos principais via Open Finance: até 48h. ERP (Omie, ContaAzul, Sankhya, TOTVS, SAP B1, Senior): conectores nativos, 3–5 dias úteis com onboarding guiado.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">
+              Quem treina a Olívia com o contexto da minha empresa?
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </summary>
+            <div class="faq-answer">Time de Customer Success Orbit + Olívia aprende sozinha com seu plano de contas, centros de custo e histórico. Refinamento contínuo nos primeiros 30 dias.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">
+              Meus dados financeiros ficam seguros?
+              <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+            </summary>
+            <div class="faq-answer">LGPD, criptografia em trânsito e em repouso (AES-256), data center BR. Olívia não treina LLM público com seus dados. Trilha de auditoria completa por usuário.</div>
+          </details>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>CTA dark</h3>
+        <div class="cta-dark">
+          <span class="badge badge--gold-solid">Demo com especialista</span>
+          <h3 style="margin-top: 16px;">A trava não é o seu time.<br>É a sua <em>visibilidade</em>.</h3>
+          <p>Sem DRE em tempo real e fluxo conectado, decisão de caixa vira aposta. Olívia entrega clareza em minutos.</p>
+          <ul class="check-list" style="max-width: 540px; margin-bottom: 24px;">
+            <li class="check-item"><span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span><span>Demo de 30 min · sem compromisso</span></li>
+            <li class="check-item"><span class="check-circle"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span><span>Conduzida com seu próprio dado (sandbox)</span></li>
+          </ul>
+          <a class="btn btn--primary btn--lg">Agendar demo <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Marquee</h3>
+        <div class="marquee">
+          <div class="marquee-track">
+            <span>DRE em tempo real</span><span class="dot"></span>
+            <span class="--gold">Fluxo de caixa até 18 meses</span><span class="dot"></span>
+            <span>Olívia · IA financeira</span><span class="dot"></span>
+            <span class="--gold">Conciliação automática</span><span class="dot"></span>
+            <span>+3.045 empresas confiam</span><span class="dot"></span>
+            <span>DRE em tempo real</span><span class="dot"></span>
+            <span class="--gold">Fluxo de caixa até 18 meses</span><span class="dot"></span>
+            <span>Olívia · IA financeira</span><span class="dot"></span>
+            <span class="--gold">Conciliação automática</span><span class="dot"></span>
+            <span>+3.045 empresas confiam</span><span class="dot"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       4) LAYOUT & SPACING
+       ===================================================== -->
+  <section id="layout" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">04 — Layout</span>
+      <h2>Ritmo &amp; <em>respiração</em>.</h2>
+      <p class="ds-lede">Container 1300px (padrão Aura) · grid de 12 colunas · seções com 96px de padding · gaps em múltiplos de 8.</p>
+
+      <div class="ds-component">
+        <h3>Containers</h3>
+        <div class="ds-container-demo">.container.xl — max-width: 1300px</div>
+        <div class="ds-container-demo" style="max-width: 1180px;">.container.lg — max-width: 1180px</div>
+        <div class="ds-container-demo" style="max-width: 1024px;">.container.md — max-width: 1024px</div>
+        <div class="ds-container-demo" style="max-width: 760px;">.container.sm — max-width: 760px</div>
+      </div>
+
+      <div class="ds-component">
+        <h3>12-col grid</h3>
+        <div class="ds-grid-demo">
+          <div></div><div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <h3>Spacing scale (8pt)</h3>
+        <div class="ds-spacing-bar">
+          <div><div class="ds-spacing-tick" style="width: 8px;  height: 8px;"></div><div class="ds-spacing-label">8</div></div>
+          <div><div class="ds-spacing-tick" style="width: 16px; height: 16px;"></div><div class="ds-spacing-label">16</div></div>
+          <div><div class="ds-spacing-tick" style="width: 24px; height: 24px;"></div><div class="ds-spacing-label">24</div></div>
+          <div><div class="ds-spacing-tick" style="width: 32px; height: 32px;"></div><div class="ds-spacing-label">32</div></div>
+          <div><div class="ds-spacing-tick" style="width: 48px; height: 48px;"></div><div class="ds-spacing-label">48</div></div>
+          <div><div class="ds-spacing-tick" style="width: 64px; height: 64px;"></div><div class="ds-spacing-label">64</div></div>
+          <div><div class="ds-spacing-tick" style="width: 96px; height: 96px;"></div><div class="ds-spacing-label">96</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       5) MOTION & INTERACTION
+       ===================================================== -->
+  <section id="motion" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">05 — Motion</span>
+      <h2>Comportamentos <em>sutis</em>.</h2>
+      <p class="ds-lede">Easings cubic-bezier suaves, durações 300–600ms. Sem entradas espalhafatosas — interação que reforça leitura financeira.</p>
+
+      <div class="ds-motion-grid">
+        <div class="ds-motion-card">
+          <span class="label">Spin · selo</span>
+          <div class="demo-spin"></div>
+          <span class="meta">animation: spin 16s linear infinite</span>
+        </div>
+        <div class="ds-motion-card">
+          <span class="label">Pulse · status</span>
+          <div class="demo-pulse">
+            <span class="pulse-dot"></span>
+            <span class="bold-m" style="color: var(--text);">Sincronizado</span>
+          </div>
+          <span class="meta">@keyframes pulse · 1.8s</span>
+        </div>
+        <div class="ds-motion-card">
+          <span class="label">Lift · hover</span>
+          <a class="demo-lift">Passar o mouse</a>
+          <span class="meta">translateY(-2px) · 350ms</span>
+        </div>
+        <div class="ds-motion-card">
+          <span class="label">Arrow slide</span>
+          <a class="demo-arrow">Ver Olívia <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+          <span class="meta">translateX(6px) · 550ms</span>
+        </div>
+        <div class="ds-motion-card">
+          <span class="label">Image · scale + saturate</span>
+          <div class="demo-imgWrap">
+            <div class="demo-img" style="background-image: url('https://orbitgestao.com.br/images/olivia.png');"></div>
+          </div>
+          <span class="meta">scale 1.06 + saturate · 1.4s</span>
+        </div>
+        <div class="ds-motion-card">
+          <span class="label">Vertical scroll (depoimentos)</span>
+          <div class="demo-vScroll">
+            <div class="track">
+              <div>"Saímos da planilha que não fechava."</div>
+              <div>"DRE em minutos virou rotina."</div>
+              <div>"Olívia avisa antes do problema."</div>
+              <div>"Saímos da planilha que não fechava."</div>
+            </div>
+          </div>
+          <span class="meta">@keyframes vscroll · 12s</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       6) ICONS
+       ===================================================== -->
+  <section id="icons" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">06 — Ícones</span>
+      <h2>Solar <em>linear</em>.</h2>
+      <p class="ds-lede">
+        Iconify · conjunto Solar. Linear como padrão. Bold-duotone reservado para destaques pontuais.
+        Tamanhos 16/18/20/24/26.
+      </p>
+
+      <div class="ds-icon-grid">
+        <div class="ds-icon-tile"><iconify-icon icon="solar:arrow-right-linear"></iconify-icon><span class="ds-icon-name">arrow-right</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon><span class="ds-icon-name">arrow-right-up</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:check-read-linear"></iconify-icon><span class="ds-icon-name">check-read</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:close-circle-linear"></iconify-icon><span class="ds-icon-name">close-circle</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:shield-check-linear"></iconify-icon><span class="ds-icon-name">shield-check</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:dollar-minimalistic-linear"></iconify-icon><span class="ds-icon-name">dollar</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:wallet-money-linear"></iconify-icon><span class="ds-icon-name">wallet-money</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:card-linear"></iconify-icon><span class="ds-icon-name">card</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:chart-2-linear"></iconify-icon><span class="ds-icon-name">chart-2</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:pie-chart-2-linear"></iconify-icon><span class="ds-icon-name">pie-chart</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:graph-up-linear"></iconify-icon><span class="ds-icon-name">graph-up</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:graph-down-linear"></iconify-icon><span class="ds-icon-name">graph-down</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:bill-list-linear"></iconify-icon><span class="ds-icon-name">bill · DRE</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:calendar-linear"></iconify-icon><span class="ds-icon-name">calendar</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:clock-circle-linear"></iconify-icon><span class="ds-icon-name">clock · runway</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:chat-round-dots-linear"></iconify-icon><span class="ds-icon-name">chat · Olívia</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:settings-linear"></iconify-icon><span class="ds-icon-name">settings</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:buildings-linear"></iconify-icon><span class="ds-icon-name">buildings</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:bolt-circle-bold-duotone"></iconify-icon><span class="ds-icon-name">bolt</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:fire-linear"></iconify-icon><span class="ds-icon-name">fire</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon><span class="ds-icon-name">arrow-down</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:play-bold"></iconify-icon><span class="ds-icon-name">play</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:info-circle-linear"></iconify-icon><span class="ds-icon-name">info</span></div>
+        <div class="ds-icon-tile"><iconify-icon icon="solar:medal-star-linear"></iconify-icon><span class="ds-icon-name">medal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       7) CHARTS · Visualizações financeiras
+       ===================================================== -->
+  <section id="charts" class="ds-section">
+    <div class="container xl">
+      <span class="ds-eyebrow">07 — Gráficos</span>
+      <h2>Visualizações <em>financeiras</em>.</h2>
+      <p class="ds-lede">
+        SVG inline (sem dependências). Cinco padrões canônicos para a LP do Financeiro:
+        fluxo de caixa, DRE waterfall, donut de despesas, sparklines de KPI e gauge de runway.
+      </p>
+
+      <!-- ===== Linha 1: cash flow + waterfall ===== -->
+      <div class="charts-grid charts-grid--2">
+
+        <!-- Fluxo de Caixa -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Fluxo de caixa · projeção 12 meses</div>
+              <div class="chart-sub">Receita líquida acumulada · maio/2025 → abr/2026</div>
+            </div>
+            <div class="chart-meta-num">R$ <em>4,2</em>M</div>
+          </div>
+
+          <svg viewBox="0 0 600 240" class="chart-svg" preserveAspectRatio="xMidYMid meet" aria-label="Linha de fluxo de caixa projetada para 12 meses">
+            <defs>
+              <linearGradient id="cashGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffba1a" stop-opacity="0.50"/>
+                <stop offset="1" stop-color="#ffba1a" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <g class="chart-grid">
+              <line x1="50" x2="580" y1="35" y2="35"/>
+              <line x1="50" x2="580" y1="80" y2="80"/>
+              <line x1="50" x2="580" y1="125" y2="125"/>
+              <line x1="50" x2="580" y1="170" y2="170"/>
+              <line x1="50" x2="580" y1="200" y2="200"/>
+            </g>
+
+            <g class="chart-axis">
+              <text x="44" y="38" text-anchor="end">800K</text>
+              <text x="44" y="83" text-anchor="end">600K</text>
+              <text x="44" y="128" text-anchor="end">400K</text>
+              <text x="44" y="173" text-anchor="end">200K</text>
+              <text x="44" y="203" text-anchor="end">0</text>
+            </g>
+
+            <line class="line-target" x1="50" x2="580" y1="100" y2="100"/>
+            <text class="chart-axis" x="576" y="96" text-anchor="end" style="font-style:italic; opacity:0.7">meta · 500K</text>
+
+            <path class="line-area" d="M 50 178 L 94 158 L 138 168 L 182 122 L 226 142 L 270 128 L 314 95 L 358 110 L 402 80 L 446 60 L 490 70 L 534 42 L 580 42 L 580 200 L 50 200 Z"/>
+            <polyline class="line-cash" points="50,178 94,158 138,168 182,122 226,142 270,128 314,95 358,110 402,80 446,60 490,70 534,42 580,42"/>
+
+            <g>
+              <circle class="line-dot" cx="50"  cy="178" r="4"/>
+              <circle class="line-dot" cx="94"  cy="158" r="4"/>
+              <circle class="line-dot" cx="138" cy="168" r="4"/>
+              <circle class="line-dot-hi" cx="182" cy="122" r="5"/>
+              <circle class="line-dot" cx="226" cy="142" r="4"/>
+              <circle class="line-dot" cx="270" cy="128" r="4"/>
+              <circle class="line-dot" cx="314" cy="95"  r="4"/>
+              <circle class="line-dot" cx="358" cy="110" r="4"/>
+              <circle class="line-dot" cx="402" cy="80"  r="4"/>
+              <circle class="line-dot-hi" cx="446" cy="60"  r="5"/>
+              <circle class="line-dot" cx="490" cy="70"  r="4"/>
+              <circle class="line-dot" cx="534" cy="42"  r="4"/>
+              <circle class="line-dot-hi" cx="580" cy="42"  r="5"/>
+            </g>
+
+            <g class="chart-axis">
+              <text x="50"  y="225" text-anchor="middle">Mai</text>
+              <text x="94"  y="225" text-anchor="middle">Jun</text>
+              <text x="138" y="225" text-anchor="middle">Jul</text>
+              <text x="182" y="225" text-anchor="middle">Ago</text>
+              <text x="226" y="225" text-anchor="middle">Set</text>
+              <text x="270" y="225" text-anchor="middle">Out</text>
+              <text x="314" y="225" text-anchor="middle">Nov</text>
+              <text x="358" y="225" text-anchor="middle">Dez</text>
+              <text x="402" y="225" text-anchor="middle">Jan</text>
+              <text x="446" y="225" text-anchor="middle">Fev</text>
+              <text x="490" y="225" text-anchor="middle">Mar</text>
+              <text x="534" y="225" text-anchor="middle">Abr</text>
+              <text x="580" y="225" text-anchor="middle">Mai</text>
+            </g>
+          </svg>
+
+          <div class="chart-legend">
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gold-dark)"></span> Realizado</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gold);opacity:0.5"></span> Projetado</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--text-soft)"></span> Meta · R$ 500K</span>
+          </div>
+        </div>
+
+        <!-- DRE Waterfall -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">DRE · Waterfall · abr/2026</div>
+              <div class="chart-sub">Regime competência · em R$ mil</div>
+            </div>
+            <div class="chart-meta-num"><em>+327</em><span style="font-size:18px; color:var(--text-mid)">K</span></div>
+          </div>
+
+          <svg viewBox="0 0 600 240" class="chart-svg" preserveAspectRatio="xMidYMid meet" aria-label="Waterfall DRE">
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd66b"/>
+                <stop offset="1" stop-color="#ffba1a"/>
+              </linearGradient>
+            </defs>
+
+            <g class="chart-grid">
+              <line x1="50" x2="580" y1="35"  y2="35"/>
+              <line x1="50" x2="580" y1="80"  y2="80"/>
+              <line x1="50" x2="580" y1="125" y2="125"/>
+              <line x1="50" x2="580" y1="170" y2="170"/>
+            </g>
+
+            <g class="chart-axis">
+              <text x="44" y="38"  text-anchor="end">800</text>
+              <text x="44" y="83"  text-anchor="end">600</text>
+              <text x="44" y="128" text-anchor="end">400</text>
+              <text x="44" y="173" text-anchor="end">200</text>
+            </g>
+
+            <!-- Receita (612K) -->
+            <rect class="bar-positive" x="80"  y="35"  width="70" height="155" rx="3"/>
+            <text class="bar-label"    x="115" y="28"  text-anchor="middle">612</text>
+
+            <!-- Conector -->
+            <line class="bar-connect" x1="150" x2="190" y1="35" y2="35"/>
+
+            <!-- Custos diretos (-145K) -->
+            <rect class="bar-neg"      x="190" y="35"  width="70" height="36" rx="3"/>
+            <text class="bar-label"    x="225" y="86"  text-anchor="middle">−145</text>
+
+            <line class="bar-connect" x1="260" x2="300" y1="71" y2="71"/>
+
+            <!-- Despesas op (-140K) -->
+            <rect class="bar-neg"      x="300" y="71"  width="70" height="35" rx="3"/>
+            <text class="bar-label"    x="335" y="121" text-anchor="middle">−140</text>
+
+            <line class="bar-connect" x1="370" x2="410" y1="106" y2="106"/>
+
+            <!-- EBITDA (327K) -->
+            <rect class="bar-subtotal" x="410" y="106" width="70" height="84" rx="3"/>
+            <text class="bar-label"    x="445" y="100" text-anchor="middle" style="fill:var(--text)">327</text>
+
+            <line class="bar-connect" x1="480" x2="520" y1="106" y2="106"/>
+
+            <!-- Resultado líquido (285K) -->
+            <rect class="bar-result"   x="520" y="125" width="50" height="65" rx="3"/>
+            <text class="bar-label"    x="545" y="119" text-anchor="middle">285</text>
+
+            <!-- Linha base (eixo X) -->
+            <line x1="50" x2="580" y1="190" y2="190" stroke="rgba(24,25,27,0.25)" stroke-width="1"/>
+
+            <g class="bar-cat">
+              <text x="115" y="210" text-anchor="middle">Receita</text>
+              <text x="225" y="210" text-anchor="middle">Custos</text>
+              <text x="335" y="210" text-anchor="middle">Desp. Op</text>
+              <text x="445" y="210" text-anchor="middle">EBITDA</text>
+              <text x="545" y="210" text-anchor="middle">Líquido</text>
+            </g>
+          </svg>
+
+          <div class="chart-legend">
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gold)"></span> Receita</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:rgba(24,25,27,0.16)"></span> Subtrações</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--orbit-black)"></span> Subtotal</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:linear-gradient(180deg,#ffd66b,#ffba1a)"></span> Resultado</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== Linha 2: donut + gauge ===== -->
+      <div class="charts-grid charts-grid--2" style="margin-top:16px;">
+
+        <!-- Donut Top Despesas -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Top categorias · despesas mai/2026</div>
+              <div class="chart-sub">R$ 285K · 4 maiores categorias</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+            <svg viewBox="0 0 200 200" width="200" height="200" class="chart-svg" aria-label="Donut · top categorias">
+              <!-- Track -->
+              <circle class="donut-track" cx="100" cy="100" r="78"/>
+              <!-- Segmentos (perímetro = 2πr ≈ 490) -->
+              <!-- Folha 64% = 313.6 -->
+              <circle cx="100" cy="100" r="78" class="donut-seg" stroke="#ffba1a"
+                      stroke-dasharray="313.6 490" transform="rotate(-90 100 100)"/>
+              <!-- Aluguel+Infra 14.7% = 72; offset 313.6 -->
+              <circle cx="100" cy="100" r="78" class="donut-seg" stroke="#0D1117"
+                      stroke-dasharray="72 490" stroke-dashoffset="-313.6" transform="rotate(-90 100 100)"/>
+              <!-- Marketing 11% = 54; offset 385.6 -->
+              <circle cx="100" cy="100" r="78" class="donut-seg" stroke="#ffca4a"
+                      stroke-dasharray="54 490" stroke-dashoffset="-385.6" transform="rotate(-90 100 100)"/>
+              <!-- SaaS 7% = 34.3; offset 439.6 -->
+              <circle cx="100" cy="100" r="78" class="donut-seg" stroke="rgba(24,25,27,0.30)"
+                      stroke-dasharray="34.3 490" stroke-dashoffset="-439.6" transform="rotate(-90 100 100)"/>
+
+              <text class="donut-center-num" x="100" y="103">R$ 285K</text>
+              <text class="donut-center-lbl" x="100" y="120">total</text>
+            </svg>
+
+            <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--text); font-weight:600;">
+                  <span style="width:10px; height:10px; border-radius:3px; background:var(--gold);"></span> Folha
+                </span>
+                <span style="font-family:ui-monospace,monospace; font-size:12px; color:var(--text-mid);">R$ 182K · 64%</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--text); font-weight:600;">
+                  <span style="width:10px; height:10px; border-radius:3px; background:var(--orbit-black);"></span> Aluguel + Infra
+                </span>
+                <span style="font-family:ui-monospace,monospace; font-size:12px; color:var(--text-mid);">R$ 42K · 15%</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--text); font-weight:600;">
+                  <span style="width:10px; height:10px; border-radius:3px; background:var(--gold-mid);"></span> Marketing
+                </span>
+                <span style="font-family:ui-monospace,monospace; font-size:12px; color:var(--text-mid);">R$ 31K · 11%</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--text); font-weight:600;">
+                  <span style="width:10px; height:10px; border-radius:3px; background:rgba(24,25,27,0.30);"></span> SaaS / Tech
+                </span>
+                <span style="font-family:ui-monospace,monospace; font-size:12px; color:var(--text-mid);">R$ 19K · 7%</span>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:8px; border-top:1px dashed var(--border);">
+                <span style="font-size:11px; color:var(--text-mid); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Outros (3%)</span>
+                <span style="font-family:ui-monospace,monospace; font-size:12px; color:var(--text-mid);">R$ 11K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gauge Runway -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Runway · Days Cash</div>
+              <div class="chart-sub">Saúde do caixa · 0-24 meses</div>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:center; padding:8px 0;">
+            <svg viewBox="0 0 320 200" width="320" height="200" class="chart-svg" aria-label="Gauge runway 14,8 meses">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ffca4a"/>
+                  <stop offset="1" stop-color="#b87f00"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Arc background (semicircle) -->
+              <path class="gauge-bg"
+                    d="M 40 160 A 120 120 0 0 1 280 160"/>
+              <!-- Arc fill: 14.8/24 = 61.7% do arco -->
+              <!-- Perímetro arco semicircular = π·r ≈ 377; 61.7% = 232.6; total dasharray = 377 -->
+              <path class="gauge-fill"
+                    d="M 40 160 A 120 120 0 0 1 280 160"
+                    stroke-dasharray="232.6 377"
+                    pathLength="377"/>
+
+              <!-- Ticks -->
+              <line class="gauge-tick" x1="40"  y1="160" x2="46"  y2="156"/>
+              <line class="gauge-tick" x1="160" y1="40"  x2="160" y2="46"/>
+              <line class="gauge-tick" x1="280" y1="160" x2="274" y2="156"/>
+
+              <text class="gauge-lbl" x="40"  y="180" text-anchor="middle">0</text>
+              <text class="gauge-lbl" x="160" y="32"  text-anchor="middle">12m</text>
+              <text class="gauge-lbl" x="280" y="180" text-anchor="middle">24m</text>
+
+              <!-- Center number -->
+              <text class="gauge-num" x="160" y="135" text-anchor="middle">14,8</text>
+              <text class="gauge-lbl" x="160" y="155" text-anchor="middle">meses · saudável</text>
+            </svg>
+          </div>
+
+          <div class="chart-legend" style="justify-content:center;">
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--danger)"></span> &lt; 6 meses</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gold-mid)"></span> 6–12 meses</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gold-dark)"></span> &gt; 12 meses</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== Linha 3: 3 KPI sparklines ===== -->
+      <div class="ds-component" style="margin-top:16px;">
+        <h3>KPI cards · sparkline</h3>
+        <div class="kpi-spark-grid">
+
+          <div class="kpi-spark">
+            <div class="kpi-spark__head">
+              <span class="kpi-spark__lbl">Receita · 6m</span>
+              <span class="kpi-spark__delta --up">+18%</span>
+            </div>
+            <div class="kpi-spark__num">R$ 575K</div>
+            <svg viewBox="0 0 220 44" class="kpi-spark__svg" preserveAspectRatio="none">
+              <path class="spark-area" d="M 0 34 L 36 28 L 73 30 L 110 16 L 146 22 L 183 14 L 220 6 L 220 44 L 0 44 Z"/>
+              <polyline class="spark-line" points="0,34 36,28 73,30 110,16 146,22 183,14 220,6"/>
+            </svg>
+          </div>
+
+          <div class="kpi-spark">
+            <div class="kpi-spark__head">
+              <span class="kpi-spark__lbl">Inadimplência · 6m</span>
+              <span class="kpi-spark__delta --down">−4,8%</span>
+            </div>
+            <div class="kpi-spark__num">2,1%</div>
+            <svg viewBox="0 0 220 44" class="kpi-spark__svg" preserveAspectRatio="none">
+              <path class="spark-area --neg" d="M 0 8 L 36 12 L 73 16 L 110 20 L 146 26 L 183 30 L 220 34 L 220 44 L 0 44 Z"/>
+              <polyline class="spark-line --neg" points="0,8 36,12 73,16 110,20 146,26 183,30 220,34"/>
+            </svg>
+          </div>
+
+          <div class="kpi-spark">
+            <div class="kpi-spark__head">
+              <span class="kpi-spark__lbl">Margem líquida · 6m</span>
+              <span class="kpi-spark__delta --up">+12%</span>
+            </div>
+            <div class="kpi-spark__num">53%</div>
+            <svg viewBox="0 0 220 44" class="kpi-spark__svg" preserveAspectRatio="none">
+              <path class="spark-area" d="M 0 28 L 36 26 L 73 22 L 110 24 L 146 14 L 183 16 L 220 8 L 220 44 L 0 44 Z"/>
+              <polyline class="spark-line" points="0,28 36,26 73,22 110,24 146,14 183,16 220,8"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       8) OLÍVIA · HUB ORBITAL (12 agentes · light)
+       ===================================================== -->
+  <section id="olivia" class="ds-section" style="background: linear-gradient(180deg, var(--surface) 0%, var(--cream-2) 100%);">
+    <div class="container xl">
+      <span class="ds-eyebrow">08 — Olívia · IA Financeira</span>
+      <h2>Coordenando <em>12 agentes</em>.</h2>
+      <p class="ds-lede">
+        Olívia não é só uma IA financeira — é a coordenadora que conecta os 12 agentes especializados
+        da Orbit. Cada agente domina uma área. Olívia cruza os dados e entrega clareza.
+      </p>
+
+      <div class="olivia-hub" id="oliviaHub">
+        <!-- Center -->
+        <div class="olivia-hub__center">
+          <div class="olivia-hub__glow"></div>
+          <div class="olivia-hub__photo">
+            <img src="https://orbitgestao.com.br/images/olivia.png" alt="Olívia" />
+          </div>
+          <div class="olivia-hub__name">Olívia</div>
+          <div class="olivia-hub__role">CFO em IA · coordenadora geral</div>
+          <div class="olivia-hub__ring olivia-hub__ring--1"></div>
+          <div class="olivia-hub__ring olivia-hub__ring--2"></div>
+          <div class="olivia-hub__ring olivia-hub__ring--3"></div>
+        </div>
+
+        <!-- SVG lines (drawn by JS) -->
+        <svg class="olivia-hub__lines" id="oliviaLines"></svg>
+
+        <!-- 12 Agent nodes -->
+        <div class="olivia-hub__node" data-idx="0">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:compass-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Estrategista</div>
+          <div class="olivia-hub__node-desc">SWOT, BSC e OKRs</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente Estrategista</div>
+            <div class="olivia-node-card__text">Analisa o cenário da empresa com SWOT, define OKRs e monta o planejamento estratégico. Cruza dados dos outros agentes.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>95%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:95%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">SWOT</span><span class="olivia-node-card__tag">BSC</span><span class="olivia-node-card__tag">OKRs</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="1">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:branching-paths-up-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Processos</div>
+          <div class="olivia-hub__node-desc">Playbooks e automação</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Processos</div>
+            <div class="olivia-node-card__text">Mapeia, documenta e gera instruções de trabalho automaticamente. Reduz retrabalho e garante qualidade.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>90%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:90%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">Playbooks</span><span class="olivia-node-card__tag">ISO</span><span class="olivia-node-card__tag">Automação</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="2">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:users-group-rounded-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Pessoas</div>
+          <div class="olivia-hub__node-desc">Cargos, PDIs e desempenho</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Pessoas</div>
+            <div class="olivia-node-card__text">Cria descrições de cargo, avaliações 360 e PDIs personalizados. Identifica gaps de competência e trilhas.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>88%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:88%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">360°</span><span class="olivia-node-card__tag">PDI</span><span class="olivia-node-card__tag">Skills</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="3">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:square-academic-cap-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Treinamento</div>
+          <div class="olivia-hub__node-desc">Microlearning · WhatsApp</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Treinamento</div>
+            <div class="olivia-node-card__text">Treina equipes via WhatsApp com microlearning diário. Adapta conteúdo ao nível de cada colaborador e mede engajamento.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>92%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:92%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">WhatsApp</span><span class="olivia-node-card__tag">Micro</span><span class="olivia-node-card__tag">Quiz</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="4">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:chart-2-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Indicadores</div>
+          <div class="olivia-hub__node-desc">KPIs em tempo real</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Indicadores</div>
+            <div class="olivia-node-card__text">Monitora KPIs em tempo real, identifica desvios e sugere hipóteses de causa raiz antes que o problema cresça.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>94%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:94%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">KPIs</span><span class="olivia-node-card__tag">Dashboard</span><span class="olivia-node-card__tag">Alertas</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="5">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:magnifer-zoom-in-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Pesquisa</div>
+          <div class="olivia-hub__node-desc">Clima, NPS e insights</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Pesquisa</div>
+            <div class="olivia-node-card__text">Cria pesquisas de clima, satisfação e NPS. Analisa respostas e entrega insights acionáveis sobre a percepção das equipes.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>82%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:82%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">NPS</span><span class="olivia-node-card__tag">Clima</span><span class="olivia-node-card__tag">Insights</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="6">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:shield-warning-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Riscos</div>
+          <div class="olivia-hub__node-desc">Mitigação contínua</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Riscos</div>
+            <div class="olivia-node-card__text">Identifica ameaças antes que virem crises. Monitora indicadores de risco e sugere planos de mitigação preventivos.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>91%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:91%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">Prevenção</span><span class="olivia-node-card__tag">PDCA</span><span class="olivia-node-card__tag">Alertas</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="7">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:lightbulb-bolt-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Oportunidades</div>
+          <div class="olivia-hub__node-desc">Mercado e expansão</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Oportunidades</div>
+            <div class="olivia-node-card__text">Escaneia o mercado, identifica novas oportunidades e cruza com dados internos para sugerir ações de expansão e parcerias.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>87%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:87%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">Mercado</span><span class="olivia-node-card__tag">Growth</span><span class="olivia-node-card__tag">Parcerias</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="8">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:danger-triangle-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Problemas</div>
+          <div class="olivia-hub__node-desc">Não-conformidades e PDCA</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Problemas</div>
+            <div class="olivia-node-card__text">Registra não-conformidades, aplica PDCA automaticamente e acompanha a resolução até o fechamento com evidências.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>89%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:89%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">PDCA</span><span class="olivia-node-card__tag">5W2H</span><span class="olivia-node-card__tag">NC</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="9">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:document-text-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Documentos</div>
+          <div class="olivia-hub__node-desc">Padronização e versão</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Documentos</div>
+            <div class="olivia-node-card__text">Padroniza, versiona e controla todos os documentos da empresa. Garante que todos trabalhem com a versão mais recente.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>80%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:80%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">Versão</span><span class="olivia-node-card__tag">ISO</span><span class="olivia-node-card__tag">Padrão</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="10">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:hand-shake-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Vendas</div>
+          <div class="olivia-hub__node-desc">CRM, funil e coaching</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Vendas</div>
+            <div class="olivia-node-card__text">Gerencia o funil comercial, faz coaching da equipe de vendas e identifica oportunidades de upsell e cross-sell com IA.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>93%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:93%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">CRM</span><span class="olivia-node-card__tag">Funil</span><span class="olivia-node-card__tag">Coaching</span></div>
+          </div>
+        </div>
+
+        <div class="olivia-hub__node" data-idx="11">
+          <div class="olivia-hub__node-icon"><iconify-icon icon="solar:videocamera-record-linear"></iconify-icon></div>
+          <div class="olivia-hub__node-label">Reuniões</div>
+          <div class="olivia-hub__node-desc">Transcrição e follow-up</div>
+          <div class="olivia-node-card">
+            <div class="olivia-node-card__status"><iconify-icon icon="solar:record-circle-bold"></iconify-icon> Ativo 24/7</div>
+            <div class="olivia-node-card__title">Agente de Reuniões</div>
+            <div class="olivia-node-card__text">Transcreve reuniões, extrai decisões e gera planos de ação automaticamente. Nunca mais perca um follow-up.</div>
+            <div class="olivia-node-card__bar"><div class="olivia-node-card__bar-label"><span>Impacto</span><span>86%</span></div><div class="olivia-node-card__bar-track"><div class="olivia-node-card__bar-fill" style="width:86%"></div></div></div>
+            <div class="olivia-node-card__tags"><span class="olivia-node-card__tag">Ata</span><span class="olivia-node-card__tag">Follow-up</span><span class="olivia-node-card__tag">IA</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Layout JS -->
+      <script>
+      (function() {
+        var hub = document.getElementById('oliviaHub');
+        if (!hub) return;
+        var TOTAL = 12;
+        var nodes = hub.querySelectorAll('.olivia-hub__node');
+        var svg = document.getElementById('oliviaLines');
+
+        function layout() {
+          var w = hub.offsetWidth;
+          var h = hub.offsetHeight;
+          var cx = w / 2;
+          var cy = h / 2;
+          var radius = Math.min(w, h) / 2 - 40;
+          if (w < 500) radius = Math.min(w, h) / 2 - 30;
+          if (radius < 80) radius = 80;
+          if (w <= 480 && radius > 140) radius = 140;
+          else if (w <= 768 && radius > 180) radius = 180;
+          else if (radius > 360) radius = 360;
+
+          svg.setAttribute('width', w);
+          svg.setAttribute('height', h);
+          svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+          svg.innerHTML = '';
+
+          var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+          defs.innerHTML = '<filter id="oliviaGlow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>';
+          svg.appendChild(defs);
+
+          nodes.forEach(function(node, i) {
+            var angle = (i / TOTAL) * Math.PI * 2 - Math.PI / 2;
+            var nx = cx + Math.cos(angle) * radius;
+            var ny = cy + Math.sin(angle) * radius;
+
+            node.style.left = nx + 'px';
+            node.style.top = ny + 'px';
+
+            var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', cx);
+            line.setAttribute('y1', cy);
+            line.setAttribute('x2', nx);
+            line.setAttribute('y2', ny);
+            line.setAttribute('stroke', 'rgba(255,186,26,0.45)');
+            line.setAttribute('stroke-width', '1.5');
+            svg.appendChild(line);
+
+            var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('r', '3.5');
+            circle.setAttribute('fill', '#b87f00');
+            circle.setAttribute('filter', 'url(#oliviaGlow)');
+            var anim = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+            anim.setAttribute('dur', '2.5s');
+            anim.setAttribute('repeatCount', 'indefinite');
+            anim.setAttribute('begin', (i * 0.2) + 's');
+            var pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            pathEl.setAttribute('id', 'olivia-path-' + i);
+            pathEl.setAttribute('d', 'M' + nx + ',' + ny + ' L' + cx + ',' + cy);
+            pathEl.setAttribute('fill', 'none');
+            defs.appendChild(pathEl);
+            var mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+            mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#olivia-path-' + i);
+            anim.appendChild(mpath);
+            circle.appendChild(anim);
+            svg.appendChild(circle);
+          });
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) {
+            hub.classList.add('olivia-visible');
+            layout();
+            observer.disconnect();
+          }
+        }, { threshold: 0.1 });
+        observer.observe(hub);
+
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function() {
+            if (hub.classList.contains('olivia-visible')) layout();
+          }, 150);
+        });
+
+        nodes.forEach(function(node) {
+          node.addEventListener('mouseenter', function() {
+            nodes.forEach(function(n) { n.classList.remove('olivia-node--active', 'olivia-node--dimmed'); });
+            node.classList.add('olivia-node--active');
+            nodes.forEach(function(n) { if (n !== node) n.classList.add('olivia-node--dimmed'); });
+          });
+          node.addEventListener('mouseleave', function() {
+            nodes.forEach(function(n) { n.classList.remove('olivia-node--active', 'olivia-node--dimmed'); });
+          });
+        });
+      })();
+      </script>
+    </div>
+  </section>
+
+  <footer style="padding: 64px 0; text-align: center; border-top: 1px solid var(--border);">
+    <div class="container xl">
+      <div class="orbit-logo" style="margin-bottom: 12px; justify-content: center;">
+        <img src="../shared/assets/orbit-logo.png" alt="Orbit" />
+        Orbit <span class="product">Financeiro</span>
+      </div>
+      <p class="reg-s">Design System v1 · Variant B (light) · Produto Financeiro · 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>

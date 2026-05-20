@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- =================== SEO + META =================== -->
+<title>Software Financeiro com IA para Empresas | Orbit Gestão</title>
+<meta name="description" content="Pare de descobrir o caixa depois que ele acabou. Olívia IA responde DRE, fluxo e burn em linguagem natural. Para empresas R$ 500k+/mês e 30+ funcionários.">
+<meta name="keywords" content="DRE automático, fluxo de caixa empresarial, agente de IA financeiro, controle financeiro empresa média, software financeiro empresarial, IA financeira, DRE software">
+<link rel="canonical" href="https://mkt.orbitgestao.com.br/financeiro-variant-b">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkt.orbitgestao.com.br/financeiro-variant-b">
+<meta property="og:title" content="Orbit Gestão Financeiro — sua CFO em IA">
+<meta property="og:description" content="Pare de descobrir o caixa depois que ele acabou. Olívia IA responde sobre receita, margem e fluxo em linguagem natural.">
+<meta property="og:image" content="https://orbitgestao.com.br/images/og-financeiro.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffba1a">
+
+<link rel="icon" type="image/jpeg" href="../shared/assets/favicon.jpeg">
+<link rel="apple-touch-icon" href="../shared/assets/orbit-logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+<style>
+  :root {
+    --gold-dark:#b87f00; --gold:#ffba1a; --gold-mid:#ffca4a; --gold-light:#ffd66b; --gold-soft:#fff0c2;
+    --cream:#FFF8E6; --cream-2:#FFFAF0;
+    --black:#000; --orbit-black:#0D1117; --orbit-soft:#161B22; --orbit-card:#1C2333;
+    --bg:#FFFFFF; --surface:#FFFFFF; --surface-glass:rgba(255,255,255,.92); --surface-warm:var(--cream-2); --surface-deep:var(--orbit-black);
+    --text:#18191B; --text-2:#3F424B; --text-mid:rgba(24,25,27,.62); --text-soft:rgba(24,25,27,.42); --text-faint:rgba(24,25,27,.18);
+    --border:rgba(24,25,27,.08); --border-2:rgba(24,25,27,.14); --border-3:rgba(24,25,27,.22);
+    --success:#3FB950; --danger:#F85149;
+    --font-sans:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --r-12:12px; --r-16:16px; --r-20:20px; --r-24:24px; --r-32:32px; --r-40:40px; --r-arch:7rem;
+    --shadow-soft:0 1px 2px rgba(24,25,27,.04),0 6px 16px rgba(24,25,27,.05);
+    --shadow-card:0 1px 2px rgba(24,25,27,.04),0 12px 32px rgba(24,25,27,.08);
+    --shadow-lift:0 28px 56px -16px rgba(24,25,27,.18),0 12px 28px -12px rgba(24,25,27,.10);
+    --shadow-cta:0 15px 25px -10px rgba(255,186,26,.55), inset 0 4px 8px rgba(255,221,138,.65), inset 0 -4px 8px rgba(255,162,0,.55);
+    --shadow-cta-hover:0 18px 30px -10px rgba(255,186,26,.70), inset 0 4px 8px rgba(255,221,138,.75), inset 0 -4px 8px rgba(255,162,0,.65);
+    --ease-soft:cubic-bezier(.22,1,.36,1); --ease-snap:cubic-bezier(.4,0,.2,1);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;scroll-padding-top:80px}
+  body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.6;color:var(--text);background:var(--bg);overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--font-sans);color:var(--text);line-height:1;font-weight:700;letter-spacing:-0.025em}
+  a{text-decoration:none;color:inherit}
+  ul,ol{list-style:none}
+  img,video{max-width:100%;height:auto;display:block}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  iconify-icon{display:inline-flex}
+  strong,b{font-weight:700}
+  ::selection{background:var(--gold);color:var(--orbit-black)}
+
+  .container{width:100%;margin:0 auto;padding-left:24px;padding-right:24px}
+  .container.xl{max-width:1300px}
+  .container.lg{max-width:1180px}
+  .container.md{max-width:1024px}
+  .container.sm{max-width:760px}
+
+  /* Nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;gap:24px;padding:14px 24px;max-width:1300px;margin:0 auto;flex-wrap:wrap}
+  .orbit-logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-sans);font-weight:800;font-size:19px;letter-spacing:-0.025em;color:var(--text);line-height:1}
+  .orbit-logo img{width:32px;height:32px;object-fit:contain}
+  .orbit-logo .product{color:var(--gold-dark);font-weight:700;margin-left:2px}
+  .nav ul{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+  .nav a{padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--text-2);transition:background .25s var(--ease-soft),color .25s var(--ease-soft)}
+  .nav a:hover{background:rgba(255,186,26,.10);color:var(--gold-dark)}
+
+  /* Hero */
+  .hero{padding:24px 0 0 0;background:radial-gradient(1100px 600px at 50% -10%,rgba(255,186,26,.15),transparent 60%),var(--bg)}
+  .hero-panel{position:relative;background:var(--surface-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r-40);padding:40px 48px;overflow:hidden;box-shadow:var(--shadow-soft)}
+  .hero-pill{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.85);border:1px solid var(--border);border-radius:999px;padding:6px 18px 6px 6px;backdrop-filter:blur(8px);box-shadow:var(--shadow-soft);margin-bottom:32px}
+  .hero-pill .avatars{display:flex}
+  .hero-pill .av{width:28px;height:28px;border-radius:999px;border:2px solid #fff;margin-right:-8px;display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--orbit-black);background:linear-gradient(135deg,var(--gold-mid),var(--gold))}
+  .hero-pill .av:nth-child(2){background:linear-gradient(135deg,var(--gold-light),var(--gold-mid))}
+  .hero-pill .av:nth-child(3){background:var(--orbit-black);color:var(--gold)}
+  .hero-pill .av:last-child{margin-right:0}
+  .hero-pill .text{font-size:12px;font-weight:500;color:var(--text-2)}
+  .hero-pill .text strong{font-weight:700;color:var(--text)}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+  .hero-content{display:flex;flex-direction:column;gap:28px;max-width:620px}
+  .hero-headline{font-family:var(--font-sans);font-weight:700;font-size:clamp(40px,5vw,80px);line-height:0.98;letter-spacing:-0.035em;color:var(--text)}
+  .hero-headline em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-subhead{font-size:17px;line-height:1.55;color:var(--text-mid);max-width:520px;font-weight:400}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:8px;border-top:1px solid var(--border);padding-top:24px}
+  .hero-stat{padding:0 20px;border-right:1px solid var(--border)}
+  .hero-stat:first-child{padding-left:0}
+  .hero-stat:last-child{padding-right:0;border-right:0}
+  .hero-stat .num{font-family:var(--font-sans);font-weight:800;font-size:28px;line-height:1;letter-spacing:-0.03em;color:var(--text)}
+  .hero-stat .num em{color:var(--gold-dark);font-style:normal}
+  .hero-stat .lbl{font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px}
+
+  .hero-imageCol{position:relative}
+  .hero-imageCard{position:relative;aspect-ratio:4/5;border-radius:var(--r-arch) var(--r-arch) var(--r-24) var(--r-24);overflow:hidden;background:linear-gradient(135deg,var(--gold-light),var(--gold-mid));box-shadow:var(--shadow-lift)}
+  .hero-imageCard img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease-soft),filter 1.2s var(--ease-soft);filter:saturate(.92)}
+  .hero-imageCard:hover img{transform:scale(1.04);filter:saturate(1)}
+  .hero-imageCard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(to top,rgba(13,17,23,.65),transparent)}
+  .hero-imageCaption{position:absolute;left:22px;right:22px;bottom:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#fff;z-index:2}
+  .hero-imageCaption .label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;opacity:.85}
+  .hero-imageCaption .title{font-family:var(--font-sans);font-weight:700;font-size:22px;line-height:1.1;letter-spacing:-0.02em}
+  .hero-floating{position:absolute;left:-18px;bottom:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-16);padding:14px 18px;box-shadow:var(--shadow-card);transform:rotate(-4deg);transition:transform .6s var(--ease-soft);max-width:220px;z-index:3}
+  .hero-floating:hover{transform:rotate(0)}
+  .hero-floating .stat{font-family:var(--font-sans);font-weight:800;font-size:24px;line-height:0.95;color:var(--gold-dark);letter-spacing:-0.025em}
+  .hero-floating .label{font-size:11px;font-weight:500;color:var(--text-mid);margin-top:4px;line-height:1.4}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:700;font-size:14px;letter-spacing:-0.005em;padding:12px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .35s var(--ease-soft),background .35s var(--ease-soft),color .35s var(--ease-soft),box-shadow .35s var(--ease-soft),border-color .35s var(--ease-soft);white-space:nowrap}
+  .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .btn iconify-icon{font-size:16px;transition:transform .55s var(--ease-soft)}
+  .btn:hover iconify-icon{transform:translateX(3px)}
+  .btn--primary{background:radial-gradient(120% 140% at 50% 0%,#FFE49A 0%,#FFD24A 38%,#FFBA1A 100%);color:var(--orbit-black);box-shadow:var(--shadow-cta)}
+  .btn--primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-cta-hover)}
+  .btn--dark{background:var(--orbit-black);color:var(--cream)}
+  .btn--dark:hover{background:var(--orbit-soft);transform:translateY(-1px)}
+  .btn--ghost{background:rgba(255,255,255,.6);color:var(--text);border-color:var(--border-2)}
+  .btn--ghost:hover{background:var(--surface);border-color:var(--border-3)}
+  .btn--lg{padding:14px 26px;font-size:15px}
+  .btn--xl{padding:16px 30px;font-size:16px}
+
+  /* Section */
+  .section{padding:96px 0;border-top:1px solid var(--border)}
+  .section h2{font-family:var(--font-sans);font-weight:700;font-size:clamp(32px,4vw,56px);letter-spacing:-0.035em;line-height:0.98;color:var(--text);margin-bottom:12px}
+  .section h2 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .section .lede{font-size:17px;color:var(--text-mid);max-width:640px;margin-bottom:48px;line-height:1.55;font-weight:400}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--gold-dark);margin-bottom:16px}
+  .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+
+  /* Faixa credibilidade */
+  .credibility{padding:64px 0;background:var(--cream-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .credibility h2{text-align:center;font-size:clamp(20px,2.4vw,28px);font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.02em}
+  .credibility .sub{text-align:center;font-size:13px;color:var(--text-mid);margin-bottom:40px}
+  .credibility .stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1024px;margin:0 auto}
+  @media(min-width:768px){.credibility .stats{grid-template-columns:repeat(4,1fr)}}
+  .credibility .stat{text-align:center}
+  .credibility .stat .num{font-family:var(--font-sans);font-weight:800;font-size:clamp(36px,4vw,52px);color:var(--gold-dark);letter-spacing:-0.035em;line-height:1}
+  .credibility .stat .lbl{font-size:13px;color:var(--text-mid);font-weight:500;margin-top:8px;line-height:1.4}
+  .marquee{overflow:hidden;border-top:1px solid var(--border);padding:24px 0;margin-top:48px;background:var(--cream)}
+  .marquee-track{display:flex;gap:48px;width:max-content;animation:marquee 28s linear infinite;align-items:center}
+  .marquee-track span{font-family:var(--font-sans);font-weight:700;font-size:18px;letter-spacing:-0.02em;line-height:1;color:var(--text);white-space:nowrap}
+  .marquee-track span.--gold{color:var(--gold-dark)}
+  .marquee-track .dot{width:6px;height:6px;border-radius:999px;background:var(--gold);flex-shrink:0}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Para quem é */
+  .pci-grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:880px;margin:0 auto}
+  @media(min-width:768px){.pci-grid{grid-template-columns:1fr 1fr}}
+  .pci-item{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-16);transition:border-color .3s,transform .3s}
+  .pci-item:hover{border-color:rgba(255,186,26,.45);transform:translateY(-2px)}
+  .pci-item .check{flex-shrink:0;width:28px;height:28px;border-radius:999px;background:var(--gold);color:var(--orbit-black);display:grid;place-items:center}
+  .pci-item .check iconify-icon{font-size:15px;font-weight:700}
+  .pci-item .text{font-size:14px;color:var(--text);line-height:1.5;padding-top:2px}
+  .pci-item .text strong{font-weight:700}
+  .anti-target{margin-top:32px;padding:24px;background:var(--cream);border:1px dashed var(--border-2);border-radius:var(--r-20);max-width:880px;margin-left:auto;margin-right:auto}
+  .anti-target .label{font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px}
+  .anti-target ul{display:grid;grid-template-columns:1fr;gap:10px;font-size:13px;color:var(--text-mid)}
+  @media(min-width:768px){.anti-target ul{grid-template-columns:repeat(3,1fr)}}
+  .anti-target li{display:flex;align-items:flex-start;gap:8px}
+  .anti-target li::before{content:"✕";color:var(--danger);font-weight:700;flex-shrink:0;margin-top:1px}
+
+  /* Vídeo */
+  .video-wrap{position:relative;aspect-ratio:16/9;border-radius:var(--r-24);overflow:hidden;background:linear-gradient(135deg,var(--gold-light),var(--gold-mid));cursor:pointer;max-width:880px;margin:0 auto}
+  .video-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,17,23,.55),transparent 50%);pointer-events:none}
+  .video-wrap .play-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:9999px;background:var(--gold);color:var(--orbit-black);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-cta);transition:transform .3s var(--ease-soft);z-index:2}
+  .video-wrap:hover .play-btn{transform:translate(-50%,-50%) scale(1.08)}
+  .video-wrap .caption{position:absolute;left:24px;right:24px;bottom:24px;color:#fff;z-index:2}
+  .video-wrap .caption .small{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:6px}
+  .video-wrap .caption .title{font-family:var(--font-sans);font-weight:700;font-size:20px;letter-spacing:-0.02em;line-height:1.2}
+
+  /* Benefícios */
+  .benefits{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:900px){.benefits{grid-template-columns:1fr 1fr}}
+  .benefit-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:28px;transition:border-color .3s,transform .3s,box-shadow .3s}
+  .benefit-card:hover{border-color:rgba(255,186,26,.45);transform:translateY(-3px);box-shadow:var(--shadow-card)}
+  .benefit-head{display:flex;gap:16px;margin-bottom:16px}
+  .benefit-icon{flex-shrink:0;width:48px;height:48px;border-radius:14px;background:rgba(255,186,26,.10);border:1px solid rgba(255,186,26,.30);display:grid;place-items:center;color:var(--gold-dark)}
+  .benefit-icon iconify-icon{font-size:22px}
+  .benefit-title{font-family:var(--font-sans);font-weight:700;font-size:20px;letter-spacing:-0.02em;color:var(--text);margin-bottom:4px}
+  .benefit-sub{font-size:13px;color:var(--text-mid);line-height:1.5;font-weight:500}
+  .benefit-body{font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:20px}
+  .benefit-mockup{background:var(--cream-2);border:1px solid var(--border);border-radius:var(--r-16);padding:14px}
+
+  /* Mini mockups dentro dos benefícios */
+  .mockup-chat-bubble{padding:10px 12px;border-radius:10px;font-size:12px;line-height:1.45}
+  .mockup-chat-bubble.--user{background:rgba(24,25,27,.06);color:var(--text-2)}
+  .mockup-chat-bubble.--olivia{background:rgba(255,186,26,.10);border:1px solid rgba(255,186,26,.30);color:var(--text)}
+  .mockup-chat-bubble strong{color:var(--gold-dark);font-weight:700;display:block;margin-bottom:4px}
+
+  .mockup-approval{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;font-size:12px;background:rgba(24,25,27,.04)}
+  .mockup-approval .num{width:24px;height:24px;border-radius:999px;display:grid;place-items:center;font-size:11px;font-weight:800}
+  .mockup-approval .num.--done{background:rgba(63,185,80,.18);color:var(--success)}
+  .mockup-approval .num.--pending{background:var(--gold);color:var(--orbit-black);animation:pulseSubtle 2s infinite}
+  .mockup-approval .label{flex:1;color:var(--text);font-weight:600}
+  .mockup-approval .meta{color:var(--text-mid);font-size:11px}
+  @keyframes pulseSubtle{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+  .mockup-integration{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative}
+  .mockup-integration > div{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center}
+  .mockup-integration > div.--center{background:var(--gold);border-color:rgba(255,186,26,.45)}
+  .mockup-integration .mod{font-size:11px;font-weight:700;color:var(--gold-dark)}
+  .mockup-integration > div.--center .mod{color:var(--orbit-black)}
+  .mockup-integration .sub{font-size:10px;color:var(--text-mid);margin-top:2px}
+  .mockup-integration > div.--center .sub{color:rgba(13,17,23,.7)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-20);padding:28px;min-height:200px;display:flex;flex-direction:column;gap:14px;transition:transform .4s var(--ease-soft),border-color .4s var(--ease-soft)}
+  .step-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .step-num{width:44px;height:44px;border-radius:999px;background:rgba(255,186,26,.14);color:var(--gold-dark);display:grid;place-items:center;font-weight:800;font-size:16px}
+  .step-week{font-size:11px;font-weight:700;color:var(--gold-dark);letter-spacing:0.14em;text-transform:uppercase}
+  .step-title{font-family:var(--font-sans);font-weight:700;font-size:22px;color:var(--text);letter-spacing:-0.02em}
+  .step-text{font-size:14px;color:var(--text-mid);line-height:1.55}
+
+  /* Cases */
+  .cases{display:grid;grid-template-columns:1fr;gap:16px;max-width:1024px;margin:0 auto}
+  @media(min-width:768px){.cases{grid-template-columns:1fr 1fr}}
+  .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:32px;position:relative;overflow:hidden}
+  .case-quote-icon{position:absolute;top:24px;right:24px;color:var(--gold-soft);font-size:64px;line-height:1;font-family:Georgia,serif;font-weight:700;opacity:.7}
+  .case-sector{font-size:11px;font-weight:700;color:var(--gold-dark);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;position:relative;z-index:1}
+  .case-quote{font-family:var(--font-sans);font-weight:600;font-size:19px;line-height:1.4;letter-spacing:-0.015em;color:var(--text);margin-bottom:20px;position:relative;z-index:1}
+  .case-author{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .case-avatar{width:42px;height:42px;border-radius:999px;background:linear-gradient(135deg,var(--gold-mid),var(--gold));color:var(--orbit-black);display:grid;place-items:center;font-weight:800;font-size:13px}
+  .case-author-name{font-size:14px;font-weight:700;color:var(--text)}
+  .case-author-meta{font-size:12px;color:var(--text-mid)}
+  .case-result{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .case-result .lbl{font-size:12px;color:var(--text-mid);font-weight:500}
+  .case-result .val{font-family:var(--font-sans);font-weight:800;font-size:18px;color:var(--gold-dark);letter-spacing:-0.02em}
+
+  /* Comparativo */
+  .compare-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);overflow:hidden;max-width:1024px;margin:0 auto}
+  .compare-head{display:grid;grid-template-columns:5fr 4fr 3fr;background:var(--cream-2);padding:16px 24px;border-bottom:1px solid var(--border)}
+  .compare-head > div{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mid)}
+  .compare-head > div:nth-child(2){color:var(--gold-dark)}
+  .compare-row{display:grid;grid-template-columns:5fr 4fr 3fr;padding:18px 24px;border-bottom:1px solid var(--border);gap:16px;align-items:center}
+  .compare-row:last-child{border-bottom:0}
+  .compare-row .col-hoje{color:var(--text-mid);font-size:14px}
+  .compare-row .col-orbit{color:var(--text);font-size:14px;font-weight:600}
+  .compare-row .col-orbit .hl{color:var(--gold-dark)}
+  .compare-row .col-ganho{color:var(--text-mid);font-size:13px}
+  .compare-foot{padding:20px 24px;text-align:center;font-size:14px;background:var(--cream)}
+  .compare-foot strong{color:var(--gold-dark);font-weight:700}
+  @media(max-width:767px){.compare-head,.compare-row{grid-template-columns:1fr}.compare-head > div{font-size:10px;padding:4px 0}}
+
+  /* FAQ */
+  .faq-list{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:4px 28px;max-width:880px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--border)}
+  .faq-item:last-child{border-bottom:0}
+  .faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:var(--font-sans);font-weight:700;font-size:17px;line-height:1.3;letter-spacing:-0.015em;color:var(--text);text-align:left;cursor:pointer;list-style:none}
+  .faq-question::-webkit-details-marker{display:none}
+  .faq-question iconify-icon{font-size:22px;color:var(--text-mid);transition:transform .3s var(--ease-soft);flex-shrink:0}
+  .faq-item[open] .faq-question iconify-icon{transform:rotate(180deg);color:var(--gold-dark)}
+  .faq-answer{padding:0 0 22px 0;font-size:15px;color:var(--text-mid);line-height:1.6;max-width:760px;font-weight:400}
+  .faq-answer strong{color:var(--text);font-weight:700}
+
+  /* CTA dark */
+  .cta-final{padding:64px 0;background:var(--bg)}
+  .cta-dark{position:relative;background:var(--surface-deep);color:var(--cream);border-radius:var(--r-32);padding:56px;overflow:hidden}
+  .cta-dark::before{content:"";position:absolute;width:360px;height:360px;right:-100px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(255,186,26,.35),transparent 60%);pointer-events:none}
+  .cta-dark::after{content:"";position:absolute;width:280px;height:280px;left:-80px;top:-80px;background:radial-gradient(circle,rgba(255,186,26,.20),transparent 60%);pointer-events:none}
+  .cta-dark > *{position:relative;z-index:1}
+  .cta-dark .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--gold);color:var(--orbit-black);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;line-height:1;margin-bottom:20px}
+  .cta-dark h3{font-family:var(--font-sans);font-weight:700;font-size:clamp(28px,3.6vw,52px);color:var(--cream);line-height:1.05;letter-spacing:-0.03em;max-width:760px;margin-bottom:20px}
+  .cta-dark h3 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-light));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cta-dark p{color:rgba(255,244,221,.78);max-width:560px;margin-bottom:30px;line-height:1.6;font-weight:400;font-size:16px}
+  .cta-dark .micro{margin-top:18px;font-size:12px;color:rgba(255,244,221,.5)}
+
+  /* Footer */
+  .footer{padding:48px 0 28px;border-top:1px solid var(--border);background:var(--cream-2)}
+  .footer-inner{display:flex;flex-direction:column;gap:20px;align-items:flex-start;justify-content:space-between}
+  @media(min-width:768px){.footer-inner{flex-direction:row;align-items:center}}
+  .footer-brand{display:flex;align-items:center;gap:12px}
+  .footer-brand img{width:42px;height:42px;object-fit:contain}
+  .footer-brand p{margin:0}
+  .footer-brand .name{font-size:14px;font-weight:800;color:var(--text)}
+  .footer-brand .sub{font-size:11px;color:var(--text-mid)}
+  .footer-discl{font-size:11px;color:var(--text-mid);max-width:480px;line-height:1.5}
+  .footer-bot{margin-top:28px;padding-top:18px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;font-size:11px;color:var(--text-soft);font-family:ui-monospace,monospace}
+  @media(min-width:640px){.footer-bot{flex-direction:row;justify-content:space-between}}
+
+  /* Sticky CTA mobile */
+  .sticky-cta{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease}
+  .sticky-cta.--show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;background:var(--gold);color:var(--orbit-black);border-radius:999px;font-weight:800;font-size:14px;box-shadow:var(--shadow-cta);text-align:center}
+  @media(min-width:768px){.sticky-cta{display:none}}
+
+  /* Chat FAB */
+  .chat-fab{position:fixed;right:20px;bottom:20px;z-index:55;width:62px;height:62px;border-radius:9999px;background:var(--gold);color:var(--orbit-black);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 28px -8px rgba(255,186,26,.5),0 0 0 4px rgba(255,186,26,.15);transition:transform .3s,box-shadow .3s;border:none}
+  .chat-fab:hover{transform:scale(1.05);box-shadow:0 14px 32px -8px rgba(255,186,26,.65),0 0 0 6px rgba(255,186,26,.20)}
+  @media(max-width:767px){.chat-fab{bottom:88px}}
+  .chat-fab__pulse{position:absolute;inset:-6px;border-radius:9999px;border:2px solid rgba(255,186,26,.5);animation:pulseRing 1.8s ease-out infinite}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
+
+  /* Responsive */
+  @media(max-width:1024px){
+    .hero-panel{padding:28px 24px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-imageCol{max-width:460px;margin:0 auto;width:100%}
+    .hero-floating{left:8px}
+  }
+  @media(max-width:768px){
+    .section{padding:64px 0}
+    .section h2{font-size:32px}
+    .hero-headline{font-size:38px}
+    .hero-stats{grid-template-columns:1fr 1fr}
+    .cta-dark{padding:32px}
+  }
+</style>
+</head>
+
+<body data-variant="b">
+
+<!-- ════════════ NAV ════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="orbit-logo">
+      <img src="../shared/assets/orbit-logo.png" alt="Orbit" />
+      Orbit <span class="product">Financeiro</span>
+    </a>
+    <ul>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#comparativo">Comparativo</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="nav" class="btn btn--primary btn--sm" style="margin-left:8px;padding:9px 18px;font-size:13px">
+      Falar com a Olívia
+      <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+    </a>
+  </div>
+</nav>
+
+<!-- ════════════ HERO (split) ════════════ -->
+<section class="hero">
+  <div class="container xl">
+    <div class="hero-panel">
+      <div class="hero-pill">
+        <div class="avatars">
+          <span class="av">C</span>
+          <span class="av">F</span>
+          <span class="av">O</span>
+        </div>
+        <span class="text"><strong>+3.045 empresas</strong> · para R$ 500k+/mês e 30+ funcionários</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-headline">
+            Pare de descobrir o<br>
+            caixa <em>depois</em> que<br>
+            ele já acabou.
+          </h1>
+          <p class="hero-subhead">
+            Substitua planilha, ContaAzul e o financeiro improvisado por uma plataforma com IA
+            que mostra DRE, fluxo, burn rate e runway em segundos. Olívia responde em linguagem natural.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="hero" class="btn btn--primary btn--lg">
+              Falar com a Olívia agora
+              <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+            </a>
+            <a href="#video-demo" class="btn btn--ghost btn--lg">
+              <iconify-icon icon="solar:play-circle-linear"></iconify-icon>
+              Ver Olívia em 30s
+            </a>
+          </div>
+          <p style="font-size:12px;color:var(--text-soft);margin-top:-12px">Resposta em até 1 minuto. Sem cartão. Sem instalação.</p>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="num">+<em>3.045</em></div>
+              <div class="lbl">empresas</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num"><em>14,8</em>m</div>
+              <div class="lbl">runway médio</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num"><em>3</em>x</div>
+              <div class="lbl">fechamento + rápido</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-imageCol">
+          <div class="hero-imageCard">
+            <img src="https://orbitgestao.com.br/images/olivia.png" alt="Olívia — CFO em IA da Orbit Gestão respondendo em linguagem natural" />
+            <div class="hero-imageCaption">
+              <div>
+                <div class="label">Quem está pronto</div>
+                <div class="title">decide com Olívia.</div>
+              </div>
+              <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="hero-img" class="btn btn--primary" style="width:44px;height:44px;padding:0;border-radius:999px" aria-label="Falar com Olívia">
+                <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+              </a>
+            </div>
+          </div>
+          <div class="hero-floating">
+            <div class="stat">DRE em min</div>
+            <div class="label">não em semanas. Auditável e em linguagem natural.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 3. CREDIBILIDADE ════════════ -->
+<section class="credibility">
+  <div class="container xl">
+    <h2>3.045+ empresas já tiraram o financeiro da planilha</h2>
+    <p class="sub">Médias observadas em clientes Orbit Gestão nos primeiros 90 dias de uso</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">85%</div>
+        <div class="lbl">menos erros de lançamento</div>
+      </div>
+      <div class="stat">
+        <div class="num">80%</div>
+        <div class="lbl">menos tempo em análise financeira</div>
+      </div>
+      <div class="stat">
+        <div class="num">65%</div>
+        <div class="lbl">mais produtividade do time financeiro</div>
+      </div>
+      <div class="stat">
+        <div class="num">40%</div>
+        <div class="lbl">menos tempo em processos manuais</div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>3.045+ empresas</span><span class="dot"></span>
+      <span class="--gold">LGPD compliant</span><span class="dot"></span>
+      <span>ISO 9001</span><span class="dot"></span>
+      <span class="--gold">Open Finance BR</span><span class="dot"></span>
+      <span>Olívia · IA financeira</span><span class="dot"></span>
+      <span>3.045+ empresas</span><span class="dot"></span>
+      <span class="--gold">LGPD compliant</span><span class="dot"></span>
+      <span>ISO 9001</span><span class="dot"></span>
+      <span class="--gold">Open Finance BR</span><span class="dot"></span>
+      <span>Olívia · IA financeira</span><span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 4. PARA QUEM É ════════════ -->
+<section class="section" id="para-quem-e">
+  <div class="container xl">
+    <div style="text-align:center;max-width:640px;margin:0 auto 40px">
+      <span class="eyebrow">04 — Para quem é</span>
+      <h2>Quem ganha mais com o <em>Orbit Financeiro</em></h2>
+      <p class="lede" style="margin:0 auto">Não é qualquer empresa. É a sua, se você se reconhece aqui:</p>
+    </div>
+
+    <div class="pci-grid">
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text"><strong>R$ 500.000+/mês de faturamento</strong> e <strong>30 ou mais funcionários</strong>.</span>
+      </div>
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text">Você (ou seu CFO) ainda monta o fluxo de caixa em <strong>planilha toda semana</strong>.</span>
+      </div>
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text">DRE só sai <strong>15-30 dias depois</strong> do mês fechado.</span>
+      </div>
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text">Já <strong>estourou o ContaAzul/Omie/Bling</strong>, mas TOTVS/Sankhya é caro demais.</span>
+      </div>
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text">Decisões financeiras dependem da <strong>memória da equipe</strong>, não do sistema.</span>
+      </div>
+      <div class="pci-item">
+        <span class="check"><iconify-icon icon="solar:check-read-linear"></iconify-icon></span>
+        <span class="text">Quer falar com sua área financeira <strong>sem precisar "pedir" relatório</strong>.</span>
+      </div>
+    </div>
+
+    <div class="anti-target">
+      <p class="label">Quem NÃO se beneficia (e está tudo bem)</p>
+      <ul>
+        <li>Microempresa, MEI ou autônomo — Orbit é overkill.</li>
+        <li>Empresa que já tem ERP enterprise (SAP, Oracle) com BI dedicado.</li>
+        <li>Quem quer só emissor de nota fiscal — não é nosso foco.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 5. VÍDEO DEMO ════════════ -->
+<section class="section" id="video-demo" style="border-top:0">
+  <div class="container xl">
+    <div style="text-align:center;max-width:680px;margin:0 auto 32px">
+      <span class="eyebrow">05 — Vídeo</span>
+      <h2>Veja a Olívia respondendo em <em>30 segundos</em></h2>
+      <p class="lede" style="margin:0 auto">Pergunta em linguagem natural → resposta com DRE, gráfico e contexto. Em segundos.</p>
+    </div>
+
+    <div class="video-wrap" data-swap="video-demo-30s">
+      <button class="play-btn" aria-label="Reproduzir demo">
+        <iconify-icon icon="solar:play-bold" style="font-size:32px"></iconify-icon>
+      </button>
+      <div class="caption">
+        <p class="small">Demo · 30 segundos</p>
+        <p class="title">"Como ficou o meu DRE comparado ao mês passado?"</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:24px">
+      <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="apos-video" class="btn btn--ghost" style="border-color:transparent;color:var(--gold-dark);font-weight:700">
+        Quero testar com meus dados
+        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 6. BENEFÍCIOS ════════════ -->
+<section class="section" id="beneficios">
+  <div class="container xl">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px">
+      <span class="eyebrow">06 — Benefícios</span>
+      <h2>O que muda quando o financeiro vira <em>inteligência</em></h2>
+    </div>
+
+    <div class="benefits">
+
+      <!-- B1 -->
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="benefit-icon"><iconify-icon icon="solar:chat-round-dots-linear"></iconify-icon></div>
+          <div>
+            <h3 class="benefit-title">Olívia, sua IA financeira</h3>
+            <p class="benefit-sub">Pergunte em linguagem natural. Receba resposta com gráfico, contexto e drill-down.</p>
+          </div>
+        </div>
+        <p class="benefit-body">Quanto ganhei esse mês? Qual cliente está atrasando? Meu fluxo de caixa cabe na próxima folha? A Olívia responde em segundos — em linguagem humana, com base nos seus dados reais.</p>
+        <div class="benefit-mockup" style="display:flex;flex-direction:column;gap:8px" data-swap="screenshot-olivia-chat">
+          <div class="mockup-chat-bubble --user">Receita por cliente em maio</div>
+          <div class="mockup-chat-bubble --olivia">
+            <strong>Top 3 clientes (mai/2026)</strong>
+            1. ACME · R$ 182K <span style="color:var(--success);font-weight:700">+22%</span><br>
+            2. Veridian · R$ 145K <span style="color:var(--success);font-weight:700">+8%</span><br>
+            3. Lumina · R$ 96K <span style="color:var(--danger);font-weight:700">-4%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- B2 -->
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="benefit-icon"><iconify-icon icon="solar:graph-up-linear"></iconify-icon></div>
+          <div>
+            <h3 class="benefit-title">DRE, fluxo de caixa e burn rate prontos</h3>
+            <p class="benefit-sub">Operacional e gerencial conectados. Sem fechamento manual.</p>
+          </div>
+        </div>
+        <p class="benefit-body">Operacional (contas a pagar/receber, conciliação, aprovações) e controladoria (DRE, orçamento, simulação) na mesma plataforma. Fluxo projeta automaticamente — burn rate, runway e days cash on hand vivos.</p>
+        <div class="benefit-mockup" data-swap="screenshot-fluxo-caixa">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <p style="font-size:11px;font-weight:700;color:var(--text)">Fluxo projetado · 6m</p>
+            <span style="font-size:10px;font-weight:700;background:rgba(63,185,80,.12);color:var(--success);border:1px solid rgba(63,185,80,.30);padding:2px 8px;border-radius:999px">Runway 14,8m</span>
+          </div>
+          <svg viewBox="0 0 280 80" style="width:100%;height:auto">
+            <defs><linearGradient id="benefAreaB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffba1a" stop-opacity="0.45"/><stop offset="1" stop-color="#ffba1a" stop-opacity="0"/></linearGradient></defs>
+            <path fill="url(#benefAreaB)" d="M 0 60 L 47 50 L 94 55 L 141 30 L 188 38 L 235 22 L 280 12 L 280 80 L 0 80 Z"/>
+            <polyline stroke="#b87f00" stroke-width="2" fill="none" stroke-linecap="round" points="0,60 47,50 94,55 141,30 188,38 235,22 280,12"/>
+            <circle cx="280" cy="12" r="3.5" fill="#ffba1a" stroke="#b87f00" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- B3 -->
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="benefit-icon"><iconify-icon icon="solar:check-circle-linear"></iconify-icon></div>
+          <div>
+            <h3 class="benefit-title">Aprovações no clique, sem WhatsApp</h3>
+            <p class="benefit-sub">Workflow configurável por valor, centro de custo e fornecedor.</p>
+          </div>
+        </div>
+        <p class="benefit-body">Cada compra ou pagamento passa por aprovador certo, com histórico e trilha de auditoria. Acabou aprovação "pelo WhatsApp" sem rastro.</p>
+        <div class="benefit-mockup" style="display:flex;flex-direction:column;gap:6px" data-swap="screenshot-aprovacoes">
+          <div class="mockup-approval">
+            <span class="num --done"><iconify-icon icon="solar:check-circle-bold"></iconify-icon></span>
+            <span class="label">Solicitação · CC Marketing</span>
+            <span class="meta">R$ 12,4K</span>
+          </div>
+          <div class="mockup-approval">
+            <span class="num --done"><iconify-icon icon="solar:check-circle-bold"></iconify-icon></span>
+            <span class="label">Aprovador 1 · Gerente</span>
+            <span class="meta">há 12min</span>
+          </div>
+          <div class="mockup-approval" style="background:rgba(255,186,26,.12);border:1px solid rgba(255,186,26,.30)">
+            <span class="num --pending">2</span>
+            <span class="label">Aprovador 2 · Diretor Fin</span>
+            <span class="meta" style="color:var(--gold-dark);font-weight:700">pendente</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- B4 -->
+      <div class="benefit-card">
+        <div class="benefit-head">
+          <div class="benefit-icon"><iconify-icon icon="solar:branching-paths-up-linear"></iconify-icon></div>
+          <div>
+            <h3 class="benefit-title">Conectado com CRM, RH e Processos</h3>
+            <p class="benefit-sub">Sua margem por cliente em uma única tela.</p>
+          </div>
+        </div>
+        <p class="benefit-body">O lead que virou cliente no CRM já aparece no financeiro. A folha do RH alimenta o DRE. O processo de compra fala com Contas a Pagar. Tudo integrado nativamente — sem Zapier, sem integração paga.</p>
+        <div class="benefit-mockup" data-swap="screenshot-integracao">
+          <div class="mockup-integration">
+            <div><p class="mod">CRM</p><p class="sub">Leads · Pipeline</p></div>
+            <div class="--center"><p class="mod">Financeiro</p><p class="sub">Olívia · DRE</p></div>
+            <div><p class="mod">RH</p><p class="sub">Folha · Cargos</p></div>
+            <div><p class="mod">Processos</p><p class="sub">Aprovações · Compras</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 7. COMO FUNCIONA ════════════ -->
+<section class="section" id="como-funciona">
+  <div class="container xl">
+    <div style="text-align:center;max-width:640px;margin:0 auto 40px">
+      <span class="eyebrow">07 — Como funciona</span>
+      <h2>Sair da planilha em <em>3 passos</em></h2>
+      <p class="lede" style="margin:0 auto">Implementação guiada por especialistas Orbit. Resultado mensurável em 30 dias.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <p class="step-week">Semana 1</p>
+        <h3 class="step-title">Diagnóstico</h3>
+        <p class="step-text">Equipe Orbit revisa seu plano de contas, importa o histórico financeiro e mapeia o fluxo atual.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <p class="step-week">Semana 2</p>
+        <h3 class="step-title">Setup com Olívia</h3>
+        <p class="step-text">Configuramos contas, fornecedores, centros de custo, aprovadores. Olívia aprende com seu histórico.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <p class="step-week">Semanas 3-4</p>
+        <h3 class="step-title">Go-live e treinamento</h3>
+        <p class="step-text">Time treinado em 4h. Você começa a perguntar para Olívia no mesmo dia.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="passos" class="btn btn--primary btn--lg">
+        Falar com a Olívia agora
+        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 8. CASES ════════════ -->
+<section class="section">
+  <div class="container xl">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+      <span class="eyebrow">08 — Cases</span>
+      <h2>Quem já saiu da <em>planilha</em></h2>
+    </div>
+
+    <div class="cases">
+      <article class="case-card">
+        <span class="case-quote-icon">"</span>
+        <p class="case-sector">Indústria de embalagens · RJ</p>
+        <blockquote class="case-quote">"Eu não consultava DRE há 4 meses porque demorava 2 dias para fechar. Agora consulto todo dia, na hora."</blockquote>
+        <div class="case-author">
+          <div class="case-avatar" data-swap="foto-cliente-1">CF</div>
+          <div>
+            <p class="case-author-name">CFO · Diretoria Financeira</p>
+            <p class="case-author-meta">65 funcionários · R$ 1,2M/mês</p>
+          </div>
+        </div>
+        <div class="case-result">
+          <span class="lbl">Fechamento mensal</span>
+          <span class="val">12 dias → 3 dias</span>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <span class="case-quote-icon">"</span>
+        <p class="case-sector">Consultoria empresarial · SP</p>
+        <blockquote class="case-quote">"A Olívia me poupou de contratar um analista financeiro júnior. Pergunto e ela responde com gráfico."</blockquote>
+        <div class="case-author">
+          <div class="case-avatar" data-swap="foto-cliente-2">SF</div>
+          <div>
+            <p class="case-author-name">Sócio-fundador</p>
+            <p class="case-author-meta">42 funcionários · R$ 800k/mês</p>
+          </div>
+        </div>
+        <div class="case-result">
+          <span class="lbl">Time financeiro</span>
+          <span class="val">economia de 1 FTE</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 9. COMPARATIVO ════════════ -->
+<section class="section" id="comparativo">
+  <div class="container xl">
+    <div style="text-align:center;max-width:680px;margin:0 auto 40px">
+      <span class="eyebrow">09 — Comparativo</span>
+      <h2>Por que sair de <em>4 ferramentas</em> para 1</h2>
+      <p class="lede" style="margin:0 auto">Quanto custa o seu "patchwork" financeiro hoje?</p>
+    </div>
+
+    <div class="compare-table">
+      <div class="compare-head">
+        <div>Hoje você usa</div>
+        <div>Orbit no lugar dele</div>
+        <div>Ganho</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-hoje">ContaAzul + planilhas <span style="opacity:.6">(limite de funcionalidade)</span></div>
+        <div class="col-orbit">Operacional + DRE + projeção <span class="hl">tudo no Orbit</span></div>
+        <div class="col-ganho">Visão única, sem export/import</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-hoje">Excel para fluxo de caixa</div>
+        <div class="col-orbit">Fluxo de caixa projetado <span class="hl">automático</span></div>
+        <div class="col-ganho">Sem erro de fórmula, sem planilha quebrada</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-hoje">WhatsApp para aprovar pagamentos</div>
+        <div class="col-orbit">Workflow de aprovação <span class="hl">rastreado</span></div>
+        <div class="col-ganho">Compliance + histórico auditável</div>
+      </div>
+      <div class="compare-row">
+        <div class="col-hoje">Analista financeiro respondendo perguntas básicas</div>
+        <div class="col-orbit">Olívia IA responde <span class="hl">em segundos</span></div>
+        <div class="col-ganho">Time foca em estratégia</div>
+      </div>
+      <div class="compare-foot">
+        <strong>Soma o custo das ferramentas + horas perdidas + erro humano</strong> = ROI do Orbit em 90 dias.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 10. FAQ ════════════ -->
+<section class="section" id="faq">
+  <div class="container xl">
+    <div style="text-align:center;max-width:640px;margin:0 auto 40px">
+      <span class="eyebrow">10 — FAQ</span>
+      <h2>Perguntas <em>frequentes</em></h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          Funciona se já uso ContaAzul/Omie/Bling?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">Sim. Importamos seu histórico no setup. A migração é guiada por especialistas Orbit — você não fica sem operação um único dia.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          A Olívia entende minhas perguntas em português?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">Sim. Olívia foi treinada em português brasileiro e entende terminologia financeira local (regime caixa/competência, DRE gerencial, plano de contas brasileiro).</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          Meus dados ficam seguros?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">Sim. Dados criptografados em trânsito e em repouso. Conformidade com LGPD. Acessos por perfil e trilha de auditoria completa.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          Preciso de um time de TI para implantar?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">Não. A implantação é guiada pela equipe Orbit. Em média leva 3-4 semanas para ir ao ar com tudo configurado.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          Quanto custa?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">O preço varia por porte e número de usuários. Para empresas no perfil ICP (R$ 500k+/30+), a faixa típica fica entre <strong>R$ 1.500 e R$ 4.500/mês</strong> — menos do que o custo somado das ferramentas que substitui. Fale com a Olívia para uma estimativa exata.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          E se eu já tenho ERP grande (TOTVS, SAP)?
+          <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+        </summary>
+        <div class="faq-answer">Nesse caso o Orbit complementa: você usa o ERP para fiscal/folha e o Orbit para gestão executiva (DRE gerencial, Olívia, CRM, BSC). Vários clientes operam assim.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 11. CTA FINAL ════════════ -->
+<section class="cta-final">
+  <div class="container xl">
+    <div class="cta-dark">
+      <span class="badge">Olívia · IA financeira</span>
+      <h3>Pronto para parar de <em>decidir financeiro no escuro?</em></h3>
+      <p>Fale com a Olívia agora — em até 1 minuto ela entende seu cenário e agenda uma demonstração com nosso especialista.</p>
+      <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="final" class="btn btn--primary btn--xl">
+        Falar com a Olívia
+        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+      </a>
+      <p class="micro">Sem cadastro complicado. Sem cartão de crédito. Você decide se quer agendar.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="footer">
+  <div class="container xl">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../shared/assets/orbit-logo.png" alt="Orbit" />
+        <div>
+          <p class="name">Orbit Gestão</p>
+          <p class="sub">Financeiro · IA · 3.045+ empresas</p>
+        </div>
+      </div>
+      <p class="footer-discl">Os dados de performance são médias dos clientes Orbit Gestão. Resultados individuais variam por porte e segmento.</p>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Orbit Gestão. Todos os direitos reservados.</span>
+      <span>variant-b · light · jakarta · iconify-solar</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Sticky CTA mobile -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="sticky">
+    Falar com a Olívia
+    <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+  </a>
+</div>
+
+<!-- Floating chat -->
+<a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="fab" class="chat-fab" aria-label="Falar com a Olívia">
+  <span class="chat-fab__pulse"></span>
+  <iconify-icon icon="solar:chat-round-dots-linear" style="font-size:26px"></iconify-icon>
+</a>
+
+<script>
+// Sticky CTA mobile (após 30% de scroll)
+(function(){
+  var el = document.getElementById('stickyCta');
+  if (!el) return;
+  function check(){
+    var sh = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - window.innerHeight;
+    if (sh <= 0) return;
+    var pct = ((window.pageYOffset || document.documentElement.scrollTop) / sh) * 100;
+    el.classList.toggle('--show', pct >= 30 && pct <= 92);
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
+})();
+</script>
+
+<!-- Tracking config -->
+<script>
+  window.__pbqph = window.__pbqph || {};
+  window.__pbqph.config = {
+    webhookUrl: '',  // <— SWAP
+    chatUrl: 'https://demonstracao.orbitgestao.com.br/chat',
+    rootDomain: '.orbitgestao.com.br',
+    debug: false
+  };
+</script>
+<script src="../shared/js/analytics.js?v=1" defer></script>
+<script src="../shared/js/form.js?v=1" defer></script>
+
+</body>
+</html>
