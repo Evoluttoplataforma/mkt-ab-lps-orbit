@@ -1,0 +1,9 @@
+# Cloudflare Pages — config forçada
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+
+name = "mkt-ab-lps-orbit"
+compatibility_date = "2025-05-20"
+
+# Cloudflare Pages: usa public/ como root de deploy.
+# Sem isso, o painel default sobe o repo inteiro a partir da raiz e bate 404.
+pages_build_output_dir = "public"
