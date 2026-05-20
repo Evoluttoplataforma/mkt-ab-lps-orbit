@@ -257,7 +257,7 @@
   }
   function goChat(opts) {
     opts = opts || {};
-    var url = buildChatUrl(opts.params);
+    var url = opts.url || buildChatUrl(opts.params);
     var origin = opts.origin || 'cta';
     push({
       event: 'chat_abriu',
@@ -269,23 +269,22 @@
       destination: url,
       ts: Date.now()
     });
-    // sendBeacon não bloqueia navegação; o push acima já é síncrono
-    // pequeno delay garante o pixel client-side se atrelado a tag
+    // delay pequeno garante GTM/GA4 tags dispararem antes da navegação
     setTimeout(function () {
-      if (opts.target === '_blank') {
-        window.open(url, '_blank', 'noopener');
-      } else {
-        location.href = url;
-      }
-    }, 60);
+      if (opts.target === '_blank') window.open(url, '_blank', 'noopener');
+      else location.href = url;
+    }, 80);
   }
   function bindChatLinks() {
+    // Usa o href do <a> direto — maoliver92/tracking já augmenta com UTMs+gclid+fbp+fbc
+    // antes do click bubble chegar aqui (capture phase). Fallback pra buildChatUrl se não for <a>.
     var els = document.querySelectorAll('[data-cta="olivia"], [data-cta="chat"], a[href*="demonstracao.orbitgestao.com.br/chat"]');
     Array.prototype.forEach.call(els, function (el) {
       el.addEventListener('click', function (e) {
         if (el.tagName === 'A' && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return; // open in new tab natural
         e.preventDefault();
-        goChat({ origin: el.getAttribute('data-cta-origin') || 'cta', target: el.target });
+        var url = (el.tagName === 'A' && el.href) ? el.href : buildChatUrl();
+        goChat({ url: url, origin: el.getAttribute('data-cta-origin') || 'cta', target: el.target });
       });
     });
   }
