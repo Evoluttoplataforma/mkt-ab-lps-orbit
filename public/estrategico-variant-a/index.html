@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Tag Manager · GTM-KPD8KVTH -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KPD8KVTH');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager · GTM-W6H3729J -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6H3729J');</script>
+<!-- End Google Tag Manager -->
+
+<!-- =================== SEO + META =================== -->
+<title>Software de Planejamento Estratégico com BSC | Orbit Gestão</title>
+<meta name="description" content="BSC, OKRs, SWOT e inteligência de mercado conectados à execução. Para empresas R$ 500k+/mês e 30+ funcionários.">
+<meta name="keywords" content="software BSC, balanced scorecard, software OKR, planejamento estratégico, software de estratégia, BSC online">
+<link rel="canonical" href="https://mkt.orbitgestao.com.br/estrategico-variant-a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkt.orbitgestao.com.br/estrategico-variant-a">
+<meta property="og:title" content="Orbit Estratégico — BSC, OKR e SWOT que saem do papel">
+<meta property="og:description" content="Estratégia auditável conectada à execução. SWOT, BSC, OKR e inteligência de mercado em uma plataforma.">
+<meta property="og:image" content="https://orbitgestao.com.br/images/og-estrategico.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicons -->
+<link rel="icon" type="image/jpeg" href="../shared/assets/favicon.jpeg">
+<link rel="apple-touch-icon" href="../shared/assets/orbit-logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN + config Orbit -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Iconify (Solar icon set) -->
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"','system-ui','sans-serif'],
+        jakarta: ['"Plus Jakarta Sans"','system-ui','sans-serif'],
+        display: ['"Plus Jakarta Sans"','system-ui','sans-serif'],
+        mono: ['"JetBrains Mono"','ui-monospace','monospace']
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#ffba1a',
+          300:'#ffd64a', 400:'#ffca4a', 500:'#ffba1a', 600:'#e6a200', 700:'#b87f00'
+        },
+        orbit: {
+          black:'#0D1117','black-soft':'#161B22','black-card':'#1C2333',
+          'gray-200':'#30363D','gray-300':'#484F58','gray-500':'#8B949E','gray-700':'#C9D1D9'
+        },
+        success:'#3FB950', error:'#F85149'
+      },
+      boxShadow: {
+        'gold-glow':'0 0 20px rgba(255,186,26,.5), inset 0 0 10px rgba(255,186,26,.2)',
+        'gold-strong':'0 0 35px rgba(255,186,26,.6), inset 0 0 20px rgba(255,186,26,.4)',
+        'gold-soft':'0 0 40px -10px rgba(255,186,26,.5)'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+::-webkit-scrollbar{display:none}
+body{-ms-overflow-style:none;scrollbar-width:none}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;color:#fff;-webkit-font-smoothing:antialiased}
+::selection{background:#ffba1a;color:#0D1117}
+
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes blurIn{0%{opacity:0;filter:blur(15px);transform:scale(.95)}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+@keyframes beam-spin{to{transform:rotate(360deg)}}
+@keyframes lines-slide{0%{background-position:0 0}100%{background-position:24px 0}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes pulseDot{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+
+.scroll-item{animation-duration:.8s;animation-fill-mode:both;animation-play-state:running;animation-timing-function:cubic-bezier(.25,.46,.45,.94)}
+.scroll-fade-up{animation-name:fadeInUp}
+.scroll-blur-in{animation-name:blurIn}
+.d-100{animation-delay:.1s}.d-200{animation-delay:.2s}.d-300{animation-delay:.3s}.d-500{animation-delay:.5s}
+.animate-marquee{animation:marquee 28s linear infinite}
+
+[style*="--border-gradient"]::before{content:"";position:absolute;inset:0;padding:1px;border-radius:var(--border-radius-before,inherit);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background:var(--border-gradient);pointer-events:none}
+
+.gold-atmos{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:1400px;height:900px;z-index:-10;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 20%,rgba(255,186,26,.18),transparent 60%),radial-gradient(ellipse 40% 40% at 30% 40%,rgba(255,202,74,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 70% 30%,rgba(255,186,26,.10),transparent 70%);mask-image:linear-gradient(transparent,black 0%,black 50%,transparent);filter:saturate(120%) brightness(115%)}
+
+.status-dot{position:relative;width:8px;height:8px;border-radius:999px;background:#3FB950}
+.status-dot::after{content:"";position:absolute;inset:0;border-radius:999px;background:#3FB950;animation:pulseDot 1.8s ease-out infinite}
+
+/* Sticky mobile CTA */
+.sticky-cta{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease}
+.sticky-cta.--show{opacity:1;pointer-events:auto;transform:translateY(0)}
+@media(min-width:768px){.sticky-cta{display:none}}
+
+/* Floating chat */
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:55;width:62px;height:62px;border-radius:9999px;background:#ffba1a;color:#0D1117;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 28px -8px rgba(255,186,26,.6),0 0 0 4px rgba(255,186,26,.18);transition:transform .3s ease,box-shadow .3s ease;border:none}
+.chat-fab:hover{transform:scale(1.05);box-shadow:0 14px 32px -8px rgba(255,186,26,.75),0 0 0 6px rgba(255,186,26,.22)}
+@media(max-width:767px){.chat-fab{bottom:88px}}
+.chat-fab__pulse{position:absolute;inset:-6px;border-radius:9999px;border:2px solid rgba(255,186,26,.5);animation:pulseDot 1.8s ease-out infinite}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(13,17,23,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.mobile-menu.--open{opacity:1;pointer-events:auto}
+.mobile-menu a.mobile-link{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.02em;transition:color .2s}
+.mobile-menu a.mobile-link:hover{color:#ffba1a}
+.mobile-menu .mobile-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center}
+.mobile-menu .mobile-divider{width:48px;height:1px;background:rgba(255,186,26,.3);margin:8px 0}
+@media(min-width:768px){.mobile-menu,.hamburger-btn{display:none !important}}
+.hamburger-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff}
+</style>
+</head>
+
+<body data-variant="a" class="antialiased overflow-x-hidden text-white bg-orbit-black">
+
+<!-- Google Tag Manager (noscript) · GTM-KPD8KVTH -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPD8KVTH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) · GTM-W6H3729J -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6H3729J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="gold-atmos"></div>
+
+<!-- ════════════ NAV ════════════ -->
+<nav class="flex z-50 fixed w-full pt-6 pr-4 pl-4 top-0 right-0 left-0 items-center justify-center">
+  <div class="flex scroll-item scroll-fade-up bg-black/85 w-full max-w-5xl border-white/10 border rounded-full pt-1 pr-2 pb-1 pl-1 relative shadow-2xl backdrop-blur-md items-center justify-between">
+    <a href="#" class="inline-flex items-center gap-2 pl-3 pr-2 h-[50px] rounded-full">
+      <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="32" height="32" class="w-8 h-8 object-contain shrink-0"/>
+      <span class="text-white font-extrabold tracking-tight">Orbit</span>
+      <span class="text-primary font-semibold tracking-tight text-sm">Estratégico</span>
+    </a>
+    <div class="hidden md:flex gap-6 -translate-x-1/2 absolute left-1/2 items-center">
+      <a class="text-[13px] hover:text-primary transition-colors font-medium text-white/85 tracking-wide" href="#beneficios">Benefícios</a>
+      <a class="text-[13px] hover:text-primary transition-colors font-medium text-white/85 tracking-wide" href="#como-funciona">Como funciona</a>
+      <a class="text-[13px] hover:text-primary transition-colors font-medium text-white/85 tracking-wide" href="#comparativo">Comparativo</a>
+      <a class="text-[13px] hover:text-primary transition-colors font-medium text-white/85 tracking-wide" href="#faq">FAQ</a>
+    </div>
+    <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="nav" class="hidden md:flex group transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-gold-strong hover:scale-[1.02] items-center justify-center bg-black/60 border-primary border rounded-full pt-2.5 pr-6 pb-2.5 pl-6 shadow-gold-glow">
+      <span class="uppercase text-[12px] transition-colors group-hover:text-white font-bold text-white/90 tracking-tight z-10 relative">Falar com a Olívia</span>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger-btn md:!hidden" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+    <svg width="22" height="22" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#beneficios" class="mobile-link">Benefícios</a>
+  <a href="#como-funciona" class="mobile-link">Como funciona</a>
+  <a href="#comparativo" class="mobile-link">Comparativo</a>
+  <a href="#cases" class="mobile-link">Cases</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <div class="mobile-divider"></div>
+  <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="mobile-menu" class="bg-primary text-orbit-black px-8 py-4 rounded-full font-extrabold text-base shadow-gold-strong">Falar com a Olívia →</a>
+</div>
+
+<!-- ════════════ HERO ════════════ -->
+<main class="flex flex-col z-10 pt-32 md:pt-40 pr-6 pl-6 relative items-center justify-center">
+
+  <h1 class="text-center text-4xl sm:text-5xl md:text-7xl leading-[1.05] max-w-5xl mx-auto font-display font-extrabold tracking-tight scroll-item scroll-blur-in d-100">
+    Estratégia que <span class="text-primary">sai do papel</span> e chega na execução.
+  </h1>
+
+  <p class="text-center text-lg md:text-xl text-gray-400 mt-7 max-w-2xl mx-auto leading-relaxed font-light scroll-item scroll-fade-up d-200">
+    BSC, OKR, SWOT e inteligência de mercado conectados ao operacional — sem PowerPoint empoeirado, sem planilha que ninguém atualiza.
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-4 scroll-item scroll-fade-up d-300 mt-9 items-center">
+    <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="hero" class="group inline-flex overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-gold-soft focus:outline-none sm:w-auto text-sm font-bold text-white w-full h-[56px] rounded-full pt-4 pr-8 pb-4 pl-8 relative items-center justify-center" style="--border-gradient: linear-gradient(135deg, rgba(255,255,255,.2), rgba(255,255,255,0), rgba(255,255,255,.2)); --border-radius-before: 9999px">
+      <div class="absolute inset-0 -z-20 rounded-full overflow-hidden p-[1px]">
+        <div class="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0_300deg,#ffba1a_360deg)]" style="animation: beam-spin 3s linear infinite;"></div>
+        <div class="absolute inset-[1px] rounded-full bg-[#050505]"></div>
+      </div>
+      <div class="overflow-hidden bg-[#0A0A0A] rounded-full absolute top-[2px] right-[2px] bottom-[2px] left-[2px]">
+        <div class="bg-gradient-to-b from-primary/20 to-transparent absolute inset-0"></div>
+        <div class="opacity-[.07] mix-blend-plus-lighter absolute inset-0" style="background-image:repeating-linear-gradient(90deg,#fff,#fff 1px,transparent 1px,transparent 8px);background-size:24px 100%;animation:lines-slide 1.5s linear infinite"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2 bg-primary/30 blur-2xl rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-primary/50"></div>
+      </div>
+      <span class="transition-colors group-hover:text-white uppercase font-bold text-white/90 tracking-tight z-10 relative">Falar com a Olívia agora</span>
+      <svg class="relative z-10 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+    <a href="#cases" class="sm:w-auto hover:bg-primary/10 hover:border-primary hover:shadow-gold-strong hover:scale-[1.02] transition-all duration-300 flex group text-base font-semibold text-white bg-black/60 w-full border-primary border rounded-full pt-3.5 pr-7 pb-3.5 pl-7 shadow-gold-glow gap-2 items-center justify-center">
+      <svg class="w-4 h-4 text-primary group-hover:text-primary-300 transition-colors" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/><circle cx="12" cy="12" r="10"/></svg>
+      Ver cases reais
+    </a>
+  </div>
+
+  <p class="text-xs text-gray-500 mt-4 scroll-item scroll-fade-up d-300">Resposta em até 1 minuto. Sem cartão. Sem instalação.</p>
+
+  <!-- HERO MOCKUP MOBILE — chat Olívia simplificado -->
+  <div class="md:hidden w-full max-w-sm mx-auto mt-12 scroll-item scroll-blur-in d-500 px-2">
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-3xl p-5 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Header -->
+      <div class="flex items-center gap-3 pb-4 border-b border-white/5 mb-4 relative z-10">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-sm border border-white/10">OL</div>
+        <div class="flex-1">
+          <p class="text-sm font-bold text-white">Olívia · IA financeira</p>
+          <p class="text-[11px] text-gray-500">Online · responde em segundos</p>
+        </div>
+        <div class="status-dot"></div>
+      </div>
+      <!-- Chat bubbles -->
+      <div class="space-y-3 mb-4 relative z-10">
+        <div class="bg-white/5 rounded-2xl rounded-bl-sm px-4 py-3 text-sm text-gray-300 max-w-[85%]">Como ficou meu DRE em abril vs março?</div>
+        <div class="bg-primary/10 border border-primary/25 rounded-2xl rounded-br-sm px-4 py-3 text-sm text-white max-w-[88%] ml-auto">
+          <p class="font-bold text-primary mb-1 text-[13px]">Receita +18%</p>
+          <p class="leading-snug">R$ 612K · margem subiu pra <strong>53%</strong>. Quer drill por cliente?</p>
+        </div>
+      </div>
+      <!-- Quick actions -->
+      <div class="flex gap-2 flex-wrap relative z-10">
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 font-semibold">Sim, mostrar</span>
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 font-semibold">Comparar meta</span>
+      </div>
+      <!-- Footer caption -->
+      <p class="text-[11px] text-center text-gray-600 mt-5 pt-4 border-t border-white/5">Painel completo no desktop ↗</p>
+    </div>
+  </div>
+
+  <!-- HERO MOCKUP DESKTOP — Painel Financeiro Orbit -->
+  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-estrategico">
+    <div class="flex overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
+
+      <!-- Sidebar -->
+      <aside class="w-60 border-r border-white/5 bg-[#0A0A0C] flex flex-col hidden md:flex">
+        <div class="h-14 flex items-center px-5 gap-2 mb-1 border-b border-white/5">
+          <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="26" height="26" class="w-6 h-6 object-contain"/>
+          <span class="text-sm font-extrabold text-white">Orbit</span>
+          <span class="text-xs font-semibold text-primary">Estratégico</span>
+        </div>
+        <nav class="flex-1 px-3 py-3 space-y-1">
+          <div class="px-3 py-1.5 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Olívia</div>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-bold text-orbit-black bg-primary rounded-md shadow-gold-soft">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Pergunte à Olívia
+            <span class="ml-auto text-[9px] font-bold bg-orbit-black text-primary px-1.5 py-0.5 rounded">IA</span>
+          </a>
+          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Operacional</div>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-white bg-white/5 rounded-md border border-white/5">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><rect height="7" rx="1" width="7" x="3" y="3"/><rect height="7" rx="1" width="7" x="14" y="3"/><rect height="7" rx="1" width="7" x="14" y="14"/><rect height="7" rx="1" width="7" x="3" y="14"/></svg>
+            Painel Financeiro
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M2 7h20l-2 13H4z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Contas a Pagar
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Contas a Receber
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            Fluxo de Caixa
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Aprovações
+            <span class="ml-auto text-[9px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded">3</span>
+          </a>
+          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Controladoria</div>
+          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
+            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+            DRE
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main -->
+      <main class="flex-1 flex flex-col bg-[#050505] overflow-hidden">
+        <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-[#0A0A0C]/80 backdrop-blur-xl sticky top-0 z-20">
+          <div>
+            <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Visão Geral</h2>
+            <div class="flex items-center gap-2 mt-0.5">
+              <span class="text-white font-bold text-sm tracking-tight">Painel Financeiro</span>
+              <span class="text-gray-600">·</span>
+              <span class="text-xs text-gray-500">Maio 2026</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="hidden md:flex items-center px-3 py-1.5 bg-white/5 border border-white/10 rounded-full gap-2">
+              <div class="status-dot"></div>
+              <span class="text-[11px] font-medium text-gray-300">Sincronizado</span>
+            </div>
+            <button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-orbit-black text-[11px] font-bold rounded-md shadow-gold-glow">
+              <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+              Novo
+            </button>
+          </div>
+        </header>
+        <div class="flex-1 overflow-y-auto pt-5 pr-5 pb-5 pl-5 space-y-3">
+          <div class="grid grid-cols-3 gap-3">
+            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
+              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Saldo Total</p>
+              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">R$ 4,2M</h3>
+              <span class="px-1.5 py-0.5 rounded bg-success/10 text-success text-[10px] font-medium border border-success/20 flex items-center gap-1 w-fit">+12,5%</span>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
+              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Burn Mensal</p>
+              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">R$ 285K</h3>
+              <span class="px-1.5 py-0.5 rounded bg-white/5 text-gray-300 text-[10px] font-medium border border-white/10 w-fit">+2,1%</span>
+            </div>
+            <div class="overflow-hidden text-orbit-black bg-gradient-to-br from-primary to-primary-600 border-primary/40 border rounded-xl p-4 relative shadow-gold-soft">
+              <p class="text-[10px] font-bold text-orbit-black/70 uppercase tracking-wider mb-1">Runway</p>
+              <h3 class="text-xl font-extrabold tracking-tight mb-1">14,8 meses</h3>
+              <span class="text-[10px] font-bold bg-orbit-black/15 text-orbit-black px-2 py-0.5 rounded">Saudável</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3 items-start">
+            <!-- Chart -->
+            <div class="col-span-2 h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h3 class="text-base font-bold text-white">Receita × Despesa</h3>
+                  <p class="text-[11px] text-gray-500 mt-0.5">Últimos 6 meses</p>
+                </div>
+                <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">+18%</span>
+              </div>
+              <div class="flex-1 flex items-end gap-3 px-2 relative">
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[40%]"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[55%]"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[48%]"></div>
+                <div class="flex-1 bg-primary rounded-t-lg h-[82%] relative">
+                  <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/30 to-transparent"></div>
+                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-[#1A1A24] border border-primary/40 px-2 py-0.5 rounded">R$ 612K</span>
+                </div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[68%]"></div>
+                <div class="flex-1 bg-white/5 rounded-t-lg h-[78%]"></div>
+              </div>
+              <div class="flex justify-between mt-2 text-[10px] text-gray-500 px-2"><span>Dez</span><span>Jan</span><span>Fev</span><span>Mar</span><span class="text-primary font-bold">Abr</span><span>Mai</span></div>
+            </div>
+            <!-- Olivia chat preview -->
+            <div class="h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 overflow-hidden">
+              <div class="flex items-center gap-2 pb-2 border-b border-white/5">
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px]">OL</div>
+                <div class="flex-1">
+                  <p class="text-xs font-bold text-white">Olívia · IA</p>
+                  <p class="text-[10px] text-gray-500">Sua CFO em IA</p>
+                </div>
+                <div class="status-dot"></div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300 leading-snug">Como ficou meu DRE em abril vs março?</div>
+              <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white leading-snug">
+                Receita +18% (R$ 612K), margem subiu pra 53%. Quer ver o drill por cliente?
+              </div>
+              <div class="flex gap-1.5 flex-wrap">
+                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Sim, mostrar</span>
+                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Comparar meta</span>
+              </div>
+              <div class="mt-auto pt-2 flex gap-2">
+                <input class="flex-1 bg-[#111] border border-white/10 rounded px-2 py-1.5 text-[11px] text-white placeholder:text-gray-600" placeholder="Pergunte algo..."/>
+                <button class="bg-primary text-orbit-black text-[10px] font-bold px-2 py-1.5 rounded">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</main>
+
+
+<!-- ════════════ 3. FAIXA DE CREDIBILIDADE ════════════ -->
+<section class="z-10 w-full max-w-7xl mt-24 md:mt-32 mr-auto ml-auto px-6 relative">
+  <div class="bg-[#0A0A0C] border border-white/10 rounded-3xl p-8 md:p-12">
+    <h2 class="text-center text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-2">3.045+ empresas tiraram a estratégia do PowerPoint</h2>
+    <p class="text-center text-sm text-gray-500 mb-10">Médias observadas em clientes Orbit Gestão nos primeiros 90 dias de uso</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">92%</p>
+        <p class="text-xs text-gray-400 font-medium mt-2">mais alinhamento entre estratégia e execução</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">70%</p>
+        <p class="text-xs text-gray-400 font-medium mt-2">menos tempo em reuniões de revisão</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">100%</p>
+        <p class="text-xs text-gray-400 font-medium mt-2">das metas auditáveis em tempo real</p>
+      </div>
+      <div class="text-center">
+        <p class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">3x</p>
+        <p class="text-xs text-gray-400 font-medium mt-2">velocidade de tomada de decisão</p>
+      </div>
+    </div>
+    <!-- Marquee · 12 sinais densos -->
+    <div class="mt-10 pt-8 border-t border-white/5 overflow-hidden">
+      <div class="flex animate-marquee gap-10 items-center w-max opacity-80">
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">3.045+ empresas BR confiam</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">DRE em tempo real</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Olívia · sua CFO em IA</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Conciliação bancária automática</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">BSC nativo com indicadores vivos</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Burn rate &amp; runway vivos</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Decisão competitiva com dado</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Pergunte "qual meu DRE?" em português</span><span class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <!-- duplicata para loop seamless -->
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">3.045+ empresas BR confiam</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">DRE em tempo real</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Olívia · sua CFO em IA</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Conciliação bancária automática</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fluxo projetado até 18 meses</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Open Finance BR nativo</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Fechamento mensal 12d → 3d</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Aprovações com trilha de auditoria</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Burn rate &amp; runway vivos</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">−85% erros de lançamento</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-white/85 tracking-tight whitespace-nowrap">Margem por cliente em 1 clique</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+        <span aria-hidden="true" class="text-sm font-bold text-primary tracking-tight whitespace-nowrap">Pergunte "qual meu DRE?" em português</span><span aria-hidden="true" class="w-1 h-1 rounded-full bg-primary shrink-0"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 4. PARA QUEM É ════════════ -->
+<section id="para-quem-e" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">04</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05] mb-4">Quem ganha mais com o <span class="text-primary">Orbit Estratégico</span></h2>
+    <p class="text-base md:text-lg text-gray-400 font-light">CEOs, sócios e diretores que querem estratégia conectada à operação:</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 overflow-hidden">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:buildings-3-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Porte</span>
+        <p class="text-sm text-white leading-relaxed"><strong class="font-extrabold">R$ 500k+/mês</strong> e <strong class="font-extrabold">30+ funcionários</strong>.</p>
+      </div>
+    </div>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:document-text-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Plano no PowerPoint</span>
+        <p class="text-sm text-white leading-relaxed">Planejamento de <strong class="font-extrabold">80 páginas</strong> que ninguém abre.</p>
+      </div>
+    </div>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:archive-minimalistic-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">SWOT arquivado</span>
+        <p class="text-sm text-white leading-relaxed">SWOT feito <strong class="font-extrabold">uma vez por ano</strong> e esquecido.</p>
+      </div>
+    </div>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:calculator-minimalistic-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">BSC em planilha</span>
+        <p class="text-sm text-white leading-relaxed">BSC vira <strong class="font-extrabold">Excel quebrado</strong> que ninguém atualiza.</p>
+      </div>
+    </div>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:routing-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Plano sem execução</span>
+        <p class="text-sm text-white leading-relaxed">Estratégia não <strong class="font-extrabold">chega na tarefa</strong> do colaborador.</p>
+      </div>
+    </div>
+    <div class="group relative flex items-start gap-4 p-5 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary text-orbit-black grid place-items-center shadow-gold-glow"><iconify-icon icon="solar:graph-up-bold-duotone" style="font-size:24px"></iconify-icon></div>
+      <div class="flex-1 min-w-0">
+        <span class="inline-block text-[10px] font-extrabold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded uppercase tracking-widest mb-2">Sem visão competitiva</span>
+        <p class="text-sm text-white leading-relaxed">Não conhece <strong class="font-extrabold">concorrência</strong> em profundidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-3xl mx-auto text-center text-sm text-gray-400 flex items-center justify-center gap-2">
+    <iconify-icon icon="solar:target-bold" style="font-size:18px;color:#ffba1a"></iconify-icon>
+    Reconheceu <strong class="text-primary font-extrabold">3 ou mais</strong> sinais aí em cima? Orbit Financeiro foi feito pra você.
+  </div>
+
+  <!-- Anti-alvo -->
+  <div class="mt-8 max-w-5xl mx-auto p-6 rounded-2xl bg-[#050505] border border-white/5">
+    <div class="flex items-center gap-2 mb-5">
+      <iconify-icon icon="solar:hand-stars-linear" style="font-size:18px;color:#8B949E"></iconify-icon>
+      <p class="text-[11px] font-extrabold text-gray-500 uppercase tracking-widest">Quem NÃO se beneficia <span class="font-medium normal-case tracking-normal text-gray-600">· e está tudo bem</span></p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-400">
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:user-linear" style="font-size:14px"></iconify-icon></span><span>Microempresa, MEI — Orbit é overkill.</span></div>
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:server-square-cloud-linear" style="font-size:14px"></iconify-icon></span><span>Empresa que já tem consultoria estratégica fixa rodando.</span></div>
+      <div class="flex items-start gap-3"><span class="shrink-0 w-7 h-7 rounded-lg bg-error/10 border border-error/30 text-error grid place-items-center"><iconify-icon icon="solar:document-text-linear" style="font-size:14px"></iconify-icon></span><span>Quem só quer SWOT para sócios — não é o foco.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- (Seção 5 · Vídeo Demo removida — cases em vídeo Vimeo abaixo já cumprem esse papel) -->
+
+
+<!-- ════════════ 6. BENEFÍCIOS ════════════ -->
+<section id="beneficios" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-3xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">06</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05] mb-4">O que muda quando a estratégia <span class="text-primary">é viva</span></h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <!-- Benefit 1: Olívia IA -->
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-colors">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+          <svg class="text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white tracking-tight mb-1">BSC conectado à tarefa</h3>
+          <p class="text-sm text-gray-400 font-light leading-relaxed">Cada meta do BSC liga a um projeto e uma tarefa real.</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-300 leading-relaxed mb-5">O Balanced Scorecard sai do PowerPoint e vive na plataforma. Cada objetivo financeiro, cliente, processo ou aprendizado puxa projetos e tarefas que aparecem no dia-a-dia do time.</p>
+      <!-- Mini mockup: chat -->
+      <div class="bg-[#050505] border border-white/5 rounded-xl p-3 space-y-2" data-swap="screenshot-olivia-chat">
+        <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300">Receita por cliente em maio</div>
+        <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white">
+          <p class="font-bold text-primary mb-1">Top 3 clientes (mai/2026)</p>
+          <p>1. ACME · R$ 182K (+22%)</p>
+          <p>2. Veridian · R$ 145K (+8%)</p>
+          <p>3. Lumina · R$ 96K (-4%)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefit 2: DRE / Fluxo de caixa -->
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-colors">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+          <svg class="text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white tracking-tight mb-1">OKR trimestral auditável</h3>
+          <p class="text-sm text-gray-400 font-light leading-relaxed">Defina, acompanhe e ajuste OKRs com histórico completo.</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-300 leading-relaxed mb-5">Reunião trimestral deixa de ser "estamos bem?" e vira "atingimos 87% do KR1 com essas 3 iniciativas". Tudo gravado, tudo auditável.</p>
+      <!-- Mini mockup: line chart -->
+      <div class="bg-[#050505] border border-white/5 rounded-xl p-4" data-swap="screenshot-fluxo-caixa">
+        <div class="flex justify-between items-center mb-3">
+          <p class="text-[11px] font-bold text-white">Fluxo projetado · 6m</p>
+          <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">Runway: 14,8m</span>
+        </div>
+        <svg viewBox="0 0 280 80" class="w-full h-auto">
+          <defs><linearGradient id="benefArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffba1a" stop-opacity="0.45"/><stop offset="1" stop-color="#ffba1a" stop-opacity="0"/></linearGradient></defs>
+          <path fill="url(#benefArea)" d="M 0 60 L 47 50 L 94 55 L 141 30 L 188 38 L 235 22 L 280 12 L 280 80 L 0 80 Z"/>
+          <polyline stroke="#ffba1a" stroke-width="2" fill="none" stroke-linecap="round" points="0,60 47,50 94,55 141,30 188,38 235,22 280,12"/>
+          <circle cx="280" cy="12" r="3.5" fill="#ffba1a"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Benefit 3: Aprovações -->
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-colors">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+          <svg class="text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white tracking-tight mb-1">Inteligência de mercado com IA</h3>
+          <p class="text-sm text-gray-400 font-light leading-relaxed">Workflow configurável por valor, centro de custo e fornecedor.</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-300 leading-relaxed mb-5">Aponte um concorrente e a IA traz posicionamento, preços, principais movimentos e oportunidades para você. Sem precisar contratar consultoria de mercado.</p>
+      <!-- Mini mockup: approval workflow -->
+      <div class="bg-[#050505] border border-white/5 rounded-xl p-3 space-y-1.5" data-swap="screenshot-aprovacoes">
+        <div class="flex items-center gap-2.5 p-2 bg-white/5 rounded-lg">
+          <span class="w-6 h-6 rounded-full bg-success/15 text-success flex items-center justify-center text-[10px] font-bold">✓</span>
+          <span class="text-[11px] text-white flex-1">Solicitação · CC Marketing</span>
+          <span class="text-[10px] text-gray-500 font-mono">R$ 12,4K</span>
+        </div>
+        <div class="flex items-center gap-2.5 p-2 bg-white/5 rounded-lg">
+          <span class="w-6 h-6 rounded-full bg-success/15 text-success flex items-center justify-center text-[10px] font-bold">✓</span>
+          <span class="text-[11px] text-white flex-1">Aprovador 1 · Gerente</span>
+          <span class="text-[10px] text-gray-500">há 12min</span>
+        </div>
+        <div class="flex items-center gap-2.5 p-2 bg-primary/10 border border-primary/25 rounded-lg">
+          <span class="w-6 h-6 rounded-full bg-primary text-orbit-black flex items-center justify-center text-[10px] font-bold animate-pulse">2</span>
+          <span class="text-[11px] text-white flex-1 font-semibold">Aprovador 2 · Diretor Fin</span>
+          <span class="text-[10px] text-primary font-bold">pendente</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefit 4: Integração -->
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-colors">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+          <svg class="text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22"><path d="M9 11H1l4-4"/><path d="M5 7v4"/><path d="M9 17H1l4 4"/><path d="M5 17v4"/><path d="M15 11h8l-4-4"/><path d="M19 7v4"/><path d="M15 17h8l-4 4"/><path d="M19 17v4"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white tracking-tight mb-1">Conectado com Financeiro, CRM, RH</h3>
+          <p class="text-sm text-gray-400 font-light leading-relaxed">Estratégia conversa com receita, pipeline e headcount.</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-300 leading-relaxed mb-5">Meta de crescer 30%? O sistema mostra se o pipeline (CRM), o caixa (Financeiro) e a estrutura (RH) sustentam. Sem planilhas paralelas.</p>
+      <!-- Mini mockup: integration diagram -->
+      <div class="bg-[#050505] border border-white/5 rounded-xl p-4 relative overflow-hidden" data-swap="screenshot-integracao">
+        <div class="grid grid-cols-2 gap-3 relative z-10">
+          <div class="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+            <p class="text-[10px] font-bold text-primary">CRM</p>
+            <p class="text-[9px] text-gray-500">Leads · Pipeline</p>
+          </div>
+          <div class="bg-primary/10 border border-primary/30 rounded-lg p-2 text-center">
+            <p class="text-[10px] font-bold text-primary">Financeiro</p>
+            <p class="text-[9px] text-gray-300">Olívia · DRE</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+            <p class="text-[10px] font-bold text-primary">RH</p>
+            <p class="text-[9px] text-gray-500">Folha · Cargos</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+            <p class="text-[10px] font-bold text-primary">Processos</p>
+            <p class="text-[9px] text-gray-500">Aprovações · Compras</p>
+          </div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-8 h-8 rounded-full bg-primary/30 border border-primary blur-sm"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ 7. COMO FUNCIONA ════════════ -->
+<section id="como-funciona" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">07</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05] mb-4">Estratégia <span class="text-primary">viva</span> em 3 passos</h2>
+    <p class="text-base md:text-lg text-gray-400 font-light">Estruturação guiada pela equipe Orbit + agente IA Estrategista.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-7 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+      <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center justify-center font-extrabold text-base mb-5">01</div>
+      <p class="text-[11px] font-bold text-primary uppercase tracking-widest mb-2">Semana 1</p>
+      <h3 class="text-xl font-bold text-white tracking-tight mb-3">Diagnóstico</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Mapeamos missão, visão, SWOT atual e contextualizamos o cenário competitivo da sua empresa.</p>
+    </div>
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-7 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+      <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center justify-center font-extrabold text-base mb-5">02</div>
+      <p class="text-[11px] font-bold text-primary uppercase tracking-widest mb-2">Semana 2</p>
+      <h3 class="text-xl font-bold text-white tracking-tight mb-3">Setup BSC + OKR</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Configuramos os 4 quadrantes do BSC, conectamos objetivos a projetos e definimos OKRs do trimestre.</p>
+    </div>
+    <div class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-6 md:p-7 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+      <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center justify-center font-extrabold text-base mb-5">03</div>
+      <p class="text-[11px] font-bold text-primary uppercase tracking-widest mb-2">Semanas 3-4</p>
+      <h3 class="text-xl font-bold text-white tracking-tight mb-3">Go-live</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Time treinado, diretoria começa a usar nas reuniões mensais. Olívia gera relatórios automáticos.</p>
+    </div>
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="passos" class="inline-flex items-center gap-2 bg-primary text-orbit-black px-7 py-4 rounded-full text-sm font-bold hover:bg-primary-400 hover:scale-[1.02] transition-all shadow-gold-glow">
+      Falar com a Olívia agora
+      <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="14"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- ════════════ 8. CASES ════════════ -->
+<section id="cases" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">08</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05]">Quem já saiu da <span class="text-primary">planilha</span></h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+
+    <article class="bg-[#0A0A0C] border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 flex flex-col">
+      <div class="relative" style="padding-top:177.78%">
+        <iframe class="absolute inset-0 w-full h-full" src="https://player.vimeo.com/video/1194126879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Rogério Menossi · Time Produtivo"></iframe>
+      </div>
+      <div class="p-5 flex-1 flex flex-col gap-1">
+        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-1 rounded uppercase tracking-widest w-fit mb-1.5"><iconify-icon icon="solar:videocamera-record-bold" style="font-size:12px"></iconify-icon> Case em vídeo</span>
+        <p class="text-sm font-extrabold text-white tracking-tight">Rogério Menossi</p>
+        <p class="text-xs text-gray-500 font-semibold">Time Produtivo</p>
+      </div>
+    </article>
+
+    <article class="bg-[#0A0A0C] border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 flex flex-col">
+      <div class="relative" style="padding-top:177.78%">
+        <iframe class="absolute inset-0 w-full h-full" src="https://player.vimeo.com/video/1194125389?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Bruno Lozano · Ritual de Gestão"></iframe>
+      </div>
+      <div class="p-5 flex-1 flex flex-col gap-1">
+        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-1 rounded uppercase tracking-widest w-fit mb-1.5"><iconify-icon icon="solar:videocamera-record-bold" style="font-size:12px"></iconify-icon> Case em vídeo</span>
+        <p class="text-sm font-extrabold text-white tracking-tight">Bruno Lozano</p>
+        <p class="text-xs text-gray-500 font-semibold">Ritual de Gestão</p>
+      </div>
+    </article>
+
+    <article class="bg-[#0A0A0C] border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 flex flex-col">
+      <div class="relative" style="padding-top:177.78%">
+        <iframe class="absolute inset-0 w-full h-full" src="https://player.vimeo.com/video/1194124564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Hygor Limar · Potencialize Resultados"></iframe>
+      </div>
+      <div class="p-5 flex-1 flex flex-col gap-1">
+        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-1 rounded uppercase tracking-widest w-fit mb-1.5"><iconify-icon icon="solar:videocamera-record-bold" style="font-size:12px"></iconify-icon> Case em vídeo</span>
+        <p class="text-sm font-extrabold text-white tracking-tight">Hygor Limar</p>
+        <p class="text-xs text-gray-500 font-semibold">Potencialize Resultados</p>
+      </div>
+    </article>
+
+    <article class="bg-[#0A0A0C] border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 hover:shadow-gold-soft transition-all duration-300 flex flex-col">
+      <div class="relative" style="padding-top:177.78%">
+        <iframe class="absolute inset-0 w-full h-full" src="https://player.vimeo.com/video/1194123078?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Lucineia Pedrosa · Econtech Consultoria"></iframe>
+      </div>
+      <div class="p-5 flex-1 flex flex-col gap-1">
+        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-1 rounded uppercase tracking-widest w-fit mb-1.5"><iconify-icon icon="solar:videocamera-record-bold" style="font-size:12px"></iconify-icon> Case em vídeo</span>
+        <p class="text-sm font-extrabold text-white tracking-tight">Lucineia Pedrosa</p>
+        <p class="text-xs text-gray-500 font-semibold">Econtech Consultoria</p>
+      </div>
+    </article>
+
+  </div>
+  <script src="https://player.vimeo.com/api/player.js" defer></script>
+</section>
+
+
+<!-- ════════════ 9. COMPARATIVO ════════════ -->
+<section id="comparativo" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">09</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05] mb-3">Por que sair de <span class="text-primary">PowerPoint + Excel</span> de BSC</h2>
+    <p class="text-base md:text-lg text-gray-400 font-light">Estratégia em arquivos mortos não muda o resultado da empresa.</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto bg-[#0A0A0C] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+    <!-- Header -->
+    <div class="hidden md:grid grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-5 px-6 py-3 bg-orbit-black-soft border-b border-white/5 items-center">
+      <div></div>
+      <div class="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">Hoje você usa</div>
+      <div></div>
+      <div class="text-[10px] font-extrabold text-primary uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_0_3px_rgba(255,186,26,.18)]"></span>Orbit no lugar dele</div>
+      <div class="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">Ganho</div>
+    </div>
+
+    <!-- Rows -->
+    <div class="divide-y divide-white/5">
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:document-text-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">Plano estratégico em PowerPoint</span>80 páginas · ninguém abre · empoeirado</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 relative md:col-span-1 col-span-1"><span class="text-primary font-extrabold">BSC vivo conectado a projetos</span> tudo no Orbit</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Estratégia chega na tarefa do colab</div>
+      </div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:calculator-minimalistic-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">BSC em planilha Excel</span>Fórmula quebra · ninguém atualiza</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Fluxo projetado até 18 meses</span> · automático</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Sem briga de fórmula</div>
+      </div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:archive-minimalistic-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">SWOT feito 1x por ano</span>Arquivado · ninguém revisita</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">SWOT acompanhado trimestralmente</span> com trilha de auditoria</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Cenário sempre atualizado</div>
+      </div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:user-id-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">Consultoria estratégica externa</span>Cara · termina e tudo volta</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">Olívia + agente IA Estrategista</span> · em português</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Capacidade interna permanente</div>
+      </div>
+
+      <div class="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr_36px_1.3fr_1fr] gap-3 md:gap-5 px-5 md:px-6 py-5 md:items-center hover:bg-primary/[0.025] transition-colors">
+        <div class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 grid place-items-center text-gray-400 md:row-span-1 md:col-span-1 row-span-3"><iconify-icon icon="solar:eye-closed-bold-duotone" style="font-size:24px"></iconify-icon></div>
+        <div class="text-sm text-gray-400 leading-snug col-span-1"><span class="block font-semibold text-gray-300 mb-0.5">Análise de concorrência manual</span>Subjetiva · desatualizada</div>
+        <div class="hidden md:flex items-center justify-center text-primary"><iconify-icon icon="solar:arrow-right-bold" style="font-size:22px"></iconify-icon></div>
+        <div class="text-sm text-white font-semibold leading-snug p-3 md:p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/[0.02] border border-primary/25 md:col-span-1 col-span-1"><span class="text-primary font-extrabold">IA analisa mercado automaticamente</span> · sem Zapier, sem integração paga</div>
+        <div class="text-xs md:text-sm text-gray-400 leading-snug flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" style="font-size:16px;color:#3FB950;flex-shrink:0;margin-top:1px"></iconify-icon>Margem por cliente em 1 clique</div>
+      </div>
+
+    </div>
+
+    <div class="px-6 py-6 bg-gradient-to-r from-orbit-black-soft via-primary/[0.05] to-orbit-black-soft border-t border-white/5 text-sm text-center text-gray-300 flex items-center justify-center gap-2 flex-wrap">
+      <iconify-icon icon="solar:medal-star-bold" style="font-size:18px;color:#ffba1a"></iconify-icon>
+      <span class="text-primary font-extrabold">Estratégia auditável conectada à operação</span> = velocidade de decisão multiplicada por 3.
+      <span class="text-gray-400">= ROI do Orbit em 90 dias.</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 10. FAQ ════════════ -->
+<section id="faq" class="z-10 w-full max-w-4xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">10</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05]">Perguntas <span class="text-primary">frequentes</span></h2>
+  </div>
+
+  <div class="space-y-3">
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors" open>
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Preciso de consultor estratégico pra usar?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Não. O Orbit estrutura BSC, OKR e SWOT com templates BR e o agente IA Estrategista te guia em cada etapa. Mas se quiser usar com sua consultoria, ela ganha plataforma de entrega.</p>
+    </details>
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors">
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Funciona pra empresa familiar?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Sim — funciona MELHOR pra empresa familiar com sócios, porque o BSC força conversa estruturada sobre objetivos comuns. Vários clientes Orbit usam justamente pra alinhar conselho.</p>
+    </details>
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors">
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Substitui BSC institucional tipo BSC Designer?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Sim e mais — substitui BSC Designer + ferramenta de OKR + planilha de SWOT, e conecta com o resto da gestão da empresa.</p>
+    </details>
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors">
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Quanto tempo até ver resultado?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Primeiro ciclo trimestral (90 dias) você já tem reunião de revisão estratégica baseada em dado, não em feeling.</p>
+    </details>
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors">
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Posso usar com BSC já feito?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Sim. Importamos seu BSC atual (Excel ou PowerPoint) no setup. Você não recomeça do zero.</p>
+    </details>
+    <details class="group bg-[#0A0A0C] border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-colors">
+      <summary class="flex justify-between items-center cursor-pointer list-none gap-4">
+        <span class="text-base md:text-lg font-bold text-white tracking-tight">Quanto custa?</span>
+        <svg class="text-gray-500 group-open:text-primary group-open:rotate-180 transition-transform shrink-0" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="mt-4 text-sm text-gray-400 leading-relaxed">Faixa típica do ICP (R$ 500k+/30+): <strong>R$ 1.500 a R$ 4.500/mês</strong> para a plataforma toda (não só Estratégico). Fale com a Olívia para estimativa.</p>
+    </details>
+  </div>
+</section>
+
+
+<!-- ════════════ 11. CTA FINAL ════════════ -->
+<section class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="relative bg-gradient-to-br from-[#0A0A0C] to-[#161B22] border border-white/10 rounded-3xl p-10 md:p-16 overflow-hidden">
+    <div class="absolute -right-32 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -top-20 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-orbit-black rounded-full text-[11px] font-bold tracking-widest uppercase mb-6">Olívia · IA financeira</span>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.05] mb-5">Pronto para tirar a <span class="text-primary">estratégia do PowerPoint?</span></h2>
+      <p class="text-base md:text-lg text-gray-400 font-light max-w-2xl mx-auto mb-9">Fale com a Olívia agora — em 2 minutos ela entende seu cenário e agenda demo do BSC ao vivo.</p>
+      <a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="final" class="inline-flex items-center gap-2 bg-primary text-orbit-black px-9 py-5 rounded-full text-base md:text-lg font-extrabold hover:bg-primary-400 hover:scale-[1.02] transition-all shadow-gold-strong">
+        Falar com a Olívia
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="text-xs text-gray-500 mt-5">Sem cartão. Sem cadastro. Só uma conversa de 2 minutos.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 pb-20 pt-12 border-t border-white/5 relative">
+  <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="40" height="40" class="w-10 h-10 object-contain"/>
+      <div>
+        <p class="text-sm font-extrabold text-white">Orbit Gestão</p>
+        <p class="text-[11px] text-gray-500">Financeiro · IA · 3.045+ empresas</p>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500 max-w-md text-left md:text-right">Os dados de performance são médias dos clientes Orbit Gestão. Resultados individuais variam por porte e segmento.</p>
+  </div>
+  <div class="mt-8 pt-6 border-t border-white/5 text-[11px] text-gray-600">
+    <span>© 2026 Orbit Gestão. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+
+<!-- Sticky CTA mobile (aparece após scroll 30%) -->
+<a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="sticky" class="sticky-cta bg-primary text-orbit-black rounded-full px-6 py-4 shadow-gold-strong text-center font-extrabold text-sm" id="stickyCta">
+  Falar com a Olívia →
+</a>
+
+<!-- Floating chat button (desktop + mobile) -->
+<a href="https://demonstracao.orbitgestao.com.br/chat" data-cta="olivia" data-cta-origin="fab" class="chat-fab" aria-label="Falar com a Olívia">
+  <span class="chat-fab__pulse"></span>
+  <svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="26"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</a>
+
+<script>
+// Sticky CTA mobile: aparece após 30% de scroll
+(function(){
+  var el = document.getElementById('stickyCta');
+  if (!el) return;
+  function check(){
+    var sh = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - window.innerHeight;
+    if (sh <= 0) return;
+    var pct = ((window.pageYOffset || document.documentElement.scrollTop) / sh) * 100;
+    el.classList.toggle('--show', pct >= 30 && pct <= 92);
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
+})();
+
+// Mobile menu toggle
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  var close = document.getElementById('mobileClose');
+  if(!btn || !menu) return;
+  function open(){ menu.classList.add('--open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function shut(){ menu.classList.remove('--open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click', open);
+  if(close) close.addEventListener('click', shut);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', shut); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') shut(); });
+})();
+</script>
+
+<!-- ━━━━━━ TRACKING STACK ━━━━━━ -->
+
+<!-- 1. UTM persistência + propagação cross-domain + referrer mapping (maoliver92/tracking) -->
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://cdn.jsdelivr.net/gh/maoliver92/tracking@main/utm-cookie-persist-referrer-mapping.js';
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- 2. Config Orbit -->
+<script>
+  window.__pbqph = window.__pbqph || {};
+  window.__pbqph.config = {
+    chatUrl: 'https://demonstracao.orbitgestao.com.br/chat',
+    rootDomain: '.orbitgestao.com.br',
+    debug: false
+  };
+</script>
+
+<!-- 3. Orbit analytics (dataLayer events, geo, scroll, chat_abriu) -->
+<script src="../shared/js/analytics.js?v=3" defer></script>
+
+</body>
+</html>

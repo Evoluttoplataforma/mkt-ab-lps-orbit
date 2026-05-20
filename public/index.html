@@ -19,7 +19,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-W6H3729J');</script>
 <!-- End Google Tag Manager -->
-<title>Orbit Gestão · Marketing</title>
+
+<title>Orbit Gestão · Marketing Hub</title>
 <link rel="icon" type="image/jpeg" href="shared/assets/favicon.jpeg">
 <link rel="apple-touch-icon" href="shared/assets/orbit-logo.png">
 <meta name="theme-color" content="#ffba1a">
@@ -29,47 +30,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;color:#C9D1D9;min-height:100vh;padding:40px 24px;line-height:1.5}
-  .wrap{max-width:1080px;margin:0 auto}
+  .wrap{max-width:1280px;margin:0 auto}
   .header{text-align:center;margin-bottom:48px}
-  .logo{width:80px;height:80px;margin:0 auto 20px;display:block;object-fit:contain}
-  .badge{display:inline-block;font-size:11px;font-weight:700;color:#ffba1a;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border:1px solid rgba(255,186,26,.25);border-radius:9999px;background:rgba(255,186,26,.06);margin-bottom:20px}
+  .logo{width:72px;height:72px;margin:0 auto 16px;display:block;object-fit:contain}
+  .badge{display:inline-block;font-size:11px;font-weight:700;color:#ffba1a;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border:1px solid rgba(255,186,26,.25);border-radius:9999px;background:rgba(255,186,26,.06);margin-bottom:16px}
   h1{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin-bottom:12px;line-height:1.1;letter-spacing:-.02em}
   h1 span{color:#ffba1a}
-  .lede{color:rgba(255,255,255,.6);font-size:15px;line-height:1.6;max-width:560px;margin:0 auto}
+  .lede{color:rgba(255,255,255,.6);font-size:15px;line-height:1.6;max-width:640px;margin:0 auto}
 
   .section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin:32px 0 16px;display:flex;align-items:center;gap:12px}
   .section-label::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.08)}
 
-  .grid{display:grid;grid-template-columns:1fr;gap:14px}
-  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .module-card{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);transition:border-color .3s,background .3s,transform .3s}
+  .module-card:hover{border-color:rgba(255,186,26,.4);background:rgba(255,186,26,.04);transform:translateY(-2px)}
+  .module-card .meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .module-card .ico{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ffca4a,#ffba1a);color:#0D1117;display:grid;place-items:center;font-weight:800;font-size:14px}
+  .module-card .budget{font-size:10px;font-weight:700;color:rgba(255,186,26,.85);letter-spacing:.06em;text-transform:uppercase}
+  .module-card h2{color:#fff;font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+  .module-card .desc{color:rgba(255,255,255,.55);font-size:12.5px;line-height:1.5;flex:1}
+  .module-card .variants{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding-top:6px}
+  .v-link{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:9px;font-size:12px;font-weight:700;text-decoration:none;transition:all .25s}
+  .v-link.--a{background:rgba(255,186,26,.10);color:#ffba1a;border:1px solid rgba(255,186,26,.25)}
+  .v-link.--a:hover{background:rgba(255,186,26,.18);border-color:rgba(255,186,26,.5)}
+  .v-link.--b{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.10)}
+  .v-link.--b:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.25)}
+  .v-link span{font-size:14px}
 
-  .card{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.02);text-decoration:none;transition:all .3s ease}
-  .card:hover{border-color:#ffba1a;background:rgba(255,186,26,.06);transform:translateY(-3px)}
-  .card-hdr{display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .card-tags{display:flex;gap:6px;flex-wrap:wrap}
-  .card-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:6px;line-height:1}
-  .tag-a{background:rgba(255,186,26,.18);color:#ffba1a;border:1px solid rgba(255,186,26,.3)}
-  .tag-b{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
-  .tag-lp{background:rgba(63,185,80,.16);color:#3FB950;border:1px solid rgba(63,185,80,.30)}
-  .tag-ds{background:rgba(91,162,219,.16);color:#7cb7e3;border:1px solid rgba(91,162,219,.30)}
-  .card-arrow{color:#ffba1a;font-size:18px;line-height:1}
-  .card-title{color:#fff;font-size:17px;font-weight:700;letter-spacing:-.01em}
-  .card-desc{color:rgba(255,255,255,.55);font-size:13px;line-height:1.55;min-height:42px}
-  .card-meta{display:flex;gap:6px;flex-wrap:wrap;padding-top:6px}
-  .pill{font-size:10px;font-weight:600;color:rgba(255,255,255,.6);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:3px 8px;border-radius:6px;letter-spacing:.02em}
+  .ds-section .modules{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .ds-card{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid rgba(91,162,219,.2);border-radius:14px;background:rgba(91,162,219,.04);text-decoration:none;transition:all .3s}
+  .ds-card:hover{border-color:rgba(91,162,219,.5);transform:translateY(-2px)}
+  .ds-card .tag{font-size:10px;font-weight:700;color:#7cb7e3;background:rgba(91,162,219,.16);border:1px solid rgba(91,162,219,.30);padding:3px 8px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase;width:fit-content}
+  .ds-card .title{color:#fff;font-size:14px;font-weight:700}
+  .ds-card .sub{color:rgba(255,255,255,.5);font-size:12px}
 
-  .preview{aspect-ratio:16/9;border-radius:12px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.06)}
-  .preview-a{background:radial-gradient(120% 80% at 50% 10%,rgba(255,186,26,.20),transparent 50%),#0D1117}
-  .preview-b{background:radial-gradient(120% 80% at 50% 10%,rgba(255,186,26,.12),transparent 60%),#FFFFFF}
-  .preview-text{position:absolute;left:14px;top:14px;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:.95}
-  .preview-a .preview-text{color:#fff}
-  .preview-a .preview-text span{color:#ffba1a}
-  .preview-b .preview-text{color:#18191B}
-  .preview-b .preview-text span{background:linear-gradient(90deg,#ffba1a,#b87f00);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  .foot{text-align:center;margin-top:48px;color:rgba(255,255,255,.35);font-size:12px}
+  .foot{text-align:center;margin-top:40px;color:rgba(255,255,255,.35);font-size:12px;line-height:1.6}
   .foot code{font-family:ui-monospace,monospace;color:rgba(255,186,26,.7)}
-  .foot p{margin-top:8px}
 </style>
 </head>
 <body>
@@ -82,114 +78,147 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="wrap">
 
   <div class="header">
-    <img src="shared/assets/orbit-logo.png" alt="Orbit Gestão" class="logo" width="80" height="80">
+    <img src="shared/assets/orbit-logo.png" alt="Orbit Gestão" class="logo" width="72" height="72">
     <span class="badge">Hub interno · mkt.orbitgestao.com.br</span>
     <h1>Orbit <span>Gestão</span> · Marketing</h1>
-    <p class="lede">Landing pages, Design Systems e tracking dos 7 módulos B2B + Canal Orbit. A/B test ativo no módulo Financeiro · Olívia.</p>
+    <p class="lede">A/B test ativo nos 7 módulos prioritários B2B + Canal Orbit. URLs separadas por variante, propagação de UTMs via maoliver92/tracking, dataLayer pra GTM-KPD8KVTH + GTM-W6H3729J.</p>
   </div>
 
-  <!-- LANDING PAGES -->
-  <div class="section-label">Landing Pages · Financeiro</div>
-  <div class="grid">
+  <!-- 7 MÓDULOS B2B -->
+  <div class="section-label">Landing Pages · 7 Módulos B2B (Fase 1)</div>
+  <div class="modules">
 
-    <a href="financeiro-variant-a/" class="card">
-      <div class="preview preview-a">
-        <div class="preview-text">Sua CFO em IA.<br><span>Em tempo real.</span></div>
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">F</div>
+        <span class="budget">R$ 2.200/mês</span>
       </div>
-      <div class="card-hdr">
-        <div class="card-tags">
-          <span class="card-tag tag-lp">LP</span>
-          <span class="card-tag tag-a">Variant A · Dark</span>
-        </div>
-        <span class="card-arrow">→</span>
+      <h2>Financeiro · Olívia IA</h2>
+      <p class="desc">CFO em IA. DRE, fluxo de caixa, runway e burn em tempo real. Substitui ContaAzul + Excel + WhatsApp aprovação.</p>
+      <div class="variants">
+        <a href="financeiro-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="financeiro-variant-b/" class="v-link --b">B · Light <span>→</span></a>
       </div>
-      <div class="card-title">LP Financeiro · Variant A</div>
-      <div class="card-desc">Hero centralizado finex-style + mockup do Painel Financeiro com Olívia chat. Headline: "Sua CFO em IA. DRE e fluxo de caixa em tempo real."</div>
-      <div class="card-meta">
-        <span class="pill">12 seções</span>
-        <span class="pill">Tailwind CDN</span>
-        <span class="pill">Mockups SVG</span>
-        <span class="pill">/financeiro-variant-a</span>
-        <a href="financeiro-variant-a/obrigado.html" style="font-size:10px;color:#3FB950;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.30);padding:3px 8px;border-radius:6px;font-weight:600">✓ obrigado</a>
-      </div>
-    </a>
+    </div>
 
-    <a href="financeiro-variant-b/" class="card">
-      <div class="preview preview-b">
-        <div class="preview-text">Pare de descobrir<br>o <span>caixa</span> depois.</div>
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">C</div>
+        <span class="budget">R$ 2.200/mês</span>
       </div>
-      <div class="card-hdr">
-        <div class="card-tags">
-          <span class="card-tag tag-lp">LP</span>
-          <span class="card-tag tag-b">Variant B · Light</span>
-        </div>
-        <span class="card-arrow">→</span>
+      <h2>CRM com IA</h2>
+      <p class="desc">CRM com pipeline visual + IA por lead + WhatsApp nativo. Alternativa a Pipedrive/RD Station pra empresa B2B.</p>
+      <div class="variants">
+        <a href="crm-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="crm-variant-b/" class="v-link --b">B · Light <span>→</span></a>
       </div>
-      <div class="card-title">LP Financeiro · Variant B</div>
-      <div class="card-desc">Hero split estilo Templum com foto da Olívia. Headline: "Pare de descobrir o caixa depois que ele já acabou." Fundo branco, Iconify Solar.</div>
-      <div class="card-meta">
-        <span class="pill">12 seções</span>
-        <span class="pill">CSS vanilla</span>
-        <span class="pill">Hero split</span>
-        <span class="pill">/financeiro-variant-b</span>
-        <a href="financeiro-variant-b/obrigado.html" style="font-size:10px;color:#3FB950;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.30);padding:3px 8px;border-radius:6px;font-weight:600">✓ obrigado</a>
-      </div>
-    </a>
+    </div>
 
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">E</div>
+        <span class="budget">R$ 1.500/mês</span>
+      </div>
+      <h2>Estratégico · BSC</h2>
+      <p class="desc">BSC, OKR, SWOT e inteligência de mercado conectados à execução. Estratégia auditável que sai do PowerPoint.</p>
+      <div class="variants">
+        <a href="estrategico-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="estrategico-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">I</div>
+        <span class="budget">R$ 1.300/mês</span>
+      </div>
+      <h2>Indicadores · KPIs</h2>
+      <p class="desc">22+ KPIs em tempo real, conectores nativos, causa raiz com IA. Painel único da empresa, sem Power BI.</p>
+      <div class="variants">
+        <a href="indicadores-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="indicadores-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">P</div>
+        <span class="budget">R$ 1.300/mês</span>
+      </div>
+      <h2>Processos · BPM</h2>
+      <p class="desc">Mapeamento com IA, cadeia de valor, instruções de trabalho. Conhecimento vira ativo. ISO 9001 ready.</p>
+      <div class="variants">
+        <a href="processos-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="processos-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">R</div>
+        <span class="budget">R$ 1.300/mês</span>
+      </div>
+      <h2>Pessoas · RH</h2>
+      <p class="desc">RH médio porte em uma plataforma: cargos, PDI, treinamento (WhatsApp), organograma e ATS.</p>
+      <div class="variants">
+        <a href="pessoas-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="pessoas-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico">J</div>
+        <span class="budget">R$ 1.000/mês</span>
+      </div>
+      <h2>Projetos · PMO</h2>
+      <p class="desc">Cards, Kanban, Gantt + agente IA. Conectado a BSC, CRM, Financeiro e RH. Alertas preditivos de atraso.</p>
+      <div class="variants">
+        <a href="projetos-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="projetos-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CANAL ORBIT -->
+  <div class="section-label">Canal Orbit · Funil paralelo (consultorias R$ 100k+/mês)</div>
+  <div class="modules">
+    <div class="module-card">
+      <div class="meta">
+        <div class="ico" style="background:linear-gradient(135deg,#0D1117,#1C2333);color:#ffba1a;border:1px solid rgba(255,186,26,.3)">O</div>
+        <span class="budget">R$ 800/mês</span>
+      </div>
+      <h2>Canal Orbit · White-label</h2>
+      <p class="desc">Plataforma white-label pra consultorias escalarem sem contratar. Agentes IA inclusos + modelo de recorrência embutido.</p>
+      <div class="variants">
+        <a href="canal-orbit-variant-a/" class="v-link --a">A · Dark <span>→</span></a>
+        <a href="canal-orbit-variant-b/" class="v-link --b">B · Light <span>→</span></a>
+      </div>
+    </div>
   </div>
 
   <!-- DESIGN SYSTEMS -->
-  <div class="section-label">Design Systems · Financeiro</div>
-  <div class="grid">
-
-    <a href="financeiro/design-system.html" class="card">
-      <div class="preview preview-a">
-        <div class="preview-text">Design System.<br><span>v1 · Dark.</span></div>
-      </div>
-      <div class="card-hdr">
-        <div class="card-tags">
-          <span class="card-tag tag-ds">DS</span>
-          <span class="card-tag tag-a">Padrão Orbit</span>
-        </div>
-        <span class="card-arrow">→</span>
-      </div>
-      <div class="card-title">Design System A · Dark</div>
-      <div class="card-desc">Padrão Orbit dark — clone do finex com tokens Orbit, Lucide SVG inline, mockup Painel Financeiro com Olívia.</div>
-      <div class="card-meta">
-        <span class="pill">7 seções</span>
-        <span class="pill">Tailwind</span>
-        <span class="pill">Lucide</span>
-      </div>
+  <div class="section-label ds-section">Design Systems · Financeiro</div>
+  <div class="modules ds-section">
+    <a href="financeiro/design-system.html" class="ds-card">
+      <span class="tag">DS · A</span>
+      <div class="title">Design System A · Dark</div>
+      <div class="sub">Padrão Orbit dark · finex-style · Lucide</div>
     </a>
-
-    <a href="financeiro/design-system-b.html" class="card">
-      <div class="preview preview-b">
-        <div class="preview-text">Design System.<br><span>v1 · Light.</span></div>
-      </div>
-      <div class="card-hdr">
-        <div class="card-tags">
-          <span class="card-tag tag-ds">DS</span>
-          <span class="card-tag tag-b">Templum + Orbit</span>
-        </div>
-        <span class="card-arrow">→</span>
-      </div>
-      <div class="card-title">Design System B · Light + Charts + Olívia Hub</div>
-      <div class="card-desc">Estrutura Templum/Aura adaptada com 5 gráficos SVG financeiros e hub orbital de 12 agentes coordenados pela Olívia.</div>
-      <div class="card-meta">
-        <span class="pill">9 seções</span>
-        <span class="pill">CSS vanilla</span>
-        <span class="pill">Iconify Solar</span>
-        <span class="pill">Charts SVG</span>
-      </div>
+    <a href="financeiro/design-system-b.html" class="ds-card">
+      <span class="tag">DS · B</span>
+      <div class="title">Design System B · Light</div>
+      <div class="sub">Templum-style · 5 charts SVG · Olívia hub</div>
     </a>
-
   </div>
 
   <p class="foot">
-    Subdomínio: <code>mkt.orbitgestao.com.br</code> · Cloudflare Pages · root: <code>public/</code>
-    <br>
-    <p>Próximos produtos: <code>crm</code> · <code>estrategico</code> · <code>indicadores</code> · <code>processos</code> · <code>pessoas</code> · <code>projetos</code> · <code>canal-orbit</code></p>
+    16 LPs ativas · A/B test por módulo · subdomínio <code>mkt.orbitgestao.com.br</code><br>
+    Tracking: maoliver92/tracking (UTM persistence) · analytics.js (dataLayer) · GTM-KPD8KVTH + GTM-W6H3729J<br>
+    Imagens hero placeholder pros módulos: estrategico · indicadores · processos · pessoas · projetos · canal-orbit
   </p>
 </div>
+
 </body>
 </html>
