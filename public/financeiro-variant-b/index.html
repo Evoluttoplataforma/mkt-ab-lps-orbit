@@ -233,20 +233,19 @@
   .step-title{font-family:var(--font-sans);font-weight:700;font-size:22px;color:var(--text);letter-spacing:-0.02em}
   .step-text{font-size:14px;color:var(--text-mid);line-height:1.55}
 
-  /* Cases */
-  .cases{display:grid;grid-template-columns:1fr;gap:16px;max-width:1024px;margin:0 auto}
-  @media(min-width:768px){.cases{grid-template-columns:1fr 1fr}}
-  .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:32px;position:relative;overflow:hidden}
-  .case-quote-icon{position:absolute;top:24px;right:24px;color:var(--gold-soft);font-size:64px;line-height:1;font-family:Georgia,serif;font-weight:700;opacity:.7}
-  .case-sector{font-size:11px;font-weight:700;color:var(--gold-dark);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;position:relative;z-index:1}
-  .case-quote{font-family:var(--font-sans);font-weight:600;font-size:19px;line-height:1.4;letter-spacing:-0.015em;color:var(--text);margin-bottom:20px;position:relative;z-index:1}
-  .case-author{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-  .case-avatar{width:42px;height:42px;border-radius:999px;background:linear-gradient(135deg,var(--gold-mid),var(--gold));color:var(--orbit-black);display:grid;place-items:center;font-weight:800;font-size:13px}
-  .case-author-name{font-size:14px;font-weight:700;color:var(--text)}
-  .case-author-meta{font-size:12px;color:var(--text-mid)}
-  .case-result{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-  .case-result .lbl{font-size:12px;color:var(--text-mid);font-weight:500}
-  .case-result .val{font-family:var(--font-sans);font-weight:800;font-size:18px;color:var(--gold-dark);letter-spacing:-0.02em}
+  /* Cases · vídeos verticais Vimeo */
+  .cases{display:grid;grid-template-columns:1fr;gap:20px;max-width:1200px;margin:0 auto}
+  @media(min-width:640px){.cases{grid-template-columns:1fr 1fr;gap:18px}}
+  @media(min-width:1024px){.cases{grid-template-columns:repeat(4,1fr);gap:16px}}
+  .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);overflow:hidden;transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft),border-color .4s var(--ease-soft);display:flex;flex-direction:column}
+  .case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card);border-color:rgba(255,186,26,.45)}
+  .case-video-wrap{padding-top:177.78%;position:relative;background:linear-gradient(135deg,var(--gold-light),var(--gold-mid))}
+  .case-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .case-meta{padding:18px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+  .case-meta .name{font-family:var(--font-sans);font-weight:800;font-size:15px;color:var(--text);letter-spacing:-.02em}
+  .case-meta .role{font-size:12px;color:var(--text-mid);font-weight:600;line-height:1.4}
+  .case-meta .badge-video{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--gold-dark);background:rgba(255,186,26,.10);border:1px solid rgba(255,186,26,.25);padding:3px 8px;border-radius:6px;letter-spacing:.12em;text-transform:uppercase;width:fit-content;margin-top:6px}
+  .case-meta .badge-video iconify-icon{font-size:12px}
 
   /* Comparativo — VS rich layout */
   .compare-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-32);overflow:hidden;max-width:1100px;margin:0 auto;box-shadow:var(--shadow-soft)}
@@ -816,39 +815,50 @@
 
     <div class="cases">
       <article class="case-card">
-        <span class="case-quote-icon">"</span>
-        <p class="case-sector">Indústria de embalagens · RJ</p>
-        <blockquote class="case-quote">"Eu não consultava DRE há 4 meses porque demorava 2 dias para fechar. Agora consulto todo dia, na hora."</blockquote>
-        <div class="case-author">
-          <div class="case-avatar" data-swap="foto-cliente-1">CF</div>
-          <div>
-            <p class="case-author-name">CFO · Diretoria Financeira</p>
-            <p class="case-author-meta">65 funcionários · R$ 1,2M/mês</p>
-          </div>
+        <div class="case-video-wrap">
+          <iframe src="https://player.vimeo.com/video/1194126879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Rogério Menossi · Time Produtivo"></iframe>
         </div>
-        <div class="case-result">
-          <span class="lbl">Fechamento mensal</span>
-          <span class="val">12 dias → 3 dias</span>
+        <div class="case-meta">
+          <span class="badge-video"><iconify-icon icon="solar:videocamera-record-bold"></iconify-icon> Case em vídeo</span>
+          <p class="name">Rogério Menossi</p>
+          <p class="role">Time Produtivo</p>
         </div>
       </article>
 
       <article class="case-card">
-        <span class="case-quote-icon">"</span>
-        <p class="case-sector">Consultoria empresarial · SP</p>
-        <blockquote class="case-quote">"A Olívia me poupou de contratar um analista financeiro júnior. Pergunto e ela responde com gráfico."</blockquote>
-        <div class="case-author">
-          <div class="case-avatar" data-swap="foto-cliente-2">SF</div>
-          <div>
-            <p class="case-author-name">Sócio-fundador</p>
-            <p class="case-author-meta">42 funcionários · R$ 800k/mês</p>
-          </div>
+        <div class="case-video-wrap">
+          <iframe src="https://player.vimeo.com/video/1194125389?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Bruno Lozano · Ritual de Gestão"></iframe>
         </div>
-        <div class="case-result">
-          <span class="lbl">Time financeiro</span>
-          <span class="val">economia de 1 FTE</span>
+        <div class="case-meta">
+          <span class="badge-video"><iconify-icon icon="solar:videocamera-record-bold"></iconify-icon> Case em vídeo</span>
+          <p class="name">Bruno Lozano</p>
+          <p class="role">Ritual de Gestão</p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-video-wrap">
+          <iframe src="https://player.vimeo.com/video/1194124564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Hygor Limar · Potencialize Resultados"></iframe>
+        </div>
+        <div class="case-meta">
+          <span class="badge-video"><iconify-icon icon="solar:videocamera-record-bold"></iconify-icon> Case em vídeo</span>
+          <p class="name">Hygor Limar</p>
+          <p class="role">Potencialize Resultados</p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-video-wrap">
+          <iframe src="https://player.vimeo.com/video/1194123078?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Case Lucineia Pedrosa · Econtech Consultoria"></iframe>
+        </div>
+        <div class="case-meta">
+          <span class="badge-video"><iconify-icon icon="solar:videocamera-record-bold"></iconify-icon> Case em vídeo</span>
+          <p class="name">Lucineia Pedrosa</p>
+          <p class="role">Econtech Consultoria</p>
         </div>
       </article>
     </div>
+    <script src="https://player.vimeo.com/api/player.js" defer></script>
   </div>
 </section>
 
