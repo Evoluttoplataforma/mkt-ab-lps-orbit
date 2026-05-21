@@ -854,7 +854,7 @@ def apply_module(html, slug, cfg, variant):
                             cfg['hero_a_sub'])
     else:
         old_h1 = '''<h1 class="hero-headline">
-            Pare de descobrir o caixa depois que ele já acabou.
+            Pare de descobrir o caixa <em>depois</em> que ele já acabou.
           </h1>'''
         new_h1 = f'''<h1 class="hero-headline">
             {cfg["hero_b_h1"]}
