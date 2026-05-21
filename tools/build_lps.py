@@ -585,6 +585,230 @@ MODULES = {
 
 
 # ─────────────────────────────────────────────────────────────────
+# TESTIMONIALS · trechos verbatim das demos do Cowork v2 por módulo
+# ─────────────────────────────────────────────────────────────────
+
+TESTIMONIALS = {
+    'crm': {
+        'section_h_a': 'O que <span class="text-primary">empresários reais</span> falaram sobre o comercial',
+        'section_h_b': 'O que <em>empresários reais</em> falaram sobre o comercial',
+        'cards': [
+            {
+                'quote': 'Isso aqui é a coluna vertebral da nossa operação e a gente tem muitos KPIs. A gente organiza os outros — mas é {h:casa de ferreiro e espeto de aço}.',
+                'name': 'F12 Publicidade',
+                'role': 'Agência em crescimento acelerado',
+                'metric': 'Espinha dorsal · também avalia Canal Orbit pra revender aos próprios clientes',
+            },
+            {
+                'quote': 'A gente atende B2B, sempre lojas multimarcas. Prospecção, pós-venda, {h:tudo aqui a gente faz de maneira muito manual}. Hoje tenho essa dificuldade de centralizar as informações.',
+                'name': 'Caio Arruda',
+                'role': 'Dono · Clara Ruda (indústria moda B2B · PA/BA · Brasil todo)',
+                'metric': 'Saiu da venda na unha para pipeline visual com IA',
+            },
+        ],
+    },
+    'estrategico': {
+        'section_h_a': 'O que <span class="text-primary">CEOs reais</span> falaram sobre estratégia',
+        'section_h_b': 'O que <em>CEOs reais</em> falaram sobre estratégia',
+        'cards': [
+            {
+                'quote': 'Eu vi que tem uma conexão real entre o que foi falado na mídia e o que o produto é. A gente já pegou vários processos e digitalizou — {h:agora queremos ter o estratégico conectado à execução de verdade}.',
+                'name': 'Pablo Julião',
+                'role': 'Sócio-diretor · Empresa de energia solar (SE → fazendas solares)',
+                'metric': 'Expansão regional ligando estratégia à execução',
+            },
+            {
+                'quote': 'Sempre foi eu como profissional: fazer meu cliente pagar o mínimo de imposto possível. A ideia não é ser entrega de obrigações — {h:é entregar resultado e colocar dinheiro no bolso dos nossos clientes}.',
+                'name': 'Marcos Paulo',
+                'role': 'Sócio-fundador · Conex Soluções Contábeis (nacional · desde 2022)',
+                'metric': 'Posicionamento de consultoria de resultado, não escritório de obrigações',
+            },
+        ],
+    },
+    'indicadores': {
+        'section_h_a': 'O que <span class="text-primary">diretores reais</span> falaram sobre KPI',
+        'section_h_b': 'O que <em>diretores reais</em> falaram sobre KPI',
+        'cards': [
+            {
+                'quote': 'A gente trabalha com BI que reflete os números comerciais, mas a gente tá muito ainda difuso, tem muito dado, tem muita coisa. {h:Hoje a gente tem aí orbitando uns 8 a 10 sistemas}.',
+                'name': 'Liderança Santa Julia (Uncle K)',
+                'role': 'Franqueadora de moda · 29 franquias · 30 anos',
+                'metric': '8-10 sistemas → painel único',
+            },
+            {
+                'quote': 'Pela importância de uma frota dentro de uma corporação, hoje a gente tem 140 veículos. {h:Antes era planilha}. Hoje você poupa tempo, poupa dores, poupa estresse.',
+                'name': 'Vanderlan Goncalves Da Silva',
+                'role': 'Gestor · Grupo Connect',
+                'metric': '140 veículos centralizados em painel único',
+            },
+        ],
+    },
+    'processos': {
+        'section_h_a': 'O que <span class="text-primary">gestores reais</span> falaram sobre processo',
+        'section_h_b': 'O que <em>gestores reais</em> falaram sobre processo',
+        'cards': [
+            {
+                'quote': 'Eu gosto muito de processos, é uma área que me encanta bastante. {h:Se você não tiver processos muito estruturados, você realmente não consegue gerir com resultados de pessoas}.',
+                'name': 'Alessandra',
+                'role': 'Gestora · Grupo Carla Séd (clínica dermatologia · +27 anos · +40 colab)',
+                'metric': 'Padronização estruturada para gerir time de 40+',
+            },
+            {
+                'quote': 'Hidrostática de submarino, empresas de equipamentos de guindas... {h:eu vou em um, vou em outro e acabo perdendo muito tempo no operacional}. A gente acaba perdendo prazo para ambos os lados.',
+                'name': 'Lenildo Jose',
+                'role': 'Sócio · Consultoria em NRs (segurança do trabalho · RJ)',
+                'metric': 'Migrando de Excel para BPM estruturado',
+            },
+        ],
+    },
+    'pessoas': {
+        'section_h_a': 'O que <span class="text-primary">empresários reais</span> falaram sobre RH',
+        'section_h_b': 'O que <em>empresários reais</em> falaram sobre RH',
+        'cards': [
+            {
+                'quote': 'Abri a vaga e tô com 120 currículos, 100% avaliados pela Olívia. {h:Hoje posso contratar o candidato número 98 com a mesma confiança do número 3} — porque a Olívia avaliou todos com o mesmo critério.',
+                'name': 'Vinícius',
+                'role': 'P7 Empreendimentos',
+                'metric': '120 candidatos avaliados com agente recrutador',
+            },
+            {
+                'quote': 'Empresa familiar, paguei R$ 800/mês pra empresa terceirizada de RH durante anos. As pessoas não têm a mesma mentalidade que eu. {h:Hoje, fica até mais fácil de cobrar — porque quem está dizendo é a Olívia}.',
+                'name': 'Mateus Ribeiro',
+                'role': 'Sócio · Indústria de produtos de limpeza (familiar · 15 colab + canal próprio)',
+                'metric': 'Substituiu RH terceirizado por sistema interno',
+            },
+        ],
+    },
+    'projetos': {
+        'section_h_a': 'O que <span class="text-primary">gestores de projeto reais</span> falaram',
+        'section_h_b': 'O que <em>gestores de projeto reais</em> falaram',
+        'cards': [
+            {
+                'quote': 'Eu gostei bastante desse sisteminha de vocês, principalmente nessa parte de RH. Lá na parte de vendas também pode me ajudar bastante — {h:projetos integrados ao financeiro e ao comercial}.',
+                'name': 'Jaime Guimaraes',
+                'role': 'Sócio · Page (software house · split de pagamentos · atende clínicas)',
+                'metric': 'PMO conectado a comercial e financeiro',
+            },
+            {
+                'quote': 'Eu fiz alguns cursos de inteligência artificial e desenvolvi alguns agentes, mas ainda falta um pouco de refino. Por isso decidi pegar uma empresa que já venha robusta. {h:A Olívia vai ser fantástica}.',
+                'name': 'Fábio Occenstein',
+                'role': 'Sócio · Construtora Garden Club (Minha Casa Minha Vida · 500 unidades · Recife)',
+                'metric': 'Construtora com projeto de 500 unidades habitacionais',
+            },
+        ],
+    },
+    'canal-orbit': {
+        'section_h_a': 'O que <span class="text-primary">consultores reais</span> falaram sobre o Canal',
+        'section_h_b': 'O que <em>consultores reais</em> falaram sobre o Canal',
+        'cards': [
+            {
+                'quote': '5 consultores, 238 projetos simultâneos. Custo de atendimento: 4% — quando o mercado opera entre 20-30%. {h:Foi a Orbit que tornou possível esse modelo}. Cliente que adota não troca de consultor.',
+                'name': 'Templum Consultoria',
+                'role': 'Maior consultoria de certificações ISO do Brasil (26 anos · grupo Orbit)',
+                'metric': '+8.000 empresas · 238 projetos simultâneos · 4% custo de atendimento',
+            },
+            {
+                'quote': 'Acabei de sair de uma reunião de fechamento, consegui fechar contrato de R$ 48.000. O cliente ficou muito feliz quando viu a proposta. {h:Não estou vendendo projeto único — estou vendendo plataforma + acompanhamento}.',
+                'name': 'Bruno Lozano',
+                'role': 'Consultor independente · modelo CRP',
+                'metric': 'R$ 48.000 fechados em uma reunião com proposta CRP',
+            },
+            {
+                'quote': 'Tinha serviços que praticamente dava pro cliente — coloquei no portfólio. Hoje aumentei número de produtos, aumentei receita e {h:diminuí equipe e carga horária, mas entrego mais resultado}.',
+                'name': 'Lucineia',
+                'role': 'Consultora sênior · gestão para médio/grande porte',
+                'metric': 'Aumentou receita e diminuiu equipe — entregando mais resultado',
+            },
+        ],
+    },
+}
+
+
+def _quote_highlight(text, variant):
+    """Substitui {h:texto} por <strong class="..." > do tema."""
+    if variant == 'a':
+        return re.sub(r'\{h:([^}]+)\}', r'<strong class="text-primary font-extrabold not-italic">\1</strong>', text)
+    return re.sub(r'\{h:([^}]+)\}', r'<strong style="color:var(--gold-mid);font-weight:800;font-style:normal">\1</strong>', text)
+
+
+def inject_testimonials(html, slug, variant):
+    """Substitui a seção depoimentos do Financeiro pelo conteúdo do módulo."""
+    cards = TESTIMONIALS.get(slug)
+    if not cards:
+        return html  # Financeiro mantém o template original
+
+    if variant == 'a':
+        # Renderiza cards LP A (dark)
+        cards_html = '\n'.join([
+            f'''    <article class="bg-[#0A0A0C] border border-white/10 rounded-2xl p-8 hover:border-primary/40 transition-all duration-300 flex flex-col relative">
+      <svg class="absolute top-6 right-6 text-primary/30" fill="currentColor" height="36" viewBox="0 0 24 24" width="36"><path d="M9.5 4C5.91 4 3 6.91 3 10.5V18a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2H6.5C7.327 9.673 8.832 8.5 10.5 8.5V4h-1zm12 0c-3.59 0-6.5 2.91-6.5 6.5V18a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2h-2.5c.827-2.327 2.332-3.5 4-3.5V4h-1z"/></svg>
+      <p class="text-lg leading-relaxed text-white/90 italic mb-6 relative z-10">"{_quote_highlight(c['quote'], 'a')}"</p>
+      <div class="mt-auto pt-6 border-t border-white/10">
+        <p class="text-sm font-extrabold text-white">{c['name']}</p>
+        <p class="text-xs text-gray-500 font-semibold">{c['role']}</p>
+        <span class="inline-flex items-center mt-3 px-2 py-1 rounded-full bg-primary/10 border border-primary/30 text-[10px] font-bold text-primary uppercase tracking-wider">{c['metric']}</span>
+      </div>
+    </article>'''
+            for c in cards['cards']
+        ])
+
+        # Encontra a seção depoimentos do Financeiro e substitui
+        pattern = r'<!-- ════════════ 8b\. DEPOIMENTOS \(text quotes\) ════════════ -->.*?</section>\s*\n\s*\n\s*<!-- ════════════ 9\. COMPARATIVO ════════════ -->'
+        new_section = f'''<!-- ════════════ 8b. DEPOIMENTOS (text quotes) ════════════ -->
+<section id="depoimentos" class="z-10 w-full max-w-7xl mt-24 mr-auto ml-auto px-6 relative">
+  <div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-[11px] font-mono font-medium text-primary border border-primary/20 mb-4">08b</span>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.05]">{cards['section_h_a']}</h2>
+    <p class="text-base text-gray-400 mt-4 leading-relaxed">Trechos verbatim de empresários durante apresentações do Orbit.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto" data-block="testimonials">
+{cards_html}
+  </div>
+</section>
+
+
+<!-- ════════════ 9. COMPARATIVO ════════════ -->'''
+        html = re.sub(pattern, new_section, html, flags=re.DOTALL, count=1)
+    else:
+        # Renderiza cards LP B (light)
+        cards_html = '\n'.join([
+            f'''      <article style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-24);padding:36px;display:flex;flex-direction:column;position:relative;transition:transform .4s var(--ease-soft),border-color .4s var(--ease-soft);box-shadow:var(--shadow-card)">
+        <svg style="position:absolute;top:24px;right:24px;opacity:0.22;fill:var(--gold-mid)" height="40" viewBox="0 0 24 24" width="40"><path d="M9.5 4C5.91 4 3 6.91 3 10.5V18a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2H6.5C7.327 9.673 8.832 8.5 10.5 8.5V4h-1zm12 0c-3.59 0-6.5 2.91-6.5 6.5V18a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2h-2.5c.827-2.327 2.332-3.5 4-3.5V4h-1z"/></svg>
+        <p style="font-size:17px;line-height:1.65;color:var(--text);font-style:italic;margin-bottom:24px;position:relative;z-index:1">"{_quote_highlight(c['quote'], 'b')}"</p>
+        <div style="margin-top:auto;padding-top:20px;border-top:1px solid var(--border)">
+          <p style="font-size:14px;font-weight:800;color:var(--text);margin:0">{c['name']}</p>
+          <p style="font-size:12px;color:var(--text-soft);font-weight:600;margin:2px 0 0">{c['role']}</p>
+          <span style="display:inline-flex;align-items:center;margin-top:12px;padding:5px 10px;border-radius:999px;background:rgba(255,186,26,0.12);border:1px solid rgba(255,186,26,0.35);font-size:10px;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:0.08em">{c['metric']}</span>
+        </div>
+      </article>'''
+            for c in cards['cards']
+        ])
+
+        pattern = r'<!-- ════════════ 8b\. DEPOIMENTOS \(text quotes\) ════════════ -->.*?</section>\s*\n\s*\n\s*<!-- ════════════ 9\. COMPARATIVO ════════════ -->'
+        new_section = f'''<!-- ════════════ 8b. DEPOIMENTOS (text quotes) ════════════ -->
+<section class="section" id="depoimentos">
+  <div class="container xl">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+      <span class="eyebrow">08b — Depoimentos</span>
+      <h2>{cards['section_h_b']}</h2>
+      <p style="margin-top:14px;color:var(--text-soft);font-size:16px;line-height:1.6">Trechos verbatim de empresários durante apresentações do Orbit.</p>
+    </div>
+
+    <div class="testimonials" data-block="testimonials" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;max-width:1100px;margin:0 auto">
+{cards_html}
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ 9. COMPARATIVO ════════════ -->'''
+        html = re.sub(pattern, new_section, html, flags=re.DOTALL, count=1)
+
+    return html
+
+
+# ─────────────────────────────────────────────────────────────────
 # REPLACEMENTS · cada (find, key) define o que pegar do template e
 # o que colocar do config do módulo
 # ─────────────────────────────────────────────────────────────────
@@ -617,27 +841,26 @@ def apply_module(html, slug, cfg, variant):
     # data-variant
     html = re.sub(r'data-variant="[ab]"', f'data-variant="{variant}"', html)
 
-    # Hero H1 + sub
+    # Hero H1 + sub — template Financeiro foi atualizado pra copy Cowork v2
     if variant == 'a':
         old_h1 = '''<h1 class="text-center text-4xl sm:text-5xl md:text-7xl leading-[1.05] max-w-5xl mx-auto font-display font-extrabold tracking-tight scroll-item scroll-blur-in d-100">
-    Sua <span class="text-primary">CFO em IA</span>.
-    <br class="hidden md:block">DRE e fluxo de caixa em tempo real.
+    Pare de descobrir o <span class="text-primary">caixa</span> depois que ele já acabou.
   </h1>'''
         new_h1 = f'''<h1 class="text-center text-4xl sm:text-5xl md:text-7xl leading-[1.05] max-w-5xl mx-auto font-display font-extrabold tracking-tight scroll-item scroll-blur-in d-100">
     {cfg["hero_a_h1"]}
   </h1>'''
         html = html.replace(old_h1, new_h1)
-        html = html.replace('Substitua planilha, ContaAzul e o financeiro improvisado por uma plataforma com IA que mostra DRE, fluxo, burn rate e runway em segundos.',
+        html = html.replace('Olívia, sua IA financeira, responde sobre DRE, fluxo de caixa, burn rate e runway em linguagem natural. Pare de fechar mês com 15 dias de atraso — comece os 3 dias grátis hoje.',
                             cfg['hero_a_sub'])
     else:
         old_h1 = '''<h1 class="hero-headline">
-            Pare de descobrir o caixa <em>depois</em> que ele já acabou.
+            Pare de descobrir o caixa depois que ele já acabou.
           </h1>'''
         new_h1 = f'''<h1 class="hero-headline">
             {cfg["hero_b_h1"]}
           </h1>'''
         html = html.replace(old_h1, new_h1)
-        html = html.replace('Substitua planilha, ContaAzul e o financeiro improvisado por uma plataforma com IA\n              que mostra DRE, fluxo, burn rate e runway em segundos. Olívia responde em linguagem natural.',
+        html = html.replace('Olívia, sua IA financeira, responde sobre DRE, fluxo de caixa, burn rate e runway em\n              linguagem natural. Pare de fechar mês com 15 dias de atraso — comece os 3 dias grátis hoje.',
                             cfg['hero_b_sub'])
 
     # Faixa de credibilidade - headline
@@ -715,12 +938,12 @@ def apply_module(html, slug, cfg, variant):
         html = html.replace(old_icon, new_icon, 1)
         html = html.replace(old_text, new_text, 1)
 
-    # Benefícios headline
+    # Benefícios headline — template Financeiro foi atualizado com a frase "salada mista de informações"
     if variant == 'a':
-        html = html.replace('O que muda quando o financeiro vira <span class="text-primary">inteligência</span>',
+        html = html.replace('O que muda quando o financeiro vira inteligência — não mais <span class="text-primary">"salada mista de informações"</span>',
                             cfg['benefits_headline'])
     else:
-        html = html.replace('O que muda quando o financeiro vira <em>inteligência</em>',
+        html = html.replace('O que muda quando o financeiro vira inteligência — não mais <em>"salada mista de informações"</em>',
                             cfg['benefits_headline_b'])
 
     # Benefits (4 cards)
@@ -867,6 +1090,9 @@ def apply_module(html, slug, cfg, variant):
     m = MOCKUPS.get(slug, {})
     if m:
         html = apply_mockup(html, slug, m, variant)
+
+    # Injeta testimonials específicos do módulo (substitui o do Financeiro herdado pelo template)
+    html = inject_testimonials(html, slug, variant)
 
     return html
 
