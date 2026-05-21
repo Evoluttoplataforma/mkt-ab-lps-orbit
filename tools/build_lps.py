@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT / 'tools'))
 from module_mockups import MOCKUPS
+from hero_mockups import HERO_MOCKUPS_A
 
 TPL_A = (ROOT / 'public/financeiro-variant-a/index.html').read_text()
 TPL_B = (ROOT / 'public/financeiro-variant-b/index.html').read_text()
@@ -815,6 +816,12 @@ def inject_testimonials(html, slug, variant):
 
 def apply_module(html, slug, cfg, variant):
     """Aplica os swaps do config sobre o template."""
+    # PRIMEIRO: substitui o hero mockup DESKTOP pelo específico do módulo (LP A apenas).
+    # Tem que rodar antes dos outros swaps pra não perder o comentário-âncora
+    # "Painel Financeiro Orbit" que é alterado por replaces subsequentes.
+    if variant == 'a' and slug in HERO_MOCKUPS_A:
+        html = _replace_hero_mockup_a(html, HERO_MOCKUPS_A[slug])
+
     # URLs e meta
     html = html.replace('/financeiro-variant-a', f'/{slug}-variant-{variant}')
     html = html.replace('/financeiro-variant-b', f'/{slug}-variant-{variant}')
@@ -1091,10 +1098,17 @@ def apply_module(html, slug, cfg, variant):
     if m:
         html = apply_mockup(html, slug, m, variant)
 
-    # Injeta testimonials específicos do módulo (substitui o do Financeiro herdado pelo template)
+    # Injeta testimonials específicos do módulo
     html = inject_testimonials(html, slug, variant)
 
     return html
+
+
+def _replace_hero_mockup_a(html, new_mockup):
+    """Substitui o bloco <!-- HERO MOCKUP DESKTOP --> do Financeiro pelo do módulo."""
+    pattern = r'  <!-- HERO MOCKUP DESKTOP — Painel Financeiro Orbit -->.*?\n  </div>\n</main>'
+    replacement = new_mockup.strip() + '\n</main>'
+    return re.sub(pattern, replacement, html, count=1, flags=re.DOTALL)
 
 
 def apply_mockup(html, slug, m, variant):

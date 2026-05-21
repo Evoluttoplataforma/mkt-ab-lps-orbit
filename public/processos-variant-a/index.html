@@ -252,143 +252,88 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     </div>
   </div>
 
-  <!-- HERO MOCKUP DESKTOP — Mapa de Processos Orbit -->
-  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-processos">
-    <div class="flex overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
-
-      <!-- Sidebar -->
-      <aside class="w-60 border-r border-white/5 bg-[#0A0A0C] flex flex-col hidden md:flex">
-        <div class="h-14 flex items-center px-5 gap-2 mb-1 border-b border-white/5">
-          <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="26" height="26" class="w-6 h-6 object-contain"/>
-          <span class="text-sm font-extrabold text-white">Orbit</span>
-          <span class="text-xs font-semibold text-primary">Processos</span>
+<!-- HERO MOCKUP DESKTOP · BPMN flowchart -->
+  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel">
+    <div class="flex flex-col overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
+      <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[11px]">OR</div>
+          <span class="text-white font-bold text-sm tracking-tight">Orbit</span>
+          <span class="text-primary font-bold text-xs uppercase tracking-wider">Processos</span>
         </div>
-        <nav class="flex-1 px-3 py-3 space-y-1">
-          <div class="px-3 py-1.5 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Olívia</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-bold text-orbit-black bg-primary rounded-md shadow-gold-soft">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Pergunte à Olívia
-            <span class="ml-auto text-[9px] font-bold bg-orbit-black text-primary px-1.5 py-0.5 rounded">IA</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Processos</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-white bg-white/5 rounded-md border border-white/5">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><rect height="7" rx="1" width="7" x="3" y="3"/><rect height="7" rx="1" width="7" x="14" y="3"/><rect height="7" rx="1" width="7" x="14" y="14"/><rect height="7" rx="1" width="7" x="3" y="14"/></svg>
-            Mapa de Processos
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M2 7h20l-2 13H4z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Instruções de Trabalho
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Cadeia de Valor
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            Ciclo de Vida
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Fluxogramas
-            <span class="ml-auto text-[9px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded">3</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">ISO 9001</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
-            Auditoria
-          </a>
-        </nav>
-      </aside>
-
-      <!-- Main -->
-      <main class="flex-1 flex flex-col bg-[#050505] overflow-hidden">
-        <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-[#0A0A0C]/80 backdrop-blur-xl sticky top-0 z-20">
-          <div>
-            <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Visão Geral</h2>
-            <div class="flex items-center gap-2 mt-0.5">
-              <span class="text-white font-bold text-sm tracking-tight">Mapa de Processos</span>
-              <span class="text-gray-600">·</span>
-              <span class="text-xs text-gray-500">Maio 2026</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="hidden md:flex items-center px-3 py-1.5 bg-white/5 border border-white/10 rounded-full gap-2">
-              <div class="status-dot"></div>
-              <span class="text-[11px] font-medium text-gray-300">Sincronizado</span>
-            </div>
-            <button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-orbit-black text-[11px] font-bold rounded-md shadow-gold-glow">
-              <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              Novo
-            </button>
-          </div>
-        </header>
-        <div class="flex-1 overflow-y-auto pt-5 pr-5 pb-5 pl-5 space-y-3">
-          <div class="grid grid-cols-3 gap-3">
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Processos Mapeados</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">47</h3>
-              <span class="px-1.5 py-0.5 rounded bg-success/10 text-success text-[10px] font-medium border border-success/20 flex items-center gap-1 w-fit">+12 mês</span>
-            </div>
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Críticos</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">12</h3>
-              <span class="px-1.5 py-0.5 rounded bg-white/5 text-gray-300 text-[10px] font-medium border border-white/10 w-fit">100%</span>
-            </div>
-            <div class="overflow-hidden text-orbit-black bg-gradient-to-br from-primary to-primary-600 border-primary/40 border rounded-xl p-4 relative shadow-gold-soft">
-              <p class="text-[10px] font-bold text-orbit-black/70 uppercase tracking-wider mb-1">ISO 9001 Ready</p>
-              <h3 class="text-xl font-extrabold tracking-tight mb-1">100%</h3>
-              <span class="text-[10px] font-bold bg-orbit-black/15 text-orbit-black px-2 py-0.5 rounded">Pronto</span>
-            </div>
-          </div>
-          <div class="grid grid-cols-3 gap-3 items-start">
-            <!-- Chart -->
-            <div class="col-span-2 h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-5 flex flex-col">
-              <div class="flex justify-between items-start mb-3">
-                <div>
-                  <h3 class="text-base font-bold text-white">Cadeia de Valor</h3>
-                  <p class="text-[11px] text-gray-500 mt-0.5">Processos por área</p>
-                </div>
-                <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">+18%</span>
-              </div>
-              <div class="flex-1 flex items-end gap-3 px-2 relative">
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[40%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[55%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[48%]"></div>
-                <div class="flex-1 bg-primary rounded-t-lg h-[82%] relative">
-                  <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/30 to-transparent"></div>
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-[#1A1A24] border border-primary/40 px-2 py-0.5 rounded">12 críticos</span>
-                </div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[68%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[78%]"></div>
-              </div>
-              <div class="flex justify-between mt-2 text-[10px] text-gray-500 px-2"><span>Dez</span><span>Jan</span><span>Fev</span><span>Mar</span><span class="text-primary font-bold">Abr</span><span>Mai</span></div>
-            </div>
-            <!-- Olivia chat preview -->
-            <div class="h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 overflow-hidden">
-              <div class="flex items-center gap-2 pb-2 border-b border-white/5">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px]">OL</div>
-                <div class="flex-1">
-                  <p class="text-xs font-bold text-white">Olívia · IA</p>
-                  <p class="text-[10px] text-gray-500">Sua IA de processos</p>
-                </div>
-                <div class="status-dot"></div>
-              </div>
-              <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300 leading-snug">Mapeie meu processo de compras</div>
-              <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white leading-snug">
-                Mapa criado (12 críticos), margem subiu pra 53%. Quer ver o drill por cliente?
-              </div>
-              <div class="flex gap-1.5 flex-wrap">
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Ver mapa</span>
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Otimizar</span>
-              </div>
-              <div class="mt-auto pt-2 flex gap-2">
-                <input class="flex-1 bg-[#111] border border-white/10 rounded px-2 py-1.5 text-[11px] text-white placeholder:text-gray-600" placeholder="Descreva um processo pra eu mapear..."/>
-                <button class="bg-primary text-orbit-black text-[10px] font-bold px-2 py-1.5 rounded">Enviar</button>
-              </div>
-            </div>
-          </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] text-gray-500">Pedido de compra · v2.1 · ISO 9001</span>
+          <button class="bg-primary text-orbit-black px-3 py-1.5 rounded-lg text-[11px] font-bold">Exportar BPMN</button>
         </div>
-      </main>
+      </header>
+      <!-- Flowchart canvas -->
+      <div class="flex-1 p-8 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <!-- SVG canvas with BPMN nodes -->
+        <svg class="w-full h-full relative z-10" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+          <!-- Linhas conectoras -->
+          <line x1="160" y1="120" x2="220" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="370" y1="120" x2="430" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="540" y1="120" x2="600" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="670" y1="155" x2="670" y2="240" stroke="#ffba1a" stroke-width="2" marker-end="url(#arrow-gold)"/>
+          <line x1="730" y1="120" x2="800" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="950" y1="120" x2="1010" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="730" y1="295" x2="800" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0 0, 10 5, 0 10" fill="rgba(255,255,255,0.3)"/></marker>
+            <marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0 0, 10 5, 0 10" fill="#ffba1a"/></marker>
+          </defs>
+
+          <!-- Start · Recebe pedido -->
+          <circle cx="100" cy="120" r="28" fill="#1A1A1F" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <text x="100" y="125" text-anchor="middle" fill="white" font-size="11" font-weight="700">Receber</text>
+
+          <!-- Atividade 1 -->
+          <rect x="220" y="90" width="150" height="60" rx="10" fill="#0E0E11" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="295" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="700">Validar dados</text>
+          <text x="295" y="130" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">Compras · 15min</text>
+
+          <!-- Atividade 2 -->
+          <rect x="430" y="90" width="110" height="60" rx="10" fill="#0E0E11" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="485" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="700">Cotar</text>
+          <text x="485" y="130" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">3 fornecedores</text>
+
+          <!-- Decisão · losango -->
+          <polygon points="670,90 730,120 670,150 610,120" fill="#0E0E11" stroke="#ffba1a" stroke-width="2"/>
+          <text x="670" y="118" text-anchor="middle" fill="#ffba1a" font-size="11" font-weight="700">Valor</text>
+          <text x="670" y="132" text-anchor="middle" fill="#ffba1a" font-size="10" font-weight="700">&gt; 10k?</text>
+
+          <!-- Path NÃO · direto pra aprovar -->
+          <rect x="800" y="90" width="150" height="60" rx="10" fill="#0E0E11" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="875" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="700">Aprovar líder</text>
+          <text x="875" y="130" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">SLA · 4h</text>
+
+          <!-- Path SIM · aprovação diretor -->
+          <rect x="600" y="240" width="160" height="60" rx="10" fill="#0E0E11" stroke="#ffba1a" stroke-width="1.5"/>
+          <text x="680" y="265" text-anchor="middle" fill="white" font-size="11" font-weight="700">Aprovar diretor</text>
+          <text x="680" y="280" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">SLA · 24h · 2-vias</text>
+
+          <!-- End · concluído -->
+          <circle cx="1080" cy="120" r="28" fill="#1A1A1F" stroke="#3FB950" stroke-width="3"/>
+          <text x="1080" y="120" text-anchor="middle" fill="#3FB950" font-size="11" font-weight="700">Concluído</text>
+
+          <!-- Indicadores nas atividades -->
+          <text x="295" y="170" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">KPI · 100% no SLA</text>
+          <text x="485" y="170" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="9">KPI · 95% no SLA</text>
+        </svg>
+
+        <!-- Tags inferiores -->
+        <div class="absolute bottom-4 left-6 flex gap-2 z-10">
+          <span class="text-[10px] bg-success/15 text-success border border-success/30 rounded-full px-2.5 py-1 font-bold">✓ ISO 9001 ready</span>
+          <span class="text-[10px] bg-white/5 border border-white/10 rounded-full px-2.5 py-1 font-bold text-gray-300">5 etapas · 2 responsáveis · 4 KPIs</span>
+        </div>
+
+        <!-- Olívia agent -->
+        <div class="absolute bottom-4 right-4 bg-[#0A0A0C] border border-primary/30 rounded-2xl p-3 max-w-[260px] shadow-2xl ring-1 ring-primary/15 z-10">
+          <div class="flex items-start gap-2"><div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px] shrink-0">OL</div><div><p class="text-[11px] font-bold text-white">Agente IA · processo gerado</p><p class="text-[10px] text-gray-400 mt-0.5">A partir da descrição em texto. Edite ou aprove.</p></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </main>

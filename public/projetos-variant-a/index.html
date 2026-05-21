@@ -252,143 +252,98 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     </div>
   </div>
 
-  <!-- HERO MOCKUP DESKTOP — Painel de Projetos Orbit -->
-  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-projetos">
-    <div class="flex overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
-
-      <!-- Sidebar -->
-      <aside class="w-60 border-r border-white/5 bg-[#0A0A0C] flex flex-col hidden md:flex">
-        <div class="h-14 flex items-center px-5 gap-2 mb-1 border-b border-white/5">
-          <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="26" height="26" class="w-6 h-6 object-contain"/>
-          <span class="text-sm font-extrabold text-white">Orbit</span>
-          <span class="text-xs font-semibold text-primary">Projetos</span>
+<!-- HERO MOCKUP DESKTOP · Gantt -->
+  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel">
+    <div class="flex flex-col overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
+      <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[11px]">OR</div>
+          <span class="text-white font-bold text-sm tracking-tight">Orbit</span>
+          <span class="text-primary font-bold text-xs uppercase tracking-wider">Projetos</span>
         </div>
-        <nav class="flex-1 px-3 py-3 space-y-1">
-          <div class="px-3 py-1.5 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Olívia</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-bold text-orbit-black bg-primary rounded-md shadow-gold-soft">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Pergunte à Olívia
-            <span class="ml-auto text-[9px] font-bold bg-orbit-black text-primary px-1.5 py-0.5 rounded">IA</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Projetos</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-white bg-white/5 rounded-md border border-white/5">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><rect height="7" rx="1" width="7" x="3" y="3"/><rect height="7" rx="1" width="7" x="14" y="3"/><rect height="7" rx="1" width="7" x="14" y="14"/><rect height="7" rx="1" width="7" x="3" y="14"/></svg>
-            Painel de Projetos
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M2 7h20l-2 13H4z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Tarefas
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Cronograma
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            Alertas
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Portfolio
-            <span class="ml-auto text-[9px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded">3</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Pessoas</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
-            Membros
-          </a>
-        </nav>
-      </aside>
-
-      <!-- Main -->
-      <main class="flex-1 flex flex-col bg-[#050505] overflow-hidden">
-        <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-[#0A0A0C]/80 backdrop-blur-xl sticky top-0 z-20">
-          <div>
-            <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Visão Geral</h2>
-            <div class="flex items-center gap-2 mt-0.5">
-              <span class="text-white font-bold text-sm tracking-tight">Painel de Projetos</span>
-              <span class="text-gray-600">·</span>
-              <span class="text-xs text-gray-500">Maio 2026</span>
+        <div class="flex items-center gap-3">
+          <div class="flex bg-white/5 rounded-lg p-0.5"><span class="px-2.5 py-1 text-[10px] font-bold text-gray-400">Kanban</span><span class="px-2.5 py-1 text-[10px] font-bold bg-primary/20 text-primary rounded">Gantt</span><span class="px-2.5 py-1 text-[10px] font-bold text-gray-400">Lista</span></div>
+          <button class="bg-primary text-orbit-black px-3 py-1.5 rounded-lg text-[11px] font-bold">+ Projeto</button>
+        </div>
+      </header>
+      <div class="flex-1 p-6 flex flex-col">
+        <!-- Eixo tempo -->
+        <div class="grid grid-cols-12 gap-2 mb-3 border-b border-white/10 pb-2">
+          <div class="col-span-3"></div>
+          <div class="col-span-9 grid grid-cols-6 text-[10px] uppercase tracking-wider text-gray-500 font-bold">
+            <div>Mai</div><div>Jun</div><div class="text-primary">Jul</div><div>Ago</div><div>Set</div><div>Out</div>
+          </div>
+        </div>
+        <!-- Projetos · 6 linhas -->
+        <div class="flex-1 space-y-2.5">
+          <!-- Projeto 1 · CRM rollout -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">CRM rollout · Vendas</p>
+              <p class="text-[10px] text-gray-500">PMO · Lia · 4/8 tarefas</p>
+            </div>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[2%] w-[40%] h-6 bg-gradient-to-r from-primary to-primary-600 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-orbit-black">50%</span></div>
             </div>
           </div>
-          <div class="flex items-center gap-3">
-            <div class="hidden md:flex items-center px-3 py-1.5 bg-white/5 border border-white/10 rounded-full gap-2">
-              <div class="status-dot"></div>
-              <span class="text-[11px] font-medium text-gray-300">Sincronizado</span>
+          <!-- Projeto 2 · ISO 9001 -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">Certificação ISO 9001</p>
+              <p class="text-[10px] text-gray-500">PMO · Carlos · 12/24</p>
             </div>
-            <button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-orbit-black text-[11px] font-bold rounded-md shadow-gold-glow">
-              <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              Novo
-            </button>
-          </div>
-        </header>
-        <div class="flex-1 overflow-y-auto pt-5 pr-5 pb-5 pl-5 space-y-3">
-          <div class="grid grid-cols-3 gap-3">
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Projetos Ativos</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">14</h3>
-              <span class="px-1.5 py-0.5 rounded bg-success/10 text-success text-[10px] font-medium border border-success/20 flex items-center gap-1 w-fit">12 no prazo</span>
-            </div>
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">On-time</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">86%</h3>
-              <span class="px-1.5 py-0.5 rounded bg-white/5 text-gray-300 text-[10px] font-medium border border-white/10 w-fit">+12pp</span>
-            </div>
-            <div class="overflow-hidden text-orbit-black bg-gradient-to-br from-primary to-primary-600 border-primary/40 border rounded-xl p-4 relative shadow-gold-soft">
-              <p class="text-[10px] font-bold text-orbit-black/70 uppercase tracking-wider mb-1">Risco Próximo</p>
-              <h3 class="text-xl font-extrabold tracking-tight mb-1">1 alto</h3>
-              <span class="text-[10px] font-bold bg-orbit-black/15 text-orbit-black px-2 py-0.5 rounded">Atenção</span>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[12%] w-[75%] h-6 bg-white/10 border border-white/20 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-white">50% · risco</span></div>
             </div>
           </div>
-          <div class="grid grid-cols-3 gap-3 items-start">
-            <!-- Chart -->
-            <div class="col-span-2 h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-5 flex flex-col">
-              <div class="flex justify-between items-start mb-3">
-                <div>
-                  <h3 class="text-base font-bold text-white">Burndown · 6 meses</h3>
-                  <p class="text-[11px] text-gray-500 mt-0.5">Entregas vs planejado</p>
-                </div>
-                <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">+18%</span>
-              </div>
-              <div class="flex-1 flex items-end gap-3 px-2 relative">
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[40%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[55%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[48%]"></div>
-                <div class="flex-1 bg-primary rounded-t-lg h-[82%] relative">
-                  <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/30 to-transparent"></div>
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-[#1A1A24] border border-primary/40 px-2 py-0.5 rounded">14 entregues</span>
-                </div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[68%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[78%]"></div>
-              </div>
-              <div class="flex justify-between mt-2 text-[10px] text-gray-500 px-2"><span>Dez</span><span>Jan</span><span>Fev</span><span>Mar</span><span class="text-primary font-bold">Abr</span><span>Mai</span></div>
+          <!-- Projeto 3 · com risco -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">Reforma operação SP <span class="text-error">⚠</span></p>
+              <p class="text-[10px] text-error">5 dias atrasado · cliente notificado</p>
             </div>
-            <!-- Olivia chat preview -->
-            <div class="h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 overflow-hidden">
-              <div class="flex items-center gap-2 pb-2 border-b border-white/5">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px]">OL</div>
-                <div class="flex-1">
-                  <p class="text-xs font-bold text-white">Olívia · IA</p>
-                  <p class="text-[10px] text-gray-500">Sua IA de projetos</p>
-                </div>
-                <div class="status-dot"></div>
-              </div>
-              <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300 leading-snug">Quais projetos vão atrasar?</div>
-              <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white leading-snug">
-                2 com risco preditivo (14 entregues), margem subiu pra 53%. Quer ver o drill por cliente?
-              </div>
-              <div class="flex gap-1.5 flex-wrap">
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Ver riscos</span>
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Replanejar</span>
-              </div>
-              <div class="mt-auto pt-2 flex gap-2">
-                <input class="flex-1 bg-[#111] border border-white/10 rounded px-2 py-1.5 text-[11px] text-white placeholder:text-gray-600" placeholder="Pergunte sobre projetos ou tarefas..."/>
-                <button class="bg-primary text-orbit-black text-[10px] font-bold px-2 py-1.5 rounded">Enviar</button>
-              </div>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[5%] w-[55%] h-6 bg-error/20 border border-error/50 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-error">38% · atrasado</span></div>
+            </div>
+          </div>
+          <!-- Projeto 4 -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">Migração de servidor</p>
+              <p class="text-[10px] text-gray-500">CTO · André · 8/10</p>
+            </div>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[18%] w-[28%] h-6 bg-success/20 border border-success/50 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-success">80% · no prazo</span></div>
+            </div>
+          </div>
+          <!-- Projeto 5 -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">Onboarding · Cliente Mega</p>
+              <p class="text-[10px] text-gray-500">CS · Paula · 3/12</p>
+            </div>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[40%] w-[35%] h-6 bg-white/10 border border-white/20 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-white">25%</span></div>
+            </div>
+          </div>
+          <!-- Projeto 6 -->
+          <div class="grid grid-cols-12 gap-2 items-center">
+            <div class="col-span-3">
+              <p class="text-[12px] font-bold text-white">Estudo de mercado SE</p>
+              <p class="text-[10px] text-gray-500">Strategy · 0/6</p>
+            </div>
+            <div class="col-span-9 grid grid-cols-6 relative h-7 items-center">
+              <div class="absolute left-[58%] w-[32%] h-6 bg-white/[0.04] border border-white/10 rounded-md flex items-center px-2"><span class="text-[10px] font-bold text-gray-400">planejado</span></div>
             </div>
           </div>
         </div>
-      </main>
+        <!-- Olivia -->
+        <div class="bg-primary/5 border border-primary/30 rounded-xl p-3 mt-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-xs shrink-0">OL</div>
+          <p class="text-[12px] text-gray-300 flex-1"><strong class="text-primary">Risco preditivo:</strong> Reforma SP precisa de mais 2 pessoas até quinta. Mover do projeto Mega?</p>
+          <button class="text-[10px] bg-primary text-orbit-black px-3 py-1.5 rounded-lg font-bold">Realocar</button>
+        </div>
+      </div>
     </div>
   </div>
 </main>

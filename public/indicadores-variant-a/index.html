@@ -252,143 +252,105 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0D1117;col
     </div>
   </div>
 
-  <!-- HERO MOCKUP DESKTOP — Painel de KPIs Orbit -->
-  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel-indicadores">
-    <div class="flex overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
-
-      <!-- Sidebar -->
-      <aside class="w-60 border-r border-white/5 bg-[#0A0A0C] flex flex-col hidden md:flex">
-        <div class="h-14 flex items-center px-5 gap-2 mb-1 border-b border-white/5">
-          <img src="../shared/assets/orbit-logo.png" alt="Orbit" width="26" height="26" class="w-6 h-6 object-contain"/>
-          <span class="text-sm font-extrabold text-white">Orbit</span>
-          <span class="text-xs font-semibold text-primary">Indicadores</span>
+<!-- HERO MOCKUP DESKTOP · Grid de KPIs Orbit -->
+  <div class="hidden md:flex scroll-item scroll-blur-in d-500 w-full h-[720px] max-w-[1440px] mt-20 mr-auto ml-auto relative items-center justify-center" data-swap="screenshot-painel">
+    <div class="flex flex-col overflow-hidden z-30 bg-[#0A0A0C] w-full h-full max-w-6xl border-white/10 border ring-white/5 ring-1 rounded-2xl mr-2 ml-2 md:mr-6 md:ml-6 relative shadow-2xl text-gray-400 select-none">
+      <!-- Topbar -->
+      <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[11px]">OR</div>
+          <span class="text-white font-bold text-sm tracking-tight">Orbit</span>
+          <span class="text-primary font-bold text-xs uppercase tracking-wider">Indicadores</span>
         </div>
-        <nav class="flex-1 px-3 py-3 space-y-1">
-          <div class="px-3 py-1.5 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Olívia</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-bold text-orbit-black bg-primary rounded-md shadow-gold-soft">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Pergunte à Olívia
-            <span class="ml-auto text-[9px] font-bold bg-orbit-black text-primary px-1.5 py-0.5 rounded">IA</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">KPIs</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-white bg-white/5 rounded-md border border-white/5">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><rect height="7" rx="1" width="7" x="3" y="3"/><rect height="7" rx="1" width="7" x="14" y="3"/><rect height="7" rx="1" width="7" x="14" y="14"/><rect height="7" rx="1" width="7" x="3" y="14"/></svg>
-            Painel de KPIs
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M2 7h20l-2 13H4z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Dashboards
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Indicadores
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            Alertas
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Categorias
-            <span class="ml-auto text-[9px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded">3</span>
-          </a>
-          <div class="px-3 py-1.5 mt-2 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Configuração</div>
-          <a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md">
-            <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
-            Conectores
-          </a>
-        </nav>
-      </aside>
-
-      <!-- Main -->
-      <main class="flex-1 flex flex-col bg-[#050505] overflow-hidden">
-        <header class="h-14 border-b border-white/5 flex items-center justify-between px-6 bg-[#0A0A0C]/80 backdrop-blur-xl sticky top-0 z-20">
-          <div>
-            <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Visão Geral</h2>
-            <div class="flex items-center gap-2 mt-0.5">
-              <span class="text-white font-bold text-sm tracking-tight">Painel de KPIs</span>
-              <span class="text-gray-600">·</span>
-              <span class="text-xs text-gray-500">Maio 2026</span>
-            </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] text-gray-500">Atualizado há 2 min</span>
+          <button class="bg-white/5 border border-white/10 text-white px-3 py-1.5 rounded-lg text-[11px] font-bold">+ Dashboard</button>
+        </div>
+      </header>
+      <!-- Grid 3x2 -->
+      <div class="flex-1 grid grid-cols-3 gap-4 p-6">
+        <!-- KPI 1 · CPL · Sparkline area -->
+        <div class="bg-[#0E0E11] border border-white/10 rounded-2xl p-4 flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">CPL</span>
+            <span class="text-[9px] bg-success/15 text-success rounded px-1.5 py-0.5 font-bold">−18%</span>
           </div>
-          <div class="flex items-center gap-3">
-            <div class="hidden md:flex items-center px-3 py-1.5 bg-white/5 border border-white/10 rounded-full gap-2">
-              <div class="status-dot"></div>
-              <span class="text-[11px] font-medium text-gray-300">Sincronizado</span>
-            </div>
-            <button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-orbit-black text-[11px] font-bold rounded-md shadow-gold-glow">
-              <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-              Novo
-            </button>
+          <p class="text-2xl font-extrabold text-white mb-1">R$ 187</p>
+          <p class="text-[10px] text-gray-500 mb-3">vs R$ 228 mês anterior</p>
+          <svg class="w-full h-12" viewBox="0 0 120 40" preserveAspectRatio="none">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3FB950" stop-opacity="0.4"/><stop offset="100%" stop-color="#3FB950" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0,30 L20,28 L40,22 L60,18 L80,12 L100,15 L120,8 L120,40 L0,40 Z" fill="url(#g1)"/>
+            <path d="M0,30 L20,28 L40,22 L60,18 L80,12 L100,15 L120,8" stroke="#3FB950" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <!-- KPI 2 · Conversão · Donut -->
+        <div class="bg-[#0E0E11] border border-white/10 rounded-2xl p-4 flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Taxa Conversão</span>
+            <span class="text-[9px] bg-success/15 text-success rounded px-1.5 py-0.5 font-bold">+2,4pp</span>
           </div>
-        </header>
-        <div class="flex-1 overflow-y-auto pt-5 pr-5 pb-5 pl-5 space-y-3">
-          <div class="grid grid-cols-3 gap-3">
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">KPIs ativos</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">22</h3>
-              <span class="px-1.5 py-0.5 rounded bg-success/10 text-success text-[10px] font-medium border border-success/20 flex items-center gap-1 w-fit">18 na meta</span>
-            </div>
-            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-white/10">
-              <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">CPL Marketing</p>
-              <h3 class="text-xl font-extrabold text-white tracking-tight mb-1">R$ 42</h3>
-              <span class="px-1.5 py-0.5 rounded bg-white/5 text-gray-300 text-[10px] font-medium border border-white/10 w-fit">−18%</span>
-            </div>
-            <div class="overflow-hidden text-orbit-black bg-gradient-to-br from-primary to-primary-600 border-primary/40 border rounded-xl p-4 relative shadow-gold-soft">
-              <p class="text-[10px] font-bold text-orbit-black/70 uppercase tracking-wider mb-1">NPS Cliente</p>
-              <h3 class="text-xl font-extrabold tracking-tight mb-1">78</h3>
-              <span class="text-[10px] font-bold bg-orbit-black/15 text-orbit-black px-2 py-0.5 rounded">Promotor</span>
-            </div>
-          </div>
-          <div class="grid grid-cols-3 gap-3 items-start">
-            <!-- Chart -->
-            <div class="col-span-2 h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-5 flex flex-col">
-              <div class="flex justify-between items-start mb-3">
-                <div>
-                  <h3 class="text-base font-bold text-white">CPL × Conversão</h3>
-                  <p class="text-[11px] text-gray-500 mt-0.5">Últimos 6 meses</p>
-                </div>
-                <span class="text-[10px] font-bold bg-success/10 text-success border border-success/20 px-2 py-0.5 rounded-full">+18%</span>
-              </div>
-              <div class="flex-1 flex items-end gap-3 px-2 relative">
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[40%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[55%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[48%]"></div>
-                <div class="flex-1 bg-primary rounded-t-lg h-[82%] relative">
-                  <div class="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/30 to-transparent"></div>
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-[#1A1A24] border border-primary/40 px-2 py-0.5 rounded">R$ 42</span>
-                </div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[68%]"></div>
-                <div class="flex-1 bg-white/5 rounded-t-lg h-[78%]"></div>
-              </div>
-              <div class="flex justify-between mt-2 text-[10px] text-gray-500 px-2"><span>Dez</span><span>Jan</span><span>Fev</span><span>Mar</span><span class="text-primary font-bold">Abr</span><span>Mai</span></div>
-            </div>
-            <!-- Olivia chat preview -->
-            <div class="h-[280px] bg-[#101018] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 overflow-hidden">
-              <div class="flex items-center gap-2 pb-2 border-b border-white/5">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px]">OL</div>
-                <div class="flex-1">
-                  <p class="text-xs font-bold text-white">Olívia · IA</p>
-                  <p class="text-[10px] text-gray-500">Sua IA de indicadores</p>
-                </div>
-                <div class="status-dot"></div>
-              </div>
-              <div class="bg-white/5 rounded-lg p-2.5 text-[11px] text-gray-300 leading-snug">Por que o CPL caiu 30% em maio?</div>
-              <div class="bg-primary/10 border border-primary/25 rounded-lg p-2.5 text-[11px] text-white leading-snug">
-                3 causas correlacionadas (R$ 42), margem subiu pra 53%. Quer ver o drill por cliente?
-              </div>
-              <div class="flex gap-1.5 flex-wrap">
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Ver detalhe</span>
-                <span class="text-[9px] bg-white/5 border border-white/10 rounded px-2 py-1 text-gray-400">Replicar</span>
-              </div>
-              <div class="mt-auto pt-2 flex gap-2">
-                <input class="flex-1 bg-[#111] border border-white/10 rounded px-2 py-1.5 text-[11px] text-white placeholder:text-gray-600" placeholder="Pergunte sobre qualquer KPI..."/>
-                <button class="bg-primary text-orbit-black text-[10px] font-bold px-2 py-1.5 rounded">Enviar</button>
-              </div>
+          <div class="flex items-center gap-3 mt-2">
+            <svg class="w-16 h-16" viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+              <circle cx="18" cy="18" r="15" fill="none" stroke="#ffba1a" stroke-width="3" stroke-dasharray="14.3 100" transform="rotate(-90 18 18)" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <p class="text-2xl font-extrabold text-white">14,3%</p>
+              <p class="text-[10px] text-gray-500">meta · 12%</p>
             </div>
           </div>
         </div>
-      </main>
+        <!-- KPI 3 · MRR · Sparkline line -->
+        <div class="bg-gradient-to-br from-primary/15 to-transparent border border-primary/40 rounded-2xl p-4 flex flex-col ring-1 ring-primary/20">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] uppercase tracking-wider text-primary font-bold">MRR · destaque</span>
+            <span class="text-[9px] bg-primary/30 text-primary rounded px-1.5 py-0.5 font-bold">+22%</span>
+          </div>
+          <p class="text-2xl font-extrabold text-white mb-1">22</p>
+          <p class="text-[10px] text-gray-400 mb-3">12 meses crescendo</p>
+          <svg class="w-full h-12" viewBox="0 0 120 40" preserveAspectRatio="none">
+            <path d="M0,35 L15,30 L30,28 L45,22 L60,20 L75,14 L90,10 L105,8 L120,4" stroke="#ffba1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="120" cy="4" r="2.5" fill="#ffba1a"/>
+          </svg>
+        </div>
+        <!-- KPI 4 · NPS · Barras -->
+        <div class="bg-[#0E0E11] border border-white/10 rounded-2xl p-4 flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">NPS</span>
+            <span class="text-[9px] bg-success/15 text-success rounded px-1.5 py-0.5 font-bold">Excelente</span>
+          </div>
+          <p class="text-2xl font-extrabold text-white mb-1">72</p>
+          <p class="text-[10px] text-gray-500 mb-3">↑ de 64 em 90 dias</p>
+          <div class="flex items-end gap-1 h-12">
+            <div class="flex-1 bg-white/5 rounded-t" style="height:30%"></div>
+            <div class="flex-1 bg-white/10 rounded-t" style="height:45%"></div>
+            <div class="flex-1 bg-success/40 rounded-t" style="height:60%"></div>
+            <div class="flex-1 bg-success/60 rounded-t" style="height:75%"></div>
+            <div class="flex-1 bg-success rounded-t" style="height:95%"></div>
+          </div>
+        </div>
+        <!-- KPI 5 · Churn · Sparkline desc -->
+        <div class="bg-[#0E0E11] border border-white/10 rounded-2xl p-4 flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Churn mensal</span>
+            <span class="text-[9px] bg-error/15 text-error rounded px-1.5 py-0.5 font-bold">⚠ acima</span>
+          </div>
+          <p class="text-2xl font-extrabold text-white mb-1">2,4%</p>
+          <p class="text-[10px] text-error mb-3">meta · 1,8%</p>
+          <svg class="w-full h-12" viewBox="0 0 120 40" preserveAspectRatio="none">
+            <path d="M0,8 L20,10 L40,12 L60,18 L80,22 L100,28 L120,32" stroke="#F85149" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- KPI 6 · Olívia insight card -->
+        <div class="bg-[#0E0E11] border border-primary/30 rounded-2xl p-4 flex flex-col">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-orbit-black font-extrabold text-[10px]">OL</div>
+            <span class="text-[11px] font-bold text-white">Insight da Olívia</span>
+          </div>
+          <p class="text-[12px] text-gray-300 leading-relaxed">Churn subiu 3 meses seguidos. Clientes que cancelaram tiveram <strong class="text-primary">NPS &lt; 30</strong>. Sugiro PDI no CS.</p>
+          <button class="mt-auto text-[10px] text-primary font-bold flex items-center gap-1">Criar tarefa →</button>
+        </div>
+      </div>
     </div>
   </div>
 </main>
